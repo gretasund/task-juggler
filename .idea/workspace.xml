@@ -13,49 +13,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="Login and Registration">
-      <change afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/error/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/userAdmin/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/userManager/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrectValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/PasswordMatches.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/PasswordMatchesValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/UserAlreadyExist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/UserAlreadyExistValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/ForbiddenException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/IncorrectPasswordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/UserAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/ChangePasswordForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/RegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/RegisterUserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/RegisterUserForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-    </list>
+    <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="Added:&#10;&#10;- annotations&#10;- exceptions&#10;- change password" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600120723500</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added:&#10;&#10;- annotations&#10;- exceptions&#10;- change password">
+      <created>1600969891986</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600969891986</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,9 +213,14 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Login and Registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login and Registration" />
+    <MESSAGE value="Added:&#10;&#10;- annotations&#10;- exceptions&#10;- change password" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added:&#10;&#10;- annotations&#10;- exceptions&#10;- change password" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1033" y="525" key="#Notifications" timestamp="1600969965778">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1033" y="525" key="#Notifications/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969965778" />
     <state x="328" y="106" key="#Project_Structure" timestamp="1600120401306">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -311,13 +281,15 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1600841266198" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1600120742708">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="670" y="353" width="1576" height="781" key="Vcs.Push.Dialog.v2" timestamp="1600969904680">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1600120742708" />
-    <state x="541" y="157" width="612" height="735" key="find.popup" timestamp="1600967157551">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="670" y="353" width="1576" height="781" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969904680" />
+    <state x="159" y="401" width="1958" height="951" key="find.popup" timestamp="1600969691948">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="541" y="157" width="612" height="735" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1600967157551" />
+    <state x="159" y="401" width="1958" height="951" key="find.popup/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969691948" />
   </component>
 </project>
