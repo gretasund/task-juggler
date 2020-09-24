@@ -1,9 +1,6 @@
 package de.hsba.bi.projectwork.user;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,8 +13,7 @@ import java.util.List;
 
 @Entity
 @RequiredArgsConstructor
-@Getter
-@Setter
+@Data
 public class User implements Comparable<User> {
 
     public static String ADMIN_ROLE = "ADMIN";

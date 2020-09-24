@@ -1,17 +1,17 @@
 package de.hsba.bi.projectwork.web.user;
 
-import lombok.Getter;
+import de.hsba.bi.projectwork.user.annotations.PasswordMatches;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
-@Getter
-@Setter
+@Data
 @RequiredArgsConstructor
+@PasswordMatches
 public class RegisterUserForm {
 
     @NotEmpty(message = "Please enter a username.")

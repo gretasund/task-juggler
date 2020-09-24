@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="fragments/header"></header>
+<body>
+
+
+<div class="wrapper">
+
+    <div class="container marketing">
+
+        <div sec:authorize="authenticated" th:object="${changePasswordForm}">
+        <h1>Account</h1><br>
+            <table>
+                <tr>
+                    <td><img class="img-circle" width="80" height="80" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnyarisk.com%2Fwp-content%2Fthemes%2Fnyarisk%2Fassets%2Fimg%2Fdefault-profile.png&f=1&nofb=1"></td>
+                </tr>
+            </table>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 py-3 px-lg-5">
+                        <b>Name</b>
+                    </div>
+                    <div class="col-8 py-3 px-lg-5" th:text="${user.name}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 py-3 px-lg-5">
+                        <b>Role</b>
+                    </div>
+                    <div class="col-8 py-3 px-lg-5" th:text="${user.role}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 py-3 px-lg-5">
+                        <b>Password</b>
+                    </div>
+                    <div class="col-8 py-3 px-lg-5">
+                        <!--Password change in process-->
+                        <div th:if="${#fields.errors().size() > 0} or ${#fields.hasErrors('${changePasswordForm}')}">
+                            <!--Button-->
+                            <a class="btn btn-outline-primary" aria-expanded="false" data-toggle="collapse" href="#multiCollapse2" role="button" aria-controls="multiCollapse2">Change Password</a>
+                            <!--Card-->
+                            <div th:attr="class='collapse show'" class="collapse multi-collapse" id="multiCollapse2"><!--class="collapse show" -->
+                                <form th:action="@{/changePassword}" th:object="${changePasswordForm}" method="post">
+                                    <div th:if="${#fields.hasErrors('${changePasswordForm}')}">
+                                        <label th:errors="${changePasswordForm}" class="text-danger small"></label>
+                                    </div>
+                                    <div class="form-group"><br>
+                                        <label for="oldPassword2">Old Password</label>
+                                        <label class="text-danger small" th:errors="*{oldPassword}"></label>
+                                        <div>
+                                            <input class="form-control" id="oldPassword2" name="password" type="password" th:field="*{oldPassword}"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newPassword2">New Password</label><br>
+                                        <label class="text-danger small" th:errors="*{password}"></label>
+                                        <div>
+                                            <input class="form-control" id="newPassword2" name="password" type="password" th:field="*{password}"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmNewPassword2">Confirm Password</label><br>
+                                        <label class="text-danger small" th:errors="*{matchingPassword}"></label>
+                                        <div>
+                                            <input class="form-control" id="confirmNewPassword2" name="password" type="password" th:field="*{matchingPassword}"/>
+                                        </div>
+                                    </div><br>
+                                    <button type="submit" class="btn btn-outline-secondary">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!--Password change not started or successfully finished-->
+                        <div th:if="${#fields.errors().size() == 0}">
+                            <!--Button-->
+                            <div class="row">
+                                <div class="col-md-auto">
+                                    <a class="btn btn-outline-primary" aria-expanded="false" data-toggle="collapse" href="#multiCollapse1" role="button" aria-controls="multiCollapse1">Change Password</a>
+                                </div>
+                                <div class="col">
+                                    <div class="text-success" th:text="${message}"></div>
+                                </div>
+                            </div>
+                            <!--Card-->
+                            <div class="collapse multi-collapse" id="multiCollapse1">
+                                <div class="card card-body">
+                                    <form th:action="@{/changePassword}" th:object="${changePasswordForm}" method="post">
+                                        <div class="form-group"><br>
+                                            <label for="oldPassword1">Old Password</label><br>
+                                            <label class="text-danger small" th:errors="*{oldPassword}"></label>
+                                            <div>
+                                                <input class="form-control" id="oldPassword1" name="password" type="password" th:field="*{oldPassword}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="newPassword1">New Password</label><br>
+                                            <label class="text-danger small" th:errors="*{password}"></label>
+                                            <div>
+                                                <input class="form-control" id="newPassword1" name="password" type="password" th:field="*{password}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirmNewPassword1">Confirm Password</label><br>
+                                            <label class="text-danger small" th:errors="*{matchingPassword}"></label>
+                                            <div>
+                                                <input class="form-control" id="confirmNewPassword1" name="password" type="password" th:field="*{matchingPassword}"/>
+                                            </div>
+                                        </div><br>
+                                        <button type="submit" class="btn btn-outline-secondary">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br><br><br><br><br><br><br><br>
+
+        </div><!-- /.container -->
+
+    </div>
+
+</div>
+
+<div class="push"></div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
+</body>
+</html>

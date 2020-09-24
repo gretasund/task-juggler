@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="fragments/header"></header>
+<body>
+
+<div class="wrapper">
+
+    <div class="container marketing">
+
+        <!--Section for developers-->
+        <div sec:authorize="hasRole('DEVELOPER')">
+            <h1>Dashboard</h1><br>
+        </div>
+
+    </div><!-- /.container -->
+
+</div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
+</body>
+</html>

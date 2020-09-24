@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -11,46 +14,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="Login and Registration">
-      <change afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.3/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.3/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/ProjectWorkApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserAdapterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserAdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserManagerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/RegisterUserForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userAdmin/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userDeveloper/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userManager/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/ProjectworkApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/account.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/error/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/userAdmin/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/userManager/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrectValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/PasswordMatches.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/PasswordMatchesValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/UserAlreadyExist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/UserAlreadyExistValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/ForbiddenException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/IncorrectPasswordException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/UserAlreadyExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/ChangePasswordForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/account.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/RegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/RegisterUserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/RegisterUserForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +64,29 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,11 +101,19 @@
     </option>
   </component>
   <component name="ProjectId" id="1hWEWxz6iRQGwTRScc3g299sd6z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -93,12 +121,66 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.33793104" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.hsba.bi.projectwork.web.user" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web" />
+      <recent name="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ProjectWorkApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTest.findBlacklistedIBAN" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="expenses.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.hsba.bi.projectwork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.hsba.bi.projectwork" />
+      <option name="MAIN_CLASS_NAME" value="de.hsba.bi.projectwork.RegisterTest" />
+      <option name="METHOD_NAME" value="findBlacklistedIBAN" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTest.registerUserController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="expenses.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.hsba.bi.projectwork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.hsba.bi.projectwork" />
+      <option name="MAIN_CLASS_NAME" value="de.hsba.bi.projectwork.RegisterTest" />
+      <option name="METHOD_NAME" value="registerUserController" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProjectWorkApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="expenses.main" />
       <extension name="coverage">
@@ -115,9 +197,12 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ProjectWorkApplication" />
+        <item itemvalue="JUnit.RegisterTest.registerUserController" />
+        <item itemvalue="JUnit.RegisterTest.findBlacklistedIBAN" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -128,12 +213,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600118483421</updated>
-      <workItem from="1600118490513" duration="1555000" />
+      <workItem from="1600118490513" duration="2071000" />
+      <workItem from="1600279140275" duration="22000" />
+      <workItem from="1600279199317" duration="30000" />
+      <workItem from="1600761262265" duration="679000" />
+      <workItem from="1600841240068" duration="3605000" />
+      <workItem from="1600968643751" duration="740000" />
     </task>
+    <task id="LOCAL-00001" summary="Login and Registration">
+      <created>1600120723500</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600120723500</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -145,8 +243,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Login and Registration" />
     <option name="LAST_COMMIT_MESSAGE" value="Login and Registration" />
   </component>
@@ -159,28 +259,65 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600119055753" />
-    <state x="323" y="100" key="CommitChangelistDialog2" timestamp="1600118993280">
+    <state x="323" y="100" key="CommitChangelistDialog2" timestamp="1600120776293">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="323" y="100" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1600118993280" />
-    <state x="710" y="429" key="Github.ShareDialog" timestamp="1600118726475">
+    <state x="323" y="100" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1600120776293" />
+    <state x="710" y="429" key="Github.ShareDialog" timestamp="1600120842026">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="710" y="429" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600118726475" />
-    <state x="328" y="106" key="SettingsEditor" timestamp="1600120194872">
+    <state x="710" y="429" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600120842026" />
+    <state width="2517" height="400" key="GridCell.Tab.0.bottom" timestamp="1600969109840">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1638" height="459" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1600967727239" />
+    <state width="2517" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969109840" />
+    <state width="2517" height="400" key="GridCell.Tab.0.center" timestamp="1600969109840">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1638" height="459" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1600967727237" />
+    <state width="2517" height="400" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969109840" />
+    <state width="2517" height="400" key="GridCell.Tab.0.left" timestamp="1600969109839">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1638" height="459" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1600967727237" />
+    <state width="2517" height="400" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969109839" />
+    <state width="2517" height="400" key="GridCell.Tab.0.right" timestamp="1600969109840">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1638" height="459" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1600967727238" />
+    <state width="2517" height="400" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969109840" />
+    <state width="2517" height="400" key="GridCell.Tab.1.bottom" timestamp="1600969109841">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1638" height="459" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1600967727242" />
+    <state width="2517" height="400" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969109841" />
+    <state width="2517" height="400" key="GridCell.Tab.1.center" timestamp="1600969109840">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1638" height="459" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1600967727241" />
+    <state width="2517" height="400" key="GridCell.Tab.1.center/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969109840" />
+    <state width="2517" height="400" key="GridCell.Tab.1.left" timestamp="1600969109840">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1638" height="459" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1600967727240" />
+    <state width="2517" height="400" key="GridCell.Tab.1.left/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969109840" />
+    <state width="2517" height="400" key="GridCell.Tab.1.right" timestamp="1600969109840">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1638" height="459" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1600967727241" />
+    <state width="2517" height="400" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969109840" />
+    <state x="328" y="106" key="SettingsEditor" timestamp="1600841266198">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1600120194872" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1600841266198" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1600120742708">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1600120742708" />
+    <state x="541" y="157" width="612" height="735" key="find.popup" timestamp="1600967157551">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="541" y="157" width="612" height="735" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1600967157551" />
   </component>
 </project>
