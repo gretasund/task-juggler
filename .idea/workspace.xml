@@ -192,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600969891986</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added:&#10;&#10;- annotations&#10;- exceptions&#10;- change password">
+      <created>1600970072880</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600970072880</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,11 +288,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1600841266198" />
-    <state x="670" y="353" width="1576" height="781" key="Vcs.Push.Dialog.v2" timestamp="1600969904680">
+    <state x="670" y="353" width="1576" height="781" key="Vcs.Push.Dialog.v2" timestamp="1600970077422">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1600120742708" />
-    <state x="670" y="353" width="1576" height="781" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600969904680" />
+    <state x="670" y="353" width="1576" height="781" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.174.1920.1160@0.0.2560.1400" timestamp="1600970077422" />
     <state x="159" y="401" width="1958" height="951" key="find.popup" timestamp="1600969691948">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
