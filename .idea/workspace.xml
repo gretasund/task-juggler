@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -10,48 +13,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="Login and Registration">
-      <change afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/error/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/userAdmin/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/templates/userManager/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrectValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/PasswordMatches.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/PasswordMatchesValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/UserAlreadyExist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/UserAlreadyExistValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/ForbiddenException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/IncorrectPasswordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/exception/UserAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/ChangePasswordForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/RegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/UpdateProjectForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/user/ChangePasswordForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/user/ChangePasswordForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/RegisterUserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/RegisterUserForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/ChangePasswordForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/ChangePasswordForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/RegisterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,34 +85,51 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33793104" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.hsba.bi.projectwork.web.project" />
       <recent name="de.hsba.bi.projectwork.web.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web" />
       <recent name="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ProjectWorkApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RegisterTest.findBlacklistedIBAN" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="expenses.test" />
       <extension name="coverage">
@@ -176,7 +171,9 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="de.hsba.bi.projectwork.ProjectWorkApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateResources" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateResources" />
       <method v="2">
@@ -196,6 +193,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -212,7 +210,11 @@
       <workItem from="1600761262265" duration="679000" />
       <workItem from="1600841240068" duration="3605000" />
       <workItem from="1600968073830" duration="719000" />
-      <workItem from="1600968828596" duration="4891000" />
+      <workItem from="1600968828596" duration="7931000" />
+      <workItem from="1601222232264" duration="720000" />
+      <workItem from="1601222981118" duration="643000" />
+      <workItem from="1601224474581" duration="1460000" />
+      <workItem from="1601226266652" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="Login and Registration">
       <created>1600120723500</created>
@@ -221,11 +223,25 @@
       <option name="project" value="LOCAL" />
       <updated>1600120723500</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Bug fix: Users can now change their password&#10;- When a username already exists, an error message is displayed">
+      <created>1601125346483</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601125346483</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- Bug fix: Users can now change their password&#10;- When a username already exists, an error message is displayed">
+      <created>1601125413622</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601125413622</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -242,9 +258,14 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Login and Registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login and Registration" />
+    <MESSAGE value="- Bug fix: Users can now change their password&#10;- When a username already exists, an error message is displayed" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Bug fix: Users can now change their password&#10;- When a username already exists, an error message is displayed" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="456" y="0" width="767" height="1050" key="#ProjectWorkApplication" timestamp="1601223174496">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="456" y="0" width="767" height="1050" key="#ProjectWorkApplication/0.0.1680.1050@0.0.1680.1050" timestamp="1601223174496" />
     <state x="328" y="106" key="#Project_Structure" timestamp="1600120401306">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -253,82 +274,110 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600968315803" />
-    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1601122990647">
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1601223368937">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1601122990647" />
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1601223368937" />
+    <state x="577" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601222851081">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="577" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1601222851081" />
+    <state x="528" y="268" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601223005425">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="528" y="268" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1601223005425" />
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600119055753">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600119055753" />
-    <state x="323" y="100" key="CommitChangelistDialog2" timestamp="1600120776293">
+    <state x="323" y="100" key="CommitChangelistDialog2" timestamp="1601125413372">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="323" y="100" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1600120776293" />
+    <state x="323" y="100" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1601125413372" />
     <state x="710" y="429" key="Github.ShareDialog" timestamp="1600120842026">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="710" y="429" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600120842026" />
-    <state width="1638" height="364" key="GridCell.Tab.0.bottom" timestamp="1601125213017">
+    <state width="650" height="185" key="GridCell.Tab.0.bottom" timestamp="1601226217526">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1638" height="364" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601125393540" />
+    <state width="650" height="185" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1601226217526" />
+    <state width="650" height="185" key="GridCell.Tab.0.center" timestamp="1601226217525">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1638" height="364" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601125393539" />
+    <state width="650" height="185" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1601226217525" />
+    <state width="650" height="185" key="GridCell.Tab.0.left" timestamp="1601226217524">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1638" height="364" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601125393539" />
+    <state width="650" height="185" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1601226217524" />
+    <state width="650" height="185" key="GridCell.Tab.0.right" timestamp="1601226217526">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1638" height="364" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601125393540" />
+    <state width="650" height="185" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1601226217526" />
+    <state width="650" height="185" key="GridCell.Tab.1.bottom" timestamp="1601226217528">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="819" height="364" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601125391823" />
+    <state width="650" height="185" key="GridCell.Tab.1.bottom/0.23.1440.801@0.23.1440.801" timestamp="1601226217528" />
+    <state width="1638" height="364" key="GridCell.Tab.1.bottom/0.23.1680.905@0.23.1680.905" timestamp="1601125249525" />
+    <state width="650" height="185" key="GridCell.Tab.1.center" timestamp="1601226217527">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="819" height="364" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601125391822" />
+    <state width="650" height="185" key="GridCell.Tab.1.center/0.23.1440.801@0.23.1440.801" timestamp="1601226217527" />
+    <state width="1638" height="364" key="GridCell.Tab.1.center/0.23.1680.905@0.23.1680.905" timestamp="1601125249523" />
+    <state width="650" height="185" key="GridCell.Tab.1.left" timestamp="1601226217526">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="819" height="364" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601125391821" />
+    <state width="650" height="185" key="GridCell.Tab.1.left/0.23.1440.801@0.23.1440.801" timestamp="1601226217526" />
+    <state width="1638" height="364" key="GridCell.Tab.1.left/0.23.1680.905@0.23.1680.905" timestamp="1601125249522" />
+    <state width="650" height="185" key="GridCell.Tab.1.right" timestamp="1601226217528">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="819" height="364" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601125391823" />
+    <state width="650" height="185" key="GridCell.Tab.1.right/0.23.1440.801@0.23.1440.801" timestamp="1601226217528" />
+    <state width="1638" height="364" key="GridCell.Tab.1.right/0.23.1680.905@0.23.1680.905" timestamp="1601125249524" />
+    <state width="819" height="364" key="GridCell.Tab.2.bottom" timestamp="1601125391825">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="364" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601125213017" />
-    <state width="1638" height="364" key="GridCell.Tab.0.center" timestamp="1601125213012">
+    <state width="819" height="364" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601125391825" />
+    <state width="819" height="364" key="GridCell.Tab.2.center" timestamp="1601125391824">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="364" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601125213012" />
-    <state width="1638" height="364" key="GridCell.Tab.0.left" timestamp="1601125213009">
+    <state width="819" height="364" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601125391824" />
+    <state width="819" height="364" key="GridCell.Tab.2.left" timestamp="1601125391824">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="364" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601125213009" />
-    <state width="1638" height="364" key="GridCell.Tab.0.right" timestamp="1601125213013">
+    <state width="819" height="364" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601125391824" />
+    <state width="819" height="364" key="GridCell.Tab.2.right" timestamp="1601125391825">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="364" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601125213013" />
-    <state width="1638" height="364" key="GridCell.Tab.1.bottom" timestamp="1601125212801">
+    <state width="819" height="364" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601125391825" />
+    <state x="271" y="94" key="MergeDialog" timestamp="1601125647746">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="364" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601125212801" />
-    <state width="1638" height="364" key="GridCell.Tab.1.bottom/0.23.1680.905@0.23.1680.905" timestamp="1601124905272" />
-    <state width="1638" height="364" key="GridCell.Tab.1.center" timestamp="1601125212800">
+    <state x="271" y="94" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1601125647746" />
+    <state x="721" y="398" width="443" height="253" key="MultipleFileMergeDialog" timestamp="1601125647789">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="364" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601125212800" />
-    <state width="1638" height="364" key="GridCell.Tab.1.center/0.23.1680.905@0.23.1680.905" timestamp="1601124905270" />
-    <state width="1638" height="364" key="GridCell.Tab.1.left" timestamp="1601125212799">
+    <state x="721" y="398" width="443" height="253" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1601125647789" />
+    <state x="455" y="231" key="NewModule_or_Project.wizard" timestamp="1601222723402">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="364" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601125212799" />
-    <state width="1638" height="364" key="GridCell.Tab.1.left/0.23.1680.905@0.23.1680.905" timestamp="1601124905269" />
-    <state width="1638" height="364" key="GridCell.Tab.1.right" timestamp="1601125212800">
+    <state x="455" y="231" key="NewModule_or_Project.wizard/0.0.1680.1050@0.0.1680.1050" timestamp="1601222723402" />
+    <state x="328" y="106" key="SettingsEditor" timestamp="1601222799141">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="364" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601125212800" />
-    <state width="1638" height="364" key="GridCell.Tab.1.right/0.23.1680.905@0.23.1680.905" timestamp="1601124905271" />
-    <state width="1638" height="364" key="GridCell.Tab.2.bottom" timestamp="1601125212805">
+    <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1601222799141" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1601125678491">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="364" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601125212805" />
-    <state width="1638" height="364" key="GridCell.Tab.2.center" timestamp="1601125212803">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="364" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601125212803" />
-    <state width="1638" height="364" key="GridCell.Tab.2.left" timestamp="1601125212802">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="364" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601125212802" />
-    <state width="1638" height="364" key="GridCell.Tab.2.right" timestamp="1601125212804">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="364" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601125212804" />
-    <state x="328" y="106" key="SettingsEditor" timestamp="1600968231104">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1600968231104" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1600120742708">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1600120742708" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1601125678491" />
     <state x="541" y="157" width="612" height="735" key="find.popup" timestamp="1600967157551">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -339,38 +388,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java</url>
-          <line>100</line>
+          <line>96</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java</url>
-          <line>85</line>
+          <line>82</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java</url>
-          <line>87</line>
+          <line>83</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectService.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

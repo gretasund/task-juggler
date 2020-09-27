@@ -40,9 +40,29 @@ class RegisterTest {
     }
 
 
+/*
+
+    //Spring Security issues
+    @Test
+    void ChangePassword() {
+
+        //TO-DO Log-In definieren
+
+        ChangePasswordForm changePasswordForm = new ChangePasswordForm("oldpassword12", "password1234", "password1234");
+        // Set a password for ChangePasswordForm
+        //changePasswordForm.setoldpassword()= "oldpasswort";
+        //Excecute changePassword
+        userService.changePassword(changePasswordForm);
+        //Get user information from userRepository
+        User user = userService.findByName("ina");
+        //check if password was changed to the new set password
+        assertThat(userService.checkOldPassword("passwort1234",user.getPassword());
+    }
+
+
     @Test
     void registerUserController() throws Exception {
-    /*    JSONObject user = new JSONObject();
+        JSONObject user = new JSONObject();
         user.put("name", "james");
         user.put("password", "testtesttesttest");
         user.put("matchingPassword", "testtesttesttest");
@@ -53,6 +73,6 @@ class RegisterTest {
                 .content(json))
                 .andDo(print())
                 .andExpect(status().isOk());*/
-    }
-
 }
+
+
