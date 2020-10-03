@@ -17,7 +17,6 @@ public class UserManagerController {
 
     private final UserService userService;
 
-
     // dashboard
     @GetMapping
     public String index(Model model) {

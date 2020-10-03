@@ -1,10 +1,5 @@
 package de.hsba.bi.projectwork.user;
 
-import java.util.List;
-import java.util.Optional;
-
-import javax.transaction.Transactional;
-
 import de.hsba.bi.projectwork.web.exception.IncorrectPasswordException;
 import de.hsba.bi.projectwork.web.exception.UserAlreadyExistException;
 import de.hsba.bi.projectwork.web.user.ChangePasswordForm;
@@ -12,7 +7,9 @@ import de.hsba.bi.projectwork.web.user.RegisterUserForm;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import lombok.RequiredArgsConstructor;
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -25,7 +22,6 @@ public class UserService {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
-
 
     public User save(User user) {
         return userRepository.save(user);
@@ -52,11 +48,7 @@ public class UserService {
 
     public User findByName(String name) {
         Optional<User> userOptional = userRepository.findByName(name);
-        if (userOptional.isPresent()) {
-            return userOptional.get();
-        } else {
-            return null;
-        }
+        return userOptional.orElse(null);
     }
 
     public List<User> findUsers() {

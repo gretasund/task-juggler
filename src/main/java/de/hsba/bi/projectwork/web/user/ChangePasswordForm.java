@@ -1,6 +1,5 @@
 package de.hsba.bi.projectwork.web.user;
 
-import de.hsba.bi.projectwork.user.annotations.OldPasswordIsCorrect;
 import de.hsba.bi.projectwork.user.annotations.PasswordMatches;
 import lombok.Data;
 
@@ -11,7 +10,6 @@ import javax.validation.constraints.Size;
 
 @Data
 @PasswordMatches
-@OldPasswordIsCorrect
 public class ChangePasswordForm {
 
     private String oldPassword;

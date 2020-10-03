@@ -1,13 +1,13 @@
 package de.hsba.bi.projectwork.user;
 
+import de.hsba.bi.projectwork.project.Project;
+
+import de.hsba.bi.projectwork.task.Task;
 import lombok.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +53,14 @@ public class User implements Comparable<User> {
 
     @Basic(optional = false)
     private String role;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @OrderBy
+    private List<Project> projects;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "assignee")
+    @OrderBy
+    private List<Task> assignedTasks;
 
     @Override
     public int compareTo(User other) {
