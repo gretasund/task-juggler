@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -89,7 +90,7 @@ public class TaskService {
         return taskRepository.findTaskByAssignee(assignee);
     }
 
-    public List<Task> findTaskByDueDate(String dueDate) {
+    public List<Task> findTaskByDueDate(LocalDate dueDate) {
         return taskRepository.findTaskByDueDate(dueDate);
     }
 
@@ -150,13 +151,24 @@ public class TaskService {
 
     public Task addNewTask(Task task, Long projectId) {
         // TODO Als Entwickler in einem Projekt kann ich eine Aufgabe zu diesem Projekt hinzufügen, diese beinhaltet wenigstens einen Titel und eine Beschreibung
+        // load entities
         Project project = projectService.findById(projectId);
+        User user = userService.findByName(task.getCreator().getName());
+
         if (checkStatusValidity(task) && project != null) {
+            // link task in user
+            user.getCreatedTasks().add(task);
+
+            // link project in task
             task.setProject(project);
-            List<Task> tasks = project.getTasks();
-            tasks.add(task);
+
+            // link task in project
+            project.getTasks().add(task);
+
+            // persist entities
             taskRepository.save(task);
             projectRepository.save(project);
+
         } else {
             // TODO throw an expection
         }

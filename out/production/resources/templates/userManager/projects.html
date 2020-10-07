@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="fragments/header"></header>
+<body>
+
+<div class="wrapper">
+
+    <div class="container marketing">
+
+        <!--Section for managers-->
+        <div sec:authorize="hasRole('MANAGER')">
+            <h1>Projects</h1>
+            <div class="form-group">
+                <div th:if="${projects != null}" id="accordion">
+                    <div th:each="project : ${projects}">
+                        <div class='card'>
+                            <div class='card-header'>
+                                <h5 class='mb-0'>
+                                    <button th:text="${project.name}" th:attr="data-target='#collapse'+${project.getId()}, aria-controls='collapse'+${project.getId()}" class='btn btn-link' data-toggle='collapse' aria-expanded='false'>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div th:id="'collapse'+${project.getId()}" class='collapse' aria-labelledby='headingOne' data-parent='#accordion'>
+                                <div class='card-body'>
+                                    <h4>Tasks in this project</h4>
+                                    <div th:if="${project.tasks.size() > 0}" class="container px-lg-5">
+                                        <div class="row mx-lg-n5">
+                                            <div class="col-3 py-3"><b>Name</b></div>
+                                            <div class="col py-3"><b>Status</b></div>
+                                            <div class="col py-3"><b>Assignee</b></div>
+                                            <div class="col-3 py-3"><b>Due Date</b></div>
+                                            <div class="col py-3"><b>Effort</b>
+                                                <svg id="i-info" data-toggle="tooltip" data-placement="right" title="Actual effort / Estimated effort in hours" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                                    <path d="M16 14 L16 23 M16 8 L16 10" />
+                                                    <circle cx="16" cy="16" r="14" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div th:each="task : ${project.tasks}" class="row mx-lg-n5">
+                                            <div class="col-3 py-3">
+                                                <a th:href="@{'/userManager/viewTask/' + ${task.id}}" th:text="${task.name}"></a>
+                                            </div>
+                                            <div class="col py-3" th:text="${task.status}"></div>
+                                            <div class="col py-3">
+                                                <div th:if="${task.assignee != null}" th:text="${task.assignee}"></div>
+                                                <div th:if="${task.assignee == null}">
+                                                    <button th:text="'Not set'" type="button" class="alert alert-dark" data-toggle="tooltip" data-placement="right" title="Please open the task and choose an assignee."></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 py-3">
+                                                <div th:if="${task.dueDate != null}">
+                                                    <!--Button-->
+                                                    <div class="row">
+                                                        <div class="col-md-auto">
+                                                            <!--Button-->
+                                                            <button th:if="${task.getDaysLeft() <= 0}" th:text="${task.dueDate}" type="button" class="alert alert-danger" aria-expanded="false" data-toggle="collapse" th:attr="href='#datePicker'+${task.getId()}, aria-controls='datePicker'+${task.getId()}"></button>
+                                                            <button th:if="${task.getDaysLeft() > 0}" th:text="${task.dueDate}" type="button" class="alert alert-success" aria-expanded="false" data-toggle="collapse" th:attr="href='#datePicker'+${task.getId()}, aria-controls='datePicker'+${task.getId()}"></button>
+                                                            <!--Card-->
+                                                            <div class="collapse multi-collapse" th:attr="id='datePicker'+${task.getId()}">
+                                                                <div class="card card-body">
+                                                                    <form th:action="@{/userManager/setDueDate/__${task.getId()}__}" method="post">
+                                                                        <div class="form-group"><br>
+                                                                            <i class="fas fa-envelope prefix grey-text"></i>
+                                                                            <label data-error="wrong" data-success="right" for="defaultForm-date">Date</label>
+                                                                            <input th:name="dueDate" class="datepicker form-control" data-val="true" data-val-date="The field DateTakenFrom must be a date." id="defaultForm-date" name="Criteria.DateTakenFrom" type="date" value="03/17/2014">
+                                                                        </div>
+                                                                        <button type="submit" class="btn btn-outline-secondary">Save</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div th:if="${task.dueDate == null}">
+                                                    <!--Button-->
+                                                    <div class="row">
+                                                        <div class="col-md-auto">
+                                                            <!--Button-->
+                                                            <button type="button" class="alert alert-dark" aria-expanded="false" data-toggle="collapse" th:attr="href='#datePicker'+${task.getId()}, aria-controls='datePicker'+${task.getId()}">Set Date</button>
+                                                            <!--Card-->
+                                                            <div class="collapse multi-collapse" th:attr="id='datePicker'+${task.getId()}">
+                                                                <div class="card card-body">
+                                                                    <form th:action="@{/userManager/setDueDate/__${task.getId()}__}" method="post">
+                                                                        <div class="form-group"><br>
+                                                                            <i class="fas fa-envelope prefix grey-text"></i>
+                                                                            <label data-error="wrong" data-success="right" for="defaultForm-date">Date</label>
+                                                                            <input th:name="dueDate" class="datepicker form-control" data-val="true" data-val-date="The field DateTakenFrom must be a date." id="defaultForm-date" name="Criteria.DateTakenFrom" type="date" value="03/17/2014">
+                                                                        </div>
+                                                                        <button type="submit" class="btn btn-outline-secondary">Save</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col py-3">
+                                                <div th:if="${task.totalTime} <= ${task.estimation}">
+                                                    <button th:text="${task.totalTime} + ' / ' +${task.estimation}" type="button" class="alert alert-success" data-toggle="tooltip" data-placement="right" title="So far the time spent on this task is within its limits."></button>
+                                                </div>
+                                                <div th:if="${task.totalTime} > ${task.estimation} and ${task.totalTime} < ${task.estimation + 2}">
+                                                    <button th:text="${task.totalTime} + ' / ' +${task.estimation}" type="button" class="alert alert-warning" data-toggle="tooltip" data-placement="right" title="The time spent on this task slightly exceeds the original estimation."></button>
+                                                </div>
+                                                <div th:if="${task.totalTime} >= ${task.estimation + 2}">
+                                                    <button th:text="${task.totalTime} + ' / ' +${task.estimation}" type="button" class="alert alert-danger" data-toggle="tooltip" data-placement="right" title="The time spent on this task exceeds the original estimation."></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div th:if="${project.tasks.size() == 0}">
+                                            <div><br>There are no tasks assigned to this project yet!</div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+        </div>
+
+    </div>
+        <!-- /.container -->
+
+    </div>
+
+</div>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
+</body>
+</html>

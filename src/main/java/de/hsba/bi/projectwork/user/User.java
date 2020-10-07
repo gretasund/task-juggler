@@ -11,6 +11,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Entity
 @RequiredArgsConstructor
 @Data
@@ -54,13 +55,17 @@ public class User implements Comparable<User> {
     @Basic(optional = false)
     private String role;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "members")
     @OrderBy
-    private List<Project> projects;
+    private List<Project> projects = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "creator")
+    @OrderBy
+    private List<Task> createdTasks = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "assignee")
     @OrderBy
-    private List<Task> assignedTasks;
+    private List<Task> assignedTasks = new ArrayList<>();
 
     @Override
     public int compareTo(User other) {

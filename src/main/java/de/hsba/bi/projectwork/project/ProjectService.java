@@ -87,11 +87,19 @@ public class ProjectService {
         Project project = this.findById(projectId);
 
         for (User newUser : newUsers) {
-            if (!projectMembers.contains(newUser)) {
+            if (!projectMembers.contains(newUser) && !newUser.getProjects().contains(project)) {
+                // link user in project
                 project.getMembers().add(newUser);
+
+                // link project in user
+                newUser.getProjects().add(project);
+
+                // persist entities I
+                userService.save(newUser);
             }
-            this.save(project);
         }
+        // persist entities II
+        projectRepository.save(project);
     }
 
     public void removeUserFromProject(UpdateProjectForm updateProjectForm, Long projectId) {

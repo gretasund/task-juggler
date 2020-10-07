@@ -27,7 +27,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User createUser(RegisterUserForm userForm, String role) throws UserAlreadyExistException {
+    public void createUser(RegisterUserForm userForm, String role) throws UserAlreadyExistException {
         if (usernameExists(userForm.getName())) {
             throw new UserAlreadyExistException("There is an account with the username '" + userForm.getName() + "'");
         }
@@ -35,7 +35,7 @@ public class UserService {
         user.setName(userForm.getName());
         user.setPassword(passwordEncoder.encode(userForm.getPassword()));
         user.setRole(role);
-        return this.save(user);
+        this.save(user);
     }
 
     public boolean usernameExists(String name) {
