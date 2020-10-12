@@ -1,23 +1,135 @@
 <!doctype html>
 <html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
 <header th:insert="fragments/header"></header>
+<script src="https://unpkg.com/feather-icons"></script>
+<style>
+    .scroll-box {
+        overflow-y: scroll;
+        height: 300px;
+        padding: 1rem
+    }
+</style>
 <body>
 
 <div class="wrapper">
 
     <div class="container marketing">
 
-        <!--Section for developers-->
+        <!--Section for managers-->
         <div sec:authorize="hasRole('MANAGER')">
             <h1>Dashboard</h1><br>
-        </div>
+
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Goal Completion</div>
+                            <div class="card-body">
+                                <div class="scroll-box">
+                                    <div class="container">
+                                        <div th:each="project : ${projects}">
+                                            <h5 th:text="${project.getName()}"></h5>
+                                            <a th:text="${project.findTasks('Done')} + ' / ' + ${project.getTasks().size()} + ' tasks done'"></a>
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" th:attr="style='width: '+(${project.findTasks('Done')}/${project.getTasks().size()})*100+'%', aria-valuenow=${project.findTasks('Done')}, aria-valuemax=${project.getTasks().size()}" aria-valuemin="0"></div>
+                                            </div>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Almost due Tasks</div>
+                            <div class="card-body">
+                                <div class="scroll-box">
+                                    <div class="list-group">
+                                        <a th:each="taskAlmostDue : ${tasksAlmostDue}" th:attr="href='viewTask/' + ${taskAlmostDue.getId()}" href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1" th:text="${taskAlmostDue.getName()}"></h5>
+                                                <small th:if="${taskAlmostDue.getDaysLeft() > 0 && taskAlmostDue.getDaysLeft() < 100}" th:text="${taskAlmostDue.getDaysLeft()} + ' days left'" style="color: green"></small>
+                                                <small th:if="${taskAlmostDue.getDaysLeft() > 0 && taskAlmostDue.getDaysLeft() >= 100}" th:text="'+99 days left'" style="color: green"></small>
+                                                <small th:if="${taskAlmostDue.getDaysLeft() == 0}" th:text="'Due today!'" style="color: darkorange"></small>
+                                                <small th:if="${taskAlmostDue.getDaysLeft() < 0}" th:text="${taskAlmostDue.getDaysLeft()} + ' days left'" style="color: red"></small>
+                                            </div>
+                                            <div>
+                                                <small th:text="${taskAlmostDue.getProject().getName()}"></small>
+                                                <small th:if="${taskAlmostDue.getAssignee() != null}" th:text="' - assigned to ' + ${taskAlmostDue.getAssignee()}" class="text-muted"></small>
+                                                <small th:if="${taskAlmostDue.getAssignee() == null}" th:text="' - not assigned'" class="text-muted"></small>
+                                            </div>
+                                            <p class="mb-1" th:text="${taskAlmostDue.getDescription()}"></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Suggested Tasks</div>
+                            <div class="card-body">
+                                <div class="scroll-box">
+                                    <ul class="list-group">
+                                        <li class="list-group-item" th:each="suggestedTask : ${suggestedTasks}">
+                                            <a th:href="@{'/userManager/viewSuggestedTask/' + ${suggestedTask.id}}" th:text="${suggestedTask.name}"></a>
+                                            <br>
+                                            <small th:text="${suggestedTask.getProject().getName()}"></small>
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="float:right;">
+                                                <form th:action="@{/userManager/evaluateSuggestedTask/accept/__${suggestedTask.getId()}__}" method="post">
+                                                    <button type="submit" class="btn btn-success">
+                                                        <svg id="i-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                                            <path d="M2 20 L12 28 30 4" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                                <form th:action="@{/userManager/evaluateSuggestedTask/decline/__${suggestedTask.getId()}__}" method="post">
+                                                    <button type="button" class="btn btn-danger">
+                                                        <svg id="i-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                                            <path d="M2 30 L30 2 M30 30 L2 2" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Assign and Schedule</div>
+                            <div class="card-body">
+                                <div class="scroll-box">
+                                    <ul class="list-group">
+                                        <li th:each="task : ${unassignedAndUnscheduled}" class="list-group-item d-flex justify-content-between align-items-center">
+                                            <a th:text="${task.name}" th:href="@{'/userManager/viewTask/' + ${task.id}}"></a>
+                                            <span th:if="${task.getDueDate() == null}" th:text="${'unscheduled'}" class="badge badge-info badge-pill"></span>
+                                            <span th:if="${task.getAssignee() == null}" th:text="${'unassigned'}" class="badge badge-primary badge-pill"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><br>
 
     </div><!-- /.container -->
 
 </div>
 
+<div class="push"></div>
+
 <!-- FOOTER -->
 <footer th:insert="fragments/footer"></footer>
 
 </body>
-</html>>
+</html>

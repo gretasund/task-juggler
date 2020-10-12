@@ -1,10 +1,9 @@
-package de.hsba.bi.projectwork;
+package de.hsba.bi.projectwork.userTest;
 
 
 import de.hsba.bi.projectwork.user.UserService;
 import de.hsba.bi.projectwork.web.exception.UserAlreadyExistException;
 import de.hsba.bi.projectwork.web.user.RegisterUserForm;
-import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -14,10 +13,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import javax.transaction.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
 @SpringBootTest

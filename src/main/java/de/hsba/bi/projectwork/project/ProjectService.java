@@ -3,6 +3,7 @@ package de.hsba.bi.projectwork.project;
 import de.hsba.bi.projectwork.user.User;
 import de.hsba.bi.projectwork.user.UserService;
 import de.hsba.bi.projectwork.web.project.UpdateProjectForm;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -10,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
+@RequiredArgsConstructor
 @Service
 @Transactional
 public class ProjectService {
@@ -17,24 +20,8 @@ public class ProjectService {
     private final ProjectRepository projectRepository;
     private final UserService userService;
 
-    public ProjectService(ProjectRepository projectRepository, UserService userService) {
-        this.projectRepository = projectRepository;
-        this.userService = userService;
-    }
 
-    public Project createNewProject(Project project) {
-        // TODO Als Admin kann ich ein neues Projekt anlegen
-        if (project.getMembers() == null) {
-            project.setMembers(new ArrayList<>());
-        }
-        projectRepository.save(project);
-        return project;
-    }
-
-    public void save(Project project) {
-        projectRepository.save(project);
-    }
-
+    // find projects
     public List<Project> findAll() {
         return projectRepository.findAll();
     }
@@ -44,8 +31,13 @@ public class ProjectService {
         return project.orElse(null);
     }
 
-    public List<Project> findUsersProjects() {
+
+    // find projects by user
+    public List<Project> findProjectsByUser() {
+        // load current user
         User user = userService.findCurrentUser();
+
+        // get all projects and users
         List<Project> allProjects = projectRepository.findAll();
         List<Project> usersProjects = new ArrayList<>();
 
@@ -58,6 +50,24 @@ public class ProjectService {
         return usersProjects;
     }
 
+
+    // add project methods
+    public Project save(Project project) {
+        projectRepository.save(project);
+        return project;
+    }
+
+    public Project createNewProject(Project project) {
+        // TODO Als Admin kann ich ein neues Projekt anlegen
+        if (project.getMembers() == null) {
+            project.setMembers(new ArrayList<>());
+        }
+        return this.save(project);
+    }
+
+
+
+    // admin / init methods
     public List<User> findUsersNotInProject(Long projectId) {
         Project project = this.findById(projectId);
         List<User> usersNotInProject = new ArrayList<>(userService.findAll());
@@ -78,19 +88,6 @@ public class ProjectService {
                 userService.save(newUser);
             }
             this.createNewProject(project);
-        }
-    }
-
-    public void addUserToProject(List<User> newUsers, Long projectId) {
-        // TODO Als Admin kann ich andere Nutzer (jeder Rolle) zu meinem Projekt hinzufügen
-        List<User> projectMembers = this.findById(projectId).getMembers();
-        Project project = this.findById(projectId);
-
-        for (User newUser : newUsers) {
-            if (!projectMembers.contains(newUser)) {
-                project.getMembers().add(newUser);
-            }
-            this.save(project);
         }
     }
 

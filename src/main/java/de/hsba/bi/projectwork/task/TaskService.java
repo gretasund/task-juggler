@@ -11,14 +11,17 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
+
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class TaskService {
 
     private final TaskRepository taskRepository;
@@ -29,6 +32,18 @@ public class TaskService {
 
 
     // find tasks
+    public List<Task> findAll() {
+        // load tasks
+        List<Task> tasks = taskRepository.findAll();
+
+        // calc daysLeft
+        for (Task task: tasks) {
+            task.calcDaysLeft();
+        }
+
+        return tasks;
+    }
+
     public Task findById(Long id) {
         Optional<Task> optionalTask = taskRepository.findById(id);
 
@@ -42,11 +57,7 @@ public class TaskService {
         }
     }
 
-    public List<Task> findAll() {
-        return taskRepository.findAll();
-    }
-
-    public List<Task> findTasksByStatus(String status) {
+    public List<Task> findByStatus(String status) {
         if (status != null) {
             if (status.equals("Idea") || status.equals("Planned") || status.equals("wip") || status.equals("Testing") || status.equals("Done")) {
                 List<Task> allTasks = taskRepository.findAll();
@@ -67,96 +78,69 @@ public class TaskService {
         return this.findAll();
     }
 
-    public List<Task> findTasksByStatusAndUser(String status) {
-        User user = userService.findCurrentUser();
-        List<Task> tasks = this.findTasksByStatus(status);
-        if (tasks.size() > 0) {
-            tasks.removeIf(task -> !task.getProject().getMembers().contains(user));
+    public List<Task> findUnassignedAndUnscheduled() {
+        List<Task> usersTasks = this.findAll();
+        List<Task> unassignedUnscheduledTasks = new ArrayList<>();
+
+        for (Task task : usersTasks){
+            if (task.getDueDate()==null || task.getAssignee()==null)
+                unassignedUnscheduledTasks.add(task);
         }
-        return tasks;
+
+        return unassignedUnscheduledTasks;
     }
 
-    public List<Task> findAllManagersTasks() {
-        User user = userService.findCurrentUser();
-        List<Task> tasks = this.findAll();
-        if (tasks.size() > 0) {
-            tasks.removeIf(task -> !task.getProject().getMembers().contains(user));
+
+    // find task by user
+    public List<Task> findUsersTasks(List<Task> tasks) {
+        // load entities
+        User currentUser = userService.findCurrentUser();
+
+        // init new list of usersTasks
+        List<Task> usersTasks = new ArrayList<>();
+
+        // iterate over tasks
+        for (Task task: tasks) {
+            // alternative:
+            // tasks.removeIf(task -> !task.getProject().getMembers().contains(user));
+            if(task.getProject().getMembers().contains(currentUser) && !usersTasks.contains(task)){
+                usersTasks.add(task);
+            }
         }
-        return tasks;
+
+        // sort tasks by dueDate
+        Collections.sort(usersTasks);
+
+        return usersTasks;
     }
 
     public List<Task> findTaskByAssignee(User assignee) {
         return taskRepository.findTaskByAssignee(assignee);
     }
 
-    public List<Task> findTaskByDueDate(String dueDate) {
-        return taskRepository.findTaskByDueDate(dueDate);
-    }
-
-    public List<String> findRemainingStatuses(Long taskId) {
-        Task task = this.findById(taskId);
-        List<String> remainingStatuses = new ArrayList<>();
-        remainingStatuses.add("Idea");
-        remainingStatuses.add("Planned");
-        remainingStatuses.add("Work in progress");
-        remainingStatuses.add("Testing");
-        remainingStatuses.add("Done");
-        remainingStatuses.remove(task.getStatus());
-        return remainingStatuses;
-    }
-
-    public List<Task> findAlmostDue() {
-        List<Task> allManagersTasks = this.findAllManagersTasks();
-        List<Task> allManagersTasksWithDueDate = new ArrayList<>();
-
-        if (allManagersTasks.size() > 0) {
-
-            // remove Tasks with unset dueDate
-            for(int i=0; i<allManagersTasks.size(); i++){
-                if(allManagersTasks.get(i).getDueDate() != null){
-                    allManagersTasksWithDueDate.add(allManagersTasks.get(i));
-                }
-            }
-
-            // calc daysLeft
-            for (Task task: allManagersTasksWithDueDate) {
-                task.calcDaysLeft();
-            }
-
-            // sort allManagersTasks by date
-            Collections.sort(allManagersTasksWithDueDate);
-
-        }
-        return allManagersTasksWithDueDate;
-    }
-
-    public List<Task> findUnassignedAndUnscheduled() {
-        List<Task> unassignedTasks = this.findTaskByAssignee(null);
-        List<Task> unscheduledTasks = this.findTaskByDueDate(null);
-
-        for (Task task : unscheduledTasks){
-            if (!unassignedTasks.contains(task))
-                unassignedTasks.add(task);
-        }
-
-        return unassignedTasks;
-    }
-
 
     // add task methods
-    public void save(Task task) {
-        taskRepository.save(task);
+    public Task save(Task task) {
+        return taskRepository.save(task);
     }
 
-    public Task addNewTask(Task task, Long projectId) {
+    public Task createNewTask(Task task, Long projectId) {
         // TODO Als Entwickler in einem Projekt kann ich eine Aufgabe zu diesem Projekt hinzufügen, diese beinhaltet wenigstens einen Titel und eine Beschreibung
+        // load entities
         Project project = projectService.findById(projectId);
+        User creator = task.getCreator();
+
         if (checkStatusValidity(task) && project != null) {
-            task.setProject(project);
-            List<Task> tasks = project.getTasks();
-            tasks.add(task);
+            // link task in user
+            creator.getCreatedTasks().add(task);
+
+            // link task in project
+            project.getTasks().add(task);
+
+            // persist entities
             taskRepository.save(task);
             projectRepository.save(project);
+
         } else {
             // TODO throw an expection
         }
@@ -170,6 +154,13 @@ public class TaskService {
         // TODO Als Entwickler in einem Projekt kann ich den Status einer Aufgabe ändern (Idee, Geplant, in Bearbeitung, im Test, Fertig)
         Task task = this.findById(taskId);
         this.save(taskFormConverter.update(task, form));
+    }
+
+    public void setDueDate(Long taskId, String dueDate) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        Task task = this.findById(taskId);
+        task.setDueDate(LocalDate.parse(dueDate, dateTimeFormatter));
+        this.save(task);
     }
 
     public void setAssignee(Long taskId, User assignee) {

@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 
 @Data
@@ -13,8 +14,6 @@ public class TaskForm {
 
     @NotNull(message = "Please enter a name.")
     private String name;
-
-    private User assignee;
 
     @NotEmpty(message = "Please enter a description.")
     private String description;
@@ -24,6 +23,10 @@ public class TaskForm {
 
     @NotNull(message = "Please enter an estimation.")
     private int estimation;
+
+    private LocalDate dueDate;
+
+    private User assignee;
 
     private Project project;
 

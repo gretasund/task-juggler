@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="fragments/header"></header>
+<body>
+
+
+<main role="main">
+
+    <div class="container marketing">
+
+        <div sec:authorize="hasRole('MANAGER')">
+            <h2 th:text="${suggestedTask.name}">Edit Task</h2>
+            <small>
+                <button th:text="${suggestedTask.getProject().getName()}" class="btn" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            </small>
+            <br><br><br>
+
+            <div>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th scope="row">Name</th>
+                        <td>
+                            <input th:field="*{suggestedTask.name}" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Description</th>
+                        <td>
+                            <textarea th:field="*{suggestedTask.description}" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Estimation</th>
+                        <td>
+                            <div class="input-group">
+                                <input th:field="*{suggestedTask.estimation}" type="number" class="form-control">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"> hours </span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <form th:action="@{/userManager/evaluateSuggestedTask/accept/__${suggestedTask.getId()}__}" method="post">
+                            <button type="submit" class="btn btn-success" value="accept">Accept</button>
+                        </form>
+                        <form th:action="@{/userManager/evaluateSuggestedTask/decline/__${suggestedTask.getId()}__}" method="post">
+                            <button type="submit" class="btn btn-danger" value="decline">Decline</button>
+                        </form>
+                    </div>
+
+                <br><br><br><br>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+
+    </div><!-- /.container -->
+
+    <!-- FOOTER -->
+    <footer th:insert="fragments/footer"></footer>
+</main>
+
+</body>
+</html>

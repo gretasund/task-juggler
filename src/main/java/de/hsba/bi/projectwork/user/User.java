@@ -1,15 +1,18 @@
 package de.hsba.bi.projectwork.user;
 
+import de.hsba.bi.projectwork.booking.Booking;
 import de.hsba.bi.projectwork.project.Project;
-
+import de.hsba.bi.projectwork.task.BaseTask;
 import de.hsba.bi.projectwork.task.Task;
-import lombok.*;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Entity
 @RequiredArgsConstructor
@@ -21,47 +24,32 @@ public class User implements Comparable<User> {
     public static String MANAGER_ROLE = "MANAGER";
 
 
-    // TODO move to UserService
-    public static String getCurrentUsername() {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal instanceof UserDetails) {
-            return ((UserDetails) principal).getUsername();
-        }
-        return null;
-    }
-
-    // TODO delete
-    public static List<String> getRoles() {
-        List<String> roles = new ArrayList<>();
-        roles.add(ADMIN_ROLE);
-        roles.add(DEVELOPER_ROLE);
-        roles.add(MANAGER_ROLE);
-        return roles;
-    }
-
-
+    // FIELDS
     @Id
     @GeneratedValue
     @Setter(AccessLevel.NONE)
     private Long id;
-
     @Basic(optional = false)
     private String name;
-
     @Basic(optional = false)
     private String password;
-
     @Basic(optional = false)
     private String role;
-
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "members")
     @OrderBy
-    private List<Project> projects;
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "assignee")
+    private List<Project> projects = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
     @OrderBy
-    private List<Task> assignedTasks;
+    private List<Booking> bookedTimes;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "creator")
+    @OrderBy
+    private List<BaseTask> createdTasks = new ArrayList<>();
+    @OneToMany(cascade = {CascadeType.PERSIST,CascadeType.REMOVE}, orphanRemoval = true, mappedBy = "assignee")
+    @OrderBy
+    private List<Task> assignedTasks = new ArrayList<>();
 
+
+    // METHODS
     @Override
     public int compareTo(User other) {
         return this.name.compareTo(other.name);

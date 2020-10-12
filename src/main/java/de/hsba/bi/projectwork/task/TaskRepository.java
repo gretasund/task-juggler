@@ -17,6 +17,4 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     List<Task> findTaskByAssignee(User assignee);
 
-    List<Task> findTaskByDueDate(String dueDate);
-
 }

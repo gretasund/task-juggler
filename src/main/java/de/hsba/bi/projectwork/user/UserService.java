@@ -4,6 +4,8 @@ import de.hsba.bi.projectwork.web.exception.IncorrectPasswordException;
 import de.hsba.bi.projectwork.web.exception.UserAlreadyExistException;
 import de.hsba.bi.projectwork.web.user.ChangePasswordForm;
 import de.hsba.bi.projectwork.web.user.RegisterUserForm;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,16 +20,20 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
+
+    // CONSTRUCTOR
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
+
+    // CREATE AND SAVE
     public User save(User user) {
         return userRepository.save(user);
     }
 
-    public User createUser(RegisterUserForm userForm, String role) throws UserAlreadyExistException {
+    public void createUser(RegisterUserForm userForm, String role) throws UserAlreadyExistException {
         if (usernameExists(userForm.getName())) {
             throw new UserAlreadyExistException("There is an account with the username '" + userForm.getName() + "'");
         }
@@ -35,11 +41,22 @@ public class UserService {
         user.setName(userForm.getName());
         user.setPassword(passwordEncoder.encode(userForm.getPassword()));
         user.setRole(role);
-        return this.save(user);
+        this.save(user);
     }
 
-    public boolean usernameExists(String name) {
-        return userRepository.findByName(name).isPresent();
+
+    // FIND
+    public static String getCurrentUsername() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            return ((UserDetails) principal).getUsername();
+        }
+        return null;
+    }
+
+    public User findCurrentUser() {
+        Optional<User> user = userRepository.findByName(getCurrentUsername());
+        return user.orElse(null);
     }
 
     public List<User> findAll() {
@@ -55,20 +72,23 @@ public class UserService {
         return userRepository.findByRole(User.DEVELOPER_ROLE);
     }
 
-    public User findCurrentUser() {
-        Optional<User> user = userRepository.findByName(User.getCurrentUsername());
-        return user.orElse(null);
+
+    // CHECK
+    public boolean usernameExists(String name) {
+        return userRepository.findByName(name).isPresent();
     }
 
     public boolean checkOldPassword(String rawPassword, User user) {
         return passwordEncoder.matches(rawPassword, user.getPassword());
     }
 
+
+    // EDIT
     public ChangePasswordForm changePassword(ChangePasswordForm changePasswordForm) throws IncorrectPasswordException {
         // TODO Als Nutzer kann ich mein Passwort ändern
 
         // Load the authenticated user
-        Optional<User> userOptional = userRepository.findByName(User.getCurrentUsername());
+        Optional<User> userOptional = userRepository.findByName(getCurrentUsername());
 
         if (userOptional.isPresent()) {
             // check if user was found
