@@ -18,8 +18,8 @@ public class UserAdminController {
 
     // dashboard
     @GetMapping
-    public String index() {
-        return "userAdmin/index";
+    public String dashboard() {
+        return "dashboard";
     }
 
 }

@@ -78,7 +78,8 @@
                                     <a class="btn btn-outline-primary" aria-expanded="false" data-toggle="collapse" href="#multiCollapse1" role="button" aria-controls="multiCollapse1">Change Password</a>
                                 </div>
                                 <div class="col">
-                                    <div class="text-success" th:text="${message}"></div>
+                                    <div th:if="${successMessage != null}" class="text-success" th:text="${successMessage}"></div>
+                                    <div th:if="${errorMessage != null}" class="text-danger" th:text="${errorMessage}"></div>
                                 </div>
                             </div>
                             <!--Card-->

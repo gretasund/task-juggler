@@ -26,18 +26,18 @@ public class Project {
     @ManyToMany(cascade = CascadeType.MERGE)
     @OrderBy
     private List<User> members = new ArrayList<>();
-    private String name;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "project")
     @OrderBy
     private List<Task> tasks = new ArrayList<>();
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "project")
     @OrderBy
     private List<SuggestedTask> suggestedTasks = new ArrayList<>();
-    @Transient
-    private transient double usersTimeSpentInProject;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "project")
     @OrderBy
     private List<Booking> bookedTimes = new ArrayList<>();
+    @Transient
+    private transient double usersTimeSpentInProject;
+    private String name;
 
 
     // CONSTRUCTOR
@@ -49,13 +49,16 @@ public class Project {
     // METHODS
     public int findTasks(String status) {
         List<Task> allTasks = this.getTasks();
-        List<Task> tasks = new ArrayList<>();
+        List<Task> tasksWithStatus = new ArrayList<>();
+        Enum<Task.Status> statusEnum = Task.Status.getEnumByDisplayValue(status);
+
         for (Task task : allTasks) {
-            if (task.getStatus().equals(status)) {
-                tasks.add(task);
+            if (task.getStatus() == statusEnum) {
+                tasksWithStatus.add(task);
             }
+
         }
-        return tasks.size();
+        return tasksWithStatus.size();
     }
 
 }

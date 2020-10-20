@@ -17,4 +17,6 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     List<Task> findTaskByAssignee(User assignee);
 
+    List<Task> findTaskByStatus(Enum<Task.Status> status);
+
 }

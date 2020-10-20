@@ -46,7 +46,7 @@ Find a more elegant way to add a task
                                             <td>
                                                 <a th:href="@{'/userDeveloper/viewTask/' + ${task.id}}" th:text="${task.name}"></a>
                                             </td>
-                                            <td th:text="${task.status}"></td>
+                                            <td th:text="${task.status.getDisplayValue()}"></td>
                                             <td>
                                                 <div th:if="${task.assignee != null}" th:text="${task.assignee}"></div>
                                                 <div th:if="${task.assignee == null}" th:text="'Not set'"></div>
@@ -60,8 +60,8 @@ Find a more elegant way to add a task
                                             <td></td>
                                             <td></td>
                                             <td>
-                                                <form th:action="@{/userDeveloper/addTask}">
-                                                    <input type="hidden" th:value="${project.id}" th:name="projectId">
+                                                <form th:action="@{/userDeveloper/addTask/{projectId}(projectId=${project.id})}">
+                                                    <!--<input type="hidden" th:value="${project.id}" th:name="projectId">-->
                                                     <button type="submit"  class="btn btn-outline-primary">Suggest task</button>
                                                 </form>
                                             </td>

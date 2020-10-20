@@ -17,7 +17,15 @@
         <div sec:authorize="hasRole('DEVELOPER')">
 
             <div class="container">
-                <h2 th:text="${suggestedTask.getName()}">Edit Task</h2>
+                <div class="row">
+                    <div class="col">
+                        <h2 th:text="${suggestedTask.getName()}"></h2>
+                    </div>
+                    <div class="col">
+                        <div th:if="${message} != null" th:text="${message}" class="text-success" style="float: right"></div>
+                    </div>
+                </div>
+
                 <div class="container px-lg-5">
                     <div class="row mx-lg-n5">
                         <div class="col py-3 px-lg-5"></div>
@@ -37,7 +45,7 @@
                     <div class="col">
                         <div class="card mb-3 h-100">
                             <div class="card-body">
-                                <h4 class="card-title">Effort</h4>
+                                <h4 class="card-title">Estimated effort</h4>
                                 <p class="card-text" th:text="${suggestedTask.getEstimation() + ' hours'}"></p>
                             </div>
                         </div>

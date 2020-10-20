@@ -59,7 +59,7 @@
                                                 <small th:if="${taskAlmostDue.getAssignee() != null}" th:text="' - assigned to ' + ${taskAlmostDue.getAssignee()}" class="text-muted"></small>
                                                 <small th:if="${taskAlmostDue.getAssignee() == null}" th:text="' - not assigned'" class="text-muted"></small>
                                             </div>
-                                            <p class="mb-1" th:text="${taskAlmostDue.getDescription()}"></p>
+                                            <p class="mb-1" th:text="${#strings.abbreviate(taskAlmostDue.getDescription(), 100)}" ></p>
                                         </a>
                                     </div>
                                 </div>

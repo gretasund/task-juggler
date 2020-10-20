@@ -29,13 +29,8 @@ public class IndexController {
     private final UserService userService;
 
 
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
-
     @GetMapping("/dashboard")
-    public String dashboard(Model model) {
+    public String index(Model model) {
         model.addAttribute("authenticatedUser", userService.findCurrentUser());
         model.addAttribute("user", new User());
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -47,6 +42,11 @@ public class IndexController {
             case "[ROLE_MANAGER]":
                 return "redirect:/userManager";
         }
+        return "index";
+    }
+
+    @GetMapping("/home")
+    public String dashboard() {
         return "index";
     }
 
@@ -64,6 +64,24 @@ public class IndexController {
         return "register";
     }
 
+    @PostMapping("/register")
+    public String register(@ModelAttribute("user") @Valid RegisterUserForm registerUserForm, BindingResult bindingResult, Model model) {
+        if (!bindingResult.hasErrors()) {
+            try {
+                userService.createUser(registerUserForm, "DEVELOPER");
+                model.addAttribute("user", registerUserForm);
+                model.addAttribute("message", "You've successfully registered.");
+                return "login";
+            } catch (UserAlreadyExistException uaeEx) {
+                model.addAttribute("user", registerUserForm);
+                model.addAttribute("message", uaeEx.getMessage());
+                return "register";
+            }
+        }
+        model.addAttribute("user", registerUserForm);
+        return "register";
+    }
+
 
     // Als Nutzer kann ich mein Passwort ändern
     @GetMapping("/account")
@@ -74,24 +92,6 @@ public class IndexController {
     }
 
 
-    @PostMapping("/register")
-    public String register(@ModelAttribute("user") @Valid RegisterUserForm userForm, BindingResult bindingResult, Model model) {
-        if (!bindingResult.hasErrors()) {
-            try {
-                userService.createUser(userForm, "DEVELOPER");
-                model.addAttribute("user", userForm);
-                model.addAttribute("message", "You've successfully registered.");
-                return "login";
-            } catch (UserAlreadyExistException uaeEx) {
-                model.addAttribute("user", userForm);
-                model.addAttribute("message", uaeEx.getMessage());
-                return "register";
-            }
-        }
-        model.addAttribute("user", userForm);
-        return "register";
-    }
-
     @PreAuthorize("hasRole(authenticated)")
     @PostMapping("/changePassword")
     public String changePassword(@ModelAttribute("changePasswordForm") @Valid ChangePasswordForm changePasswordForm, BindingResult bindingResult, Model model) {
@@ -100,11 +100,12 @@ public class IndexController {
                 ChangePasswordForm changedPassword = userService.changePassword(changePasswordForm);
                 model.addAttribute("user", userService.findCurrentUser());
                 model.addAttribute("changePasswordForm", changePasswordForm);
-                model.addAttribute("message", "You've successfully changed your password.");
+                model.addAttribute("successMessage", "You've successfully changed your password.");
                 return "account";
             } catch (IncorrectPasswordException ipEx) {
                 model.addAttribute("user", userService.findCurrentUser());
                 model.addAttribute("changePasswordForm", changePasswordForm);
+                model.addAttribute("errorMessage", "The old password you entered is incorrect.");
                 return "account";
             }
         }

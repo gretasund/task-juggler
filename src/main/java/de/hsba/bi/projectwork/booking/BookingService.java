@@ -8,14 +8,13 @@ import de.hsba.bi.projectwork.task.TaskRepository;
 import de.hsba.bi.projectwork.task.TaskService;
 import de.hsba.bi.projectwork.user.User;
 import de.hsba.bi.projectwork.user.UserService;
+import de.hsba.bi.projectwork.web.booking.BookingForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,12 +48,12 @@ public class BookingService {
 
         // iterate over tasks
         for (Booking booking: bookings) {
-            // alternative:
-            // tasks.removeIf(task -> !task.getProject().getMembers().contains(user));
             if(booking.getUser()==currentUser && !usersBookings.contains(booking)){
                 usersBookings.add(booking);
             }
         }
+        // alternative:
+        //bookings.removeIf( booking -> !(booking.getUser()==currentUser && usersBookings.contains(booking)) );
 
         return usersBookings;
     }
@@ -63,8 +62,7 @@ public class BookingService {
     // Add / delete bookings
     public void bookTime(Long taskId, Long projectId, int timeSpent, String date, User user) {
         // TODO Als Entwickler in einem Projekt kann ich aufgewendete Zeiten für eine Aufgabe buchen (diese Buchung gilt pro Aufgabe und Entwickler, außerdem kann ein Entwickler mehrmals Zeiten buchen, wenn die Bearbeitung beispielsweise mehrere Tage dauert)
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate localDate = LocalDate.parse(date, dateTimeFormatter);
+        LocalDate localDate = LocalDate.parse(date);
 
         // get all entities
         Project project = projectService.findById(projectId);
@@ -87,18 +85,35 @@ public class BookingService {
 
     }
 
+    public void bookTime(Long taskId, Long projectId, BookingForm bookingForm, User user) {
+        // TODO Als Entwickler in einem Projekt kann ich aufgewendete Zeiten für eine Aufgabe buchen (diese Buchung gilt pro Aufgabe und Entwickler, außerdem kann ein Entwickler mehrmals Zeiten buchen, wenn die Bearbeitung beispielsweise mehrere Tage dauert)
+        LocalDate localDate = LocalDate.parse(bookingForm.getDate());
+
+        // get all entities
+        Project project = projectService.findById(projectId);
+        Task task = taskService.findById(taskId);
+        Booking booking = new Booking(user, localDate, bookingForm.getTimeSpent());
+
+        // link booking to task
+        booking.setTask(task);
+        booking.setProject(project);
+        bookingRepository.save(booking);
+
+        // link task to booking
+        task.getTimes().add(booking);
+        task.setTotalTime(task.calcTotalTime());
+        taskRepository.save(task);
+
+        //link project and booking
+        project.getBookedTimes().add(booking);
+        projectRepository.save(project);
+
+    }
+
     public void deleteBookedTime(Task task, Booking booking) {
         task.getTimes().remove(booking);
         taskRepository.save(task);
         bookingRepository.delete(booking);
-    }
-
-
-    // statistic
-    public HashMap<User, Task> compareEstimatedAndBookedTimes() {
-        // TODO Als Manager kann ich eine Statistik einsehen, bei der die geschätzten und gebuchten Zeiten gegenübergestellt werden
-        HashMap<User, Task> comparison = null;
-        return comparison;
     }
 
 }

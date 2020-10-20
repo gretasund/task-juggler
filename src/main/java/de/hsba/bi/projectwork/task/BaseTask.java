@@ -10,8 +10,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @NoArgsConstructor
@@ -24,53 +22,15 @@ public abstract class BaseTask implements Serializable {
     @Id
     @GeneratedValue
     @Setter(AccessLevel.NONE)
-    public Long id;
-    public String name;
-    public String description;
-    public int estimation;
+    protected Long id;
+    protected String name;
+    protected String description;
+    protected int estimation;
     protected LocalDate creationDate;
-
-    //private Enum<Status> status;
-    public String status;
-
     @ManyToOne(optional = false)
-    public User creator;
-
+    protected User creator;
     @ManyToOne(optional = false)
-    public Project project;
+    protected Project project;
 
-
-    // enum
-    public enum Status {
-        IDEA("Idea"),
-        PLANNED("Planned"),
-        WORK_IN_PROGRESS("Work in progress"),
-        TESTING("Testing"),
-        DONE("Done");
-
-        // fields
-        private final String displayValue;
-
-        // constructor
-        Status(String displayValue) {
-            this.displayValue = displayValue;
-        }
-
-        // methods
-        public String getDisplayValue() {
-            return displayValue;
-        }
-
-        public static List<Status> getAllStatus() {
-            List<Status> allStatus = new ArrayList<>();
-            allStatus.add(IDEA);
-            allStatus.add(PLANNED);
-            allStatus.add(WORK_IN_PROGRESS);
-            allStatus.add(TESTING);
-            allStatus.add(DONE);
-            return allStatus;
-        }
-
-    }
 
 }

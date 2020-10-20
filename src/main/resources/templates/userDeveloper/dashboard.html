@@ -5,7 +5,7 @@
 <style>
     .scroll-box {
         overflow-y: scroll;
-        height: 300px;
+        height: 290px;
         padding: 1rem
     }
 </style>
@@ -52,7 +52,7 @@
                             <div class="card-body">
                                 <div class="scroll-box">
                                     <div th:if="${myTasks != null}" class="list-group">
-                                        <a th:each="myTask : ${myTasks}" th:attr="href='viewTask/' + ${myTask.getId()}" href="#" class="list-group-item list-group-item-action">
+                                        <a th:each="myTask : ${myTasks}" th:attr="href='viewTask/' + ${myTask.getId()}" class="list-group-item list-group-item-action">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1" th:text="${myTask.getName()}"></h5>
                                                 <small th:if="${myTask.getDaysLeft() > 0 && myTask.getDaysLeft() < 100}" th:text="${myTask.getDaysLeft()} + ' days left'" style="color: green"></small>
@@ -65,7 +65,7 @@
                                                 <small th:if="${myTask.getAssignee() != null}" th:text="' - assigned to ' + ${myTask.getAssignee()}" class="text-muted"></small>
                                                 <small th:if="${myTask.getAssignee() == null}" th:text="' - not assigned'" class="text-muted"></small>
                                             </div>
-                                            <p class="mb-1" th:text="${myTask.getDescription()}"></p>
+                                            <p class="mb-1" th:text="${#strings.abbreviate(myTask.getDescription(), 120)}"></p>
                                         </a>
                                     </div>
                                     <div th:if="${myTasks == null}" class="list-group">
@@ -87,14 +87,14 @@
                                         <a th:each="suggestedTask : ${mySuggestedTasks}" th:attr="href='viewSuggestedTask/' + ${suggestedTask.getId()}" href="#" class="list-group-item list-group-item-action">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1" th:text="${suggestedTask.getName()}"></h5>
-                                                <h5 th:if="${suggestedTask.getStatus() == 'Accepted'}"><span class="badge badge-success">Accepted</span></h5>
-                                                <h5 th:if="${suggestedTask.getStatus() == 'Idea'}"><span class="badge badge-secondary">In Evaluation</span></h5>
-                                                <h5 th:if="${suggestedTask.getStatus() == 'Declined'}"><span class="badge badge-danger">Declined</span></h5>
+                                                <h5 th:if="${suggestedTask.getStatus().getDisplayValue() == 'Accepted'}"><span class="badge badge-success">Accepted</span></h5>
+                                                <h5 th:if="${suggestedTask.getStatus().getDisplayValue() == 'Idea'}"><span class="badge badge-secondary">In Evaluation</span></h5>
+                                                <h5 th:if="${suggestedTask.getStatus().getDisplayValue() == 'Declined'}"><span class="badge badge-danger">Declined</span></h5>
                                             </div>
                                             <div>
                                                 <small th:text="${suggestedTask.getProject().getName()}"></small>
                                             </div>
-                                            <p class="mb-1" th:text="${suggestedTask.getDescription()}"></p>
+                                            <p class="mb-1" th:text="${#strings.abbreviate(suggestedTask.getDescription(), 120)}"></p>
                                         </a>
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                                 <small th:if="${openTask.getAssignee() != null}" th:text="' - assigned to ' + ${openTask.getAssignee()}" class="text-muted"></small>
                                                 <small th:if="${openTask.getAssignee() == null}" th:text="' - not assigned'" class="text-muted"></small>
                                             </div>
-                                            <p class="mb-1" th:text="${openTask.getDescription()}"></p>
+                                            <p class="mb-1" th:text="${#strings.abbreviate(openTask.getDescription(), 120)}"></p>
                                         </a>
                                     </div>
                                     <div th:if="${openTasks == null}" class="list-group">

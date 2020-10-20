@@ -34,8 +34,8 @@ public class SuggestedTaskService {
         return suggestedTask.orElse(null);
     }
 
-    public List<SuggestedTask> findOpenSuggestions() {
-        return suggestedTaskRepository.findSuggestedTaskByStatus("Suggested");
+    public List<SuggestedTask> findByStatus(Enum<SuggestedTask.Status> status) {
+        return suggestedTaskRepository.findSuggestedTaskByStatus(status);
     }
 
 
@@ -102,10 +102,10 @@ public class SuggestedTaskService {
         SuggestedTask suggestedTask = this.findById(taskId);
         switch (evaluation) {
             case "accept":
-                suggestedTask.setStatus("Accepted");
+                suggestedTask.setStatus(SuggestedTask.Status.ACCEPTED);
                 taskService.save(new Task(suggestedTask));
             case "decline":
-                suggestedTask.setStatus("Declined");
+                suggestedTask.setStatus(SuggestedTask.Status.DECLINED);
                 this.save(suggestedTask);
             default:
                 // TODO

@@ -29,14 +29,14 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
     private User assignee;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "task")
     private List<Booking> times = new ArrayList<>();
+    private Enum<Status> status;
     private LocalDate dueDate;
     private int daysLeft;
     private int totalTime;
 
 
     // CONSTRUCTORS
-    // TODO delete
-    public Task(User creator, String name, String description, int estimation, String status, String dueDate, Project project) {
+    public Task(User creator, String name, String description, int estimation, Enum<Status> status, String dueDate, Project project) {
         // set due date if present
         if(dueDate != null) {
             DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -55,33 +55,16 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
 
     }
 
-    public Task(User creator, String name, String description, int estimation, String status, String dueDate) {
-        // set due date if present
-        if(dueDate != null) {
-            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            this.dueDate = LocalDate.parse(dueDate, dateTimeFormatter);
-            this.calcDaysLeft();
-        }
-
-        this.creator = creator;
-        this.creationDate = LocalDate.now();
-        this.name = name;
-        this.description = description;
-        this.estimation = estimation;
-        this.status = status;
-        this.calcDaysLeft();
-
-    }
-
     public Task(SuggestedTask suggestedTask) {
         this.creator = suggestedTask.getCreator();
         this.name = suggestedTask.getName();
         this.description = suggestedTask.getDescription();
         this.estimation = suggestedTask.getEstimation();
-        this.status = suggestedTask.getStatus();
+        this.status = Status.ACCEPTED;
         this.creationDate = suggestedTask.getCreationDate();
         this.project = suggestedTask.getProject();
         this.calcDaysLeft();
+
     }
 
 
@@ -121,6 +104,47 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
         }
         this.setTotalTime(sum);
         return sum;
+    }
+
+
+    // ENUM
+    public enum Status {
+        ACCEPTED("Accepted"),
+        WORK_IN_PROGRESS("Work in progress"),
+        TESTING("Testing"),
+        DONE("Done");
+
+        // fields
+        private final String displayValue;
+
+        // constructor
+        Status(String displayValue) {
+            this.displayValue = displayValue;
+        }
+
+        // methods
+        public String getDisplayValue() {
+            return this.displayValue;
+        }
+
+        public static List<Status> getAllStatus() {
+            List<Status> allStatus = new ArrayList<>();
+            allStatus.add(ACCEPTED);
+            allStatus.add(WORK_IN_PROGRESS);
+            allStatus.add(TESTING);
+            allStatus.add(DONE);
+            return allStatus;
+        }
+
+        public static Enum<Status> getEnumByDisplayValue(String displayValue){
+            for(Status status : Status.values()){
+                if(status.displayValue.equals(displayValue)) {
+                    return status;
+                }
+            }
+            return null;
+        }
+
     }
 
 

@@ -3,19 +3,21 @@ package de.hsba.bi.projectwork.web.task;
 import de.hsba.bi.projectwork.task.Task;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 
 @Component
 public class TaskFormConverter {
 
-    public Task update(Task task, TaskForm form) {
-        task.setName(form.getName());
-        task.setDescription(form.getDescription());
-        task.setEstimation(form.getEstimation());
-        task.setStatus(form.getStatus());
-        task.setDueDate(form.getDueDate());
+    public Task update(Task task, TaskForm taskForm) {
+        task.setName(taskForm.getName());
+        task.setDescription(taskForm.getDescription());
+        task.setEstimation(taskForm.getEstimation());
+        task.setStatus(Task.Status.getEnumByDisplayValue(taskForm.getStatus()));
+        task.setAssignee(taskForm.getAssignee());
 
-        if(form.getAssignee() != null) {
-            task.setAssignee(form.getAssignee());
+        if(taskForm.getDueDate()!= null) {
+            task.setDueDate(LocalDate.parse(taskForm.getDueDate()));
         }
 
         return task;
