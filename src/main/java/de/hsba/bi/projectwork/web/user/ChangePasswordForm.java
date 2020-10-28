@@ -12,6 +12,10 @@ import javax.validation.constraints.Size;
 @PasswordMatches
 public class ChangePasswordForm {
 
+    @NotEmpty(message = "Please confirm your password.")
+    @NotNull(message = "Please confirm your password.")
+    @Size(min = 10, message = "Your password has to be at least 10 characters long.")
+    @Size(max = 30, message = "Your password cannot be longer than 30 characters long.")
     private String oldPassword;
 
     @NotEmpty(message = "Please enter a password.")

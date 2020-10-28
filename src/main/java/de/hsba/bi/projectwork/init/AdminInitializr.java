@@ -1,5 +1,6 @@
 package de.hsba.bi.projectwork.init;
 
+import de.hsba.bi.projectwork.user.User;
 import de.hsba.bi.projectwork.user.UserService;
 import de.hsba.bi.projectwork.web.user.RegisterUserForm;
 import lombok.RequiredArgsConstructor;
@@ -26,8 +27,8 @@ public class AdminInitializr {
 
     public void initAdmins() {
         // create some admins
-        userService.createUser(new RegisterUserForm("admin1", "1234567890", "1234567890"), "ADMIN");
-        userService.createUser(new RegisterUserForm("admin2", "1234567890", "1234567890"), "ADMIN");
+        userService.createUser(new RegisterUserForm("admin1", "1234567890", "1234567890"), User.Role.ADMIN);
+        userService.createUser(new RegisterUserForm("admin2", "1234567890", "1234567890"), User.Role.ADMIN);
     }
 
 }

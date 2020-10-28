@@ -4,10 +4,7 @@ import de.hsba.bi.projectwork.booking.Booking;
 import de.hsba.bi.projectwork.project.Project;
 import de.hsba.bi.projectwork.task.BaseTask;
 import de.hsba.bi.projectwork.task.Task;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -34,7 +31,7 @@ public class User implements Comparable<User> {
     @Basic(optional = false)
     private String password;
     @Basic(optional = false)
-    private String role;
+    private Enum<User.Role> role;
     @ManyToMany(mappedBy = "members")
     @OrderBy
     private List<Project> projects = new ArrayList<>();
@@ -58,6 +55,34 @@ public class User implements Comparable<User> {
     @Override
     public String toString() {
         return name;
+    }
+
+
+    // ENUM
+    @Getter
+    public enum Role {
+        ADMIN("Admin"),
+        DEVELOPER("Developer"),
+        MANAGER("Manager");
+
+        // fields
+        private final String displayValue;
+
+        // constructor
+        Role(String displayValue) {
+            this.displayValue = displayValue;
+        }
+
+        // methods
+        public static Role getEnumByDisplayValue(String displayValue){
+            for(User.Role role : User.Role.values()){
+                if(role.displayValue.equals(displayValue)) {
+                    return role;
+                }
+            }
+            return null;
+        }
+
     }
 
 }

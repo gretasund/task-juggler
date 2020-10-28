@@ -22,7 +22,7 @@ public class OldPasswordIsCorrectValidator implements ConstraintValidator<OldPas
     public boolean isValid(Object obj, ConstraintValidatorContext context) {
         ChangePasswordForm changePasswordForm = (ChangePasswordForm) obj;
         User user = userService.findCurrentUser();
-        return userService.checkOldPassword(changePasswordForm.getOldPassword(), user);
+        return userService.oldPasswordIsCorrect(changePasswordForm.getOldPassword(), user);
     }
 
 }

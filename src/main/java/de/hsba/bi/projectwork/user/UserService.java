@@ -33,7 +33,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public void createUser(RegisterUserForm userForm, String role) throws UserAlreadyExistException {
+    public void createUser(RegisterUserForm userForm, Enum<User.Role> role) throws UserAlreadyExistException {
         if (usernameExists(userForm.getName())) {
             throw new UserAlreadyExistException("There is an account with the username '" + userForm.getName() + "'");
         }
@@ -78,7 +78,7 @@ public class UserService {
         return userRepository.findByName(name).isPresent();
     }
 
-    public boolean checkOldPassword(String rawPassword, User user) {
+    public boolean oldPasswordIsCorrect(String rawPassword, User user) {
         return passwordEncoder.matches(rawPassword, user.getPassword());
     }
 
@@ -95,7 +95,7 @@ public class UserService {
             User user = userOptional.get();
 
             // Check old password
-            if (!checkOldPassword(changePasswordForm.getOldPassword(), user)) {
+            if (!oldPasswordIsCorrect(changePasswordForm.getOldPassword(), user)) {
                 throw new IncorrectPasswordException("The old password you entered is incorrect!");
             }
 
@@ -109,15 +109,18 @@ public class UserService {
         return changePasswordForm;
     }
 
-    public boolean changeRole(Long id, String role) {
+    public void changeRole(Long id, String roleString) {
         // TODO Als Admin kann ich die Rollen anderer Nutzer ändern
-        Optional<User> userOptional = userRepository.findById(id);
-        if (userOptional.isPresent()) {
-            User user = userOptional.get();
-            user.setRole(role);
-            userRepository.save(user);
+        Enum<User.Role> roleEnum = User.Role.getEnumByDisplayValue(roleString);
+
+        if(roleEnum != null) {
+            Optional<User> userOptional = userRepository.findById(id);
+            if (userOptional.isPresent()) {
+                User user = userOptional.get();
+                user.setRole(roleEnum);
+                userRepository.save(user);
+            }
         }
-        return false;
     }
 
 }

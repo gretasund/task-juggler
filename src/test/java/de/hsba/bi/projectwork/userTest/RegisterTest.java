@@ -51,7 +51,7 @@ class RegisterTest {
         //Get user information from userRepository
         User user = userService.findByName("ina");
         //check if password was changed to the new set password
-        assertThat(userService.checkOldPassword("passwort1234",user.getPassword());
+        assertThat(userService.oldPasswordIsCorrect("passwort1234",user.getPassword());
     }
 
 

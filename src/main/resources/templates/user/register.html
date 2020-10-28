@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+    <!-- HEADER -->
+    <header th:insert="fragments/header"></header>
+<body>
+
+
+<div class="wrapper">
+
+    <div class="container marketing">
+
+        <div layout:fragment="content">
+
+            <div class="my-4">
+                <h1>Sign up</h1>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" th:action="@{/register}" th:object="${user}">
+                        <div th:if="${#fields.hasErrors('${user}')}">
+                            <label th:errors="${user}" class="text-danger small"></label>
+                        </div>
+                        <label th:if="${message} != null" th:text="${message}" class="text-danger small"></label>
+                        <div class="form-group">
+                            <label for="registerUsername">Username</label>
+                            <div>
+                                <input class="form-control" id="registerUsername" name="username" type="text" th:field="*{name}"/>
+                                <label class="text-danger small" th:errors="*{name}"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <div>
+                                <input class="form-control" id="registerPassword" name="password" type="password" th:field="*{password}"/>
+                                <label class="text-danger small" th:errors="*{password}"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="matchingPassword"> Confirm Password</label>
+                            <div>
+                                <input class="form-control" id="matchingPassword" name="password" type="password" th:field="*{matchingPassword}"/>
+                                <label class="text-danger small" th:errors="*{matchingPassword}"></label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="mb-4" th:if="${param.logout}">
+                                <strong>You´ve successfully been registered.</strong>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-primary" type="submit">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+
+            <div class="card">
+                <div class="card-body">
+                    Already have an account? <a th:href="@{/login}">Login</a>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer th:insert="fragments/footer"></footer>
+</div>
+
+</body>
+</html>
+
+

@@ -2,6 +2,7 @@ package de.hsba.bi.projectwork.project;
 
 import de.hsba.bi.projectwork.user.User;
 import de.hsba.bi.projectwork.user.UserService;
+import de.hsba.bi.projectwork.web.project.ProjectForm;
 import de.hsba.bi.projectwork.web.project.UpdateProjectForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -65,16 +66,37 @@ public class ProjectService {
         return this.save(project);
     }
 
+    public Project addProject(ProjectForm projectForm) {
+        // TODO Als Admin kann ich ein neues Projekt anlegen
 
+        Project project = new Project();
 
-    // admin / init methods
-    public List<User> findUsersNotInProject(Long projectId) {
-        Project project = this.findById(projectId);
-        List<User> usersNotInProject = new ArrayList<>(userService.findAll());
-        usersNotInProject.removeAll(project.getMembers());
-        return usersNotInProject;
+        if (projectForm.getMembers() == null) {
+            project.setMembers(new ArrayList<>());
+        }
+        else{
+            project.setMembers(projectForm.getMembers());
+        }
+        project.setName(projectForm.getName());
+
+        return this.save(project);
     }
 
+
+    // edit methods
+    public void editProject(ProjectForm projectForm) {
+        // TODO Als Admin kann ich andere Nutzer (jeder Rolle) zu einem Projekt hinzufügen
+        // TODO Als Admin kann ich andere Nutzer (jeder Rolle) aus einem Projekt entfernen
+        Project project = this.findById(projectForm.getId());
+
+        project.setName(projectForm.getName());
+        project.setMembers(projectForm.getMembers());
+
+        this.save(project);
+    }
+
+
+    // delete
     public void addUserToProject(UpdateProjectForm updateProjectForm, Long projectId) {
         // TODO Als Admin kann ich andere Nutzer (jeder Rolle) zu meinem Projekt hinzufügen
         List<User> newUsers = updateProjectForm.getNewUsers();
@@ -92,7 +114,7 @@ public class ProjectService {
     }
 
     public void removeUserFromProject(UpdateProjectForm updateProjectForm, Long projectId) {
-        // TODO Als Admin kann ich andere Nutzer (jeder Rolle) zu meinem Projekt hinzufügen
+        // TODO Als Admin kann ich andere Nutzer (jeder Rolle) aus einem Projekt entfernen
         List<User> removeUsers = updateProjectForm.getNewUsers();
         List<User> projectMembers = this.findById(projectId).getMembers();
         Project project = this.findById(projectId);

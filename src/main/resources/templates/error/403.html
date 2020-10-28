@@ -1,22 +1,29 @@
 <!doctype html>
-<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
 <header th:insert="fragments/header"></header>
 <body>
 
 
-<main role="main">
+<div class="wrapper">
 
   <div class="container marketing">
 
-    <h1>Zutritt verboten</h1>
-    <p><strong>Bitte gehen Sie <a href="/">zurück</a> auf Los.</strong></p>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="container">
 
-  </div><!-- /.container -->
+        <h1>Access denied</h1>
+        <p><strong>Please go <a href="/">back</a> home.</strong></p>
 
-  <!-- FOOTER -->
-  <footer th:insert="fragments/footer"></footer>
-</main>
+      </div>
+
+    </div>
+
+</div>
+
+<div class="push"></div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
 
 </body>
 </html>

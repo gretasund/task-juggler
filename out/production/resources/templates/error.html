@@ -1,21 +1,29 @@
 <!doctype html>
-<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
 <header th:insert="fragments/header"></header>
 <body>
 
 
-<main role="main">
+<div class="wrapper">
 
   <div class="container marketing">
 
-    <h1>Oops - das hätte nicht passieren dürfen</h1>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="container">
 
-  </div><!-- /.container -->
+      <h1>Oops - this was not supposed to happen</h1>
+      <p><strong>Please go <a href="/">back</a> home.</strong></p>
 
-  <!-- FOOTER -->
-  <footer th:insert="fragments/footer"></footer>
-</main>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="push"></div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
 
 </body>
 </html>

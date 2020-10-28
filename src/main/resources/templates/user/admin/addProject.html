@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="de" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="fragments/header"></header>
+<body>
+
+
+<div class="wrapper">
+
+    <div class="container marketing">
+
+        <div sec:authorize="hasRole('ADMIN')">
+
+            <div class="container">
+
+                <form th:action="@{/userAdmin/addProject/}" th:object="${projectForm}" method="post">
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mb-3 h-100">
+                                <div class="card-body">
+                                    <h2 class="card-title">Add a project</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container px-lg-5">
+                        <div class="row mx-lg-n5">
+                            <div class="col py-3 px-lg-5"></div>
+                            <div class="col py-3 px-lg-5"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mb-3 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Project Title</h4>
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input th:field="${projectForm.name}" class="form-control" id="name" placeholder="Name" required="required">
+                                        <label class="text-danger small" th:errors="*{name}"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container px-lg-5">
+                        <div class="row mx-lg-n5">
+                            <div class="col py-3 px-lg-5"></div>
+                            <div class="col py-3 px-lg-5"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mb-3 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Users available</h4>
+                                    <div class="form-check">
+                                        <div th:each="user : ${users}">
+                                            <input th:field="${projectForm.members}" th:value="${user.id}" class="form-check-input" type="checkbox" id="defaultCheck1">
+                                            <label th:text="${user.name}" class="form-check-label" for="defaultCheck1"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container px-lg-5">
+                        <div class="row mx-lg-n5">
+                            <div class="col py-3 px-lg-5"></div>
+                            <div class="col py-3 px-lg-5"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mb-6 h-100">
+                                <div class="card-body">
+                                    <div style="float: right">
+                                        <button type="submit" class="btn btn-primary mb-2">Create</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div><!-- /.container -->
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
+
+</body>
+</html>

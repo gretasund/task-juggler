@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="fragments/header"></header>
+<body>
+
+
+<div class="wrapper">
+
+    <div class="container marketing">
+
+        <!--Section for admins-->
+        <div sec:authorize="hasRole('ADMIN')">
+            <div class="row">
+                <div class="col">
+                    <h1>Projects</h1>
+                </div>
+                <div class="col">
+                    <div th:if="${message} != null" th:text="${message}" class="text-success" style="float: right"></div>
+                </div>
+            </div>
+
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Members</th>
+                    <th>Edit</th>
+                </tr>
+                <tr th:each="project : ${projects}">
+                    <td th:text="${project.name}"></td>
+                    <td>
+                        <span
+                                th:each="a, stat : ${project.members}"
+                                th:text=" ${project.members[__${stat.index}__].name} +  (${stat.size-1 > stat.index}? ', ':'') ">
+                        </span>
+                    </td>
+                    <td>
+                        <form th:action="@{/userAdmin/editProject/{projectId}(projectId=${project.id})}">
+                            <button type="submit"  class="btn btn-outline-primary">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <form th:action="@{/userAdmin/addProject}">
+                            <button type="submit"  class="btn btn-outline-primary">Add project</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
+</body>
+</html>

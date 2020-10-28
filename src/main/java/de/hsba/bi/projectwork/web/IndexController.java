@@ -29,13 +29,8 @@ public class IndexController {
     private final UserService userService;
 
 
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
-
-    @GetMapping("/dashboard")
-    public String dashboard(Model model) {
+    @GetMapping
+    public String index(Model model) {
         model.addAttribute("authenticatedUser", userService.findCurrentUser());
         model.addAttribute("user", new User());
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -47,13 +42,14 @@ public class IndexController {
             case "[ROLE_MANAGER]":
                 return "redirect:/userManager";
         }
-        return "index";
+        return "redirect:/login";
     }
+
 
     @GetMapping("/login")
     public String login() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        return auth instanceof AnonymousAuthenticationToken ? "login" : "redirect:/dashboard";
+        return auth instanceof AnonymousAuthenticationToken ? "user/login" : "redirect:/dashboard";
     }
 
 
@@ -61,7 +57,25 @@ public class IndexController {
     @GetMapping("/register")
     public String registerForm(Model model) {
         model.addAttribute("user", new RegisterUserForm());
-        return "register";
+        return "user/register";
+    }
+
+    @PostMapping("/register")
+    public String register(@ModelAttribute("user") @Valid RegisterUserForm registerUserForm, BindingResult bindingResult, Model model) {
+        if (!bindingResult.hasErrors()) {
+            try {
+                userService.createUser(registerUserForm, User.Role.DEVELOPER);
+                model.addAttribute("user", registerUserForm);
+                model.addAttribute("message", "You've successfully registered.");
+                return "user/login";
+            } catch (UserAlreadyExistException uaeEx) {
+                model.addAttribute("user", registerUserForm);
+                model.addAttribute("message", uaeEx.getMessage());
+                return "user/register";
+            }
+        }
+        model.addAttribute("user", registerUserForm);
+        return "user/register";
     }
 
 
@@ -70,27 +84,9 @@ public class IndexController {
     public String account(Model model) {
         model.addAttribute("user", userService.findCurrentUser());
         model.addAttribute("changePasswordForm", new ChangePasswordForm());
-        return "account";
+        return "user/account";
     }
 
-
-    @PostMapping("/register")
-    public String register(@ModelAttribute("user") @Valid RegisterUserForm userForm, BindingResult bindingResult, Model model) {
-        if (!bindingResult.hasErrors()) {
-            try {
-                userService.createUser(userForm, "DEVELOPER");
-                model.addAttribute("user", userForm);
-                model.addAttribute("message", "You've successfully registered.");
-                return "login";
-            } catch (UserAlreadyExistException uaeEx) {
-                model.addAttribute("user", userForm);
-                model.addAttribute("message", uaeEx.getMessage());
-                return "register";
-            }
-        }
-        model.addAttribute("user", userForm);
-        return "register";
-    }
 
     @PreAuthorize("hasRole(authenticated)")
     @PostMapping("/changePassword")
@@ -100,17 +96,18 @@ public class IndexController {
                 ChangePasswordForm changedPassword = userService.changePassword(changePasswordForm);
                 model.addAttribute("user", userService.findCurrentUser());
                 model.addAttribute("changePasswordForm", changePasswordForm);
-                model.addAttribute("message", "You've successfully changed your password.");
-                return "account";
+                model.addAttribute("successMessage", "You've successfully changed your password.");
+                return "user/account";
             } catch (IncorrectPasswordException ipEx) {
                 model.addAttribute("user", userService.findCurrentUser());
                 model.addAttribute("changePasswordForm", changePasswordForm);
-                return "account";
+                model.addAttribute("errorMessage", "The password you entered is incorrect.");
+                return "user/account";
             }
         }
         model.addAttribute("user", userService.findCurrentUser());
         model.addAttribute("changePasswordForm", changePasswordForm);
-        return "account";
+        return "user/account";
     }
 
 }

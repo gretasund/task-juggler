@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="fragments/header"></header>
+<body>
+
+<div class="wrapper">
+
+    <div class="container marketing">
+
+        <!--Section for developers and managers-->
+        <div sec:authorize="hasAnyRole('DEVELOPER', 'MANAGER')">
+            <h1>Tasks</h1><br>
+            <div class="container px-lg-5">
+                <div class="row mx-lg-n5">
+                    <div class="col py-3"><b>Name</b></div>
+                    <div class="col py-3"><b>Project</b></div>
+                    <div class="col py-3">
+                        <div class="btn-group">
+                            <a type="button" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
+                                <span class="selection">
+                                    <b th:if="${(param.status == null)}">Show All</b>
+                                    <b th:if="${(param.status != null)}" th:text="${param.status}"></b>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" th:href="@{'/userDeveloper/tasks'}">Show All</a>
+                                <a class="dropdown-item" th:href="@{'/userDeveloper/tasks?status=Accepted'}">Accepted</a>
+                                <a class="dropdown-item" th:href="@{'/userDeveloper/tasks?status=Work in progress'}">Work in Progress</a>
+                                <a class="dropdown-item" th:href="@{'/userDeveloper/tasks?status=Testing'}">Testing</a>
+                                <a class="dropdown-item" th:href="@{'/userDeveloper/tasks?status=Done'}">Done</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${tasks.size() == 0}" class="row mx-lg-n5">
+                        <div th:text="'There are no tasks with this status'" class="col"></div>
+                </div>
+                <div th:if="${tasks.size() > 0}">
+                    <div th:each="task : ${tasks}" class="row mx-lg-n5">
+                        <div class="col py-3">
+                            <a th:href="@{'/userDeveloper/viewTask/' + ${task.id}}" th:text="${task.name}"></a>
+                        </div>
+                        <div th:text="${task.project.getName()}" class="col py-3"></div>
+                        <div th:text="${task.status}" class="col py-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
+</body>
+</html>

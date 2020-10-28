@@ -1,15 +1,13 @@
 package de.hsba.bi.projectwork.web.project;
 
 import de.hsba.bi.projectwork.user.User;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.List;
 
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class UpdateProjectForm {
 

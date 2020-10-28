@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="fragments/header"></header>
+<style>
+    .scroll-box {
+        overflow-y: scroll;
+        height: 250px;
+    }
+</style>
+<body>
+
+
+<div class="wrapper">
+
+    <div class="container marketing">
+
+        <div sec:authorize="hasRole('DEVELOPER')">
+
+            <div class="container">
+
+                <form th:object="${suggestedTaskForm}"
+                      th:action="@{/userDeveloper/addTask}"
+                      method="post">
+
+                    <label for="name">
+                        <h4>Task Name</h4>
+                    </label>
+                    <input th:field="*{name}" class="form-control form-control-lg col-lg-6" id="name">
+                    <label class="text-danger small" th:errors="*{name}"></label>
+
+                    <br>
+
+                    <div class="container px-lg-5">
+                        <div class="row mx-lg-n5">
+                            <div class="col py-3 px-lg-5"></div>
+                            <div class="col py-3 px-lg-5"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mb-3 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Project</h4>
+                                    <div class="input-group">
+                                        <div th:text="${suggestedTaskForm.getProject().getName()}" id="project" class="form-control"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card mb-3 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Estimated Effort</h4>
+                                    <div class="input-group">
+                                        <input th:field="*{estimation}" type="number" id="time" class="form-control validate">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"> hours </span>
+                                        </div>
+                                    </div>
+                                    <label class="text-danger small" th:errors="*{estimation}"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container px-lg-5">
+                        <div class="row mx-lg-n5">
+                            <div class="col py-3 px-lg-5"></div>
+                            <div class="col py-3 px-lg-5"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mb-8 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Description</h4>
+                                    <div class="scroll-box">
+                                        <textarea  th:field="*{description}" class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 230px;"></textarea>
+                                        <label class="text-danger small" th:errors="*{description}"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container px-lg-5">
+                        <div class="row mx-lg-n5">
+                            <div class="col py-3 px-lg-5"></div>
+                            <div class="col py-3 px-lg-5"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mb-6 h-100">
+                                <div class="card-body">
+                                    <div style="float: right">
+                                        <a th:href="@{/userDeveloper/projects}" class="btn btn-primary mb-2">Cancel</a>
+                                        <input type="hidden" th:value="${suggestedTaskForm.project.id}" th:name="project">
+                                        <input type="hidden" th:value="${suggestedTaskForm.creator.id}" th:name="creator">
+                                        <button type="submit" class="btn btn-primary mb-2">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
+</body>
+</html>

@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -57,23 +56,9 @@ public class TaskService {
         }
     }
 
-    public List<Task> findByStatus(String status) {
-        if (status != null) {
-            if (status.equals("Idea") || status.equals("Planned") || status.equals("wip") || status.equals("Testing") || status.equals("Done")) {
-                List<Task> allTasks = taskRepository.findAll();
-                List<Task> tasks = new ArrayList<>();
-
-                if (status.equals("wip")) {
-                    status = "Work in progress";
-                }
-
-                for (Task task : allTasks) {
-                    if (task.getStatus().equals(status)) {
-                        tasks.add(task);
-                    }
-                }
-                return tasks;
-            }
+    public List<Task> findByStatus(Enum<Task.Status> status) {
+        if(status != null) {
+            return taskRepository.findTaskByStatus(status);
         }
         return this.findAll();
     }
@@ -83,11 +68,17 @@ public class TaskService {
         List<Task> unassignedUnscheduledTasks = new ArrayList<>();
 
         for (Task task : usersTasks){
-            if (task.getDueDate()==null || task.getAssignee()==null)
+            if ((task.getDueDate()==null || task.getAssignee()==null) && task.getStatus() != Task.Status.DONE)
                 unassignedUnscheduledTasks.add(task);
         }
 
         return unassignedUnscheduledTasks;
+    }
+
+    public List<Task> findOpenTasks(List<Task> tasks) {
+        // remove tasks with status done
+        tasks.removeIf(task -> task.getStatus().equals(Task.Status.DONE));
+        return tasks;
     }
 
 
@@ -101,12 +92,14 @@ public class TaskService {
 
         // iterate over tasks
         for (Task task: tasks) {
-            // alternative:
-            // tasks.removeIf(task -> !task.getProject().getMembers().contains(user));
             if(task.getProject().getMembers().contains(currentUser) && !usersTasks.contains(task)){
                 usersTasks.add(task);
             }
         }
+
+        // TODO consider alternatives
+        // 1st java.util.function.Predicate
+        // 2nd tasks.removeIf(task -> !task.getProject().getMembers().contains(user));
 
         // sort tasks by dueDate
         Collections.sort(usersTasks);
@@ -130,7 +123,7 @@ public class TaskService {
         Project project = projectService.findById(projectId);
         User creator = task.getCreator();
 
-        if (checkStatusValidity(task) && project != null) {
+        if (project != null) { // checkStatusValidity(task) && project != null
             // link task in user
             creator.getCreatedTasks().add(task);
 
@@ -149,17 +142,16 @@ public class TaskService {
 
 
     // edit task methods
-    public void editTask(Long taskId, TaskForm form) {
+    public void editTask(TaskForm taskForm) {
         // TODO Als Entwickler in einem Projekt kann ich eine Zeitschätzung (grob in Stunden) in einer Aufgabe speichern (diese Schätzung soll eine Eigenschaft der Aufgabe sein - verschiedene Entwickler würden diese Schätzung sehen und ändern dürfen)
         // TODO Als Entwickler in einem Projekt kann ich den Status einer Aufgabe ändern (Idee, Geplant, in Bearbeitung, im Test, Fertig)
-        Task task = this.findById(taskId);
-        this.save(taskFormConverter.update(task, form));
+        Task task = this.findById(taskForm.getTaskId());
+        this.save(taskFormConverter.update(task, taskForm));
     }
 
     public void setDueDate(Long taskId, String dueDate) {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         Task task = this.findById(taskId);
-        task.setDueDate(LocalDate.parse(dueDate, dateTimeFormatter));
+        task.setDueDate(LocalDate.parse(dueDate));
         this.save(task);
     }
 
@@ -167,23 +159,6 @@ public class TaskService {
         Task task = this.findById(taskId);
         task.setAssignee(assignee);
         this.save(task);
-    }
-
-    public boolean checkStatusValidity(Task task) {
-        switch (task.getStatus()) {
-            case "Idea":
-                return true;
-            case "Planned":
-                return true;
-            case "Work in progress":
-                return true;
-            case "Testing":
-                return true;
-            case "Done":
-                return true;
-            default:
-                return false;
-        }
     }
 
 }

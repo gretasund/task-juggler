@@ -16,7 +16,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Constraint(validatedBy = OldPasswordIsCorrectValidator.class)
 @Documented
 public @interface OldPasswordIsCorrect {
-    String message() default "The old password you entered wasn´t correct!";
+    String message() default "The password you entered is incorrect.";
 
     Class<?>[] groups() default {};
 

@@ -12,6 +12,7 @@ public class SuggestedTaskFormConverter {
     public SuggestedTask convert(SuggestedTaskForm suggestedTaskForm) {
         SuggestedTask suggestedTask = new SuggestedTask();
         suggestedTask.setName(suggestedTaskForm.getName());
+        suggestedTask.setStatus(suggestedTaskForm.getStatus());
         suggestedTask.setDescription(suggestedTaskForm.getDescription());
         suggestedTask.setEstimation(suggestedTaskForm.getEstimation());
         suggestedTask.setProject(suggestedTaskForm.getProject());
