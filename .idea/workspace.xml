@@ -20,85 +20,37 @@
   <component name="ChangeListManager">
     <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="Frontend improvements">
       <change afterPath="$PROJECT_DIR$/.idea/artifacts/azure.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/ApplicationInUse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/Initializr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/OnlyProjects.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/OnlyUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a31c590-c7f0-4e52-9756-14e23bbfaf4b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a31c590-c7f0-4e52-9756-14e23bbfaf4b/storage_v2/_src_/database/PROJECTWORK.inFeSA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a31c590-c7f0-4e52-9756-14e23bbfaf4b/storage_v2/_src_/database/PROJECTWORK.inFeSA/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a31c590-c7f0-4e52-9756-14e23bbfaf4b/storage_v2/_src_/database/PROJECTWORK.inFeSA/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cb1b7867-bc48-4e3a-8df1-be17a29adabe/storage_v2/_src_/database/PROJECTWORK.inFeSA/schema/PUBLIC.aaZQjQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/acceptedtask/AcceptedTaskRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/acceptedtask/AcceptedTaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/acceptedtask/AcceptedTaskFormConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/BookingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/init/AdminInitializr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/init/FirstDepartmentInitializr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/ProjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/ProjectRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/ProjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/ProjectService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTaskService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task$Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task$Status.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/TaskService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserDeveloperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserDeveloperController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/project/UpdateProjectForm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskFormConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskFormConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userManager/editTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/ProjectworkApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/ProjectworkApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/taskTest/TaskSortingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/taskTest/TaskSortingTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/userTest/RegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/userTest/RegisterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/AdminInitializr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/FirstDepartmentInitializr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/ApplicationInUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/ApplicationInUse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/BaseTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/AbstractTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Status.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/suggestedtask/SuggestedTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/suggestedtask/SuggestedTaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/suggestedtask/SuggestedTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/acceptedtask/AcceptedTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/ProjectForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/ProjectForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/UpdateProjectForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskFormConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskFormConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/suggestedtask/SuggestedTaskForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/suggestedtask/SuggestedTaskFormConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/acceptedtask/AcceptedTaskForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskFormConverter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/admin/addProject.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/addProject.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/admin/editProject.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/editProject.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/admin/projects.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/admin/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/manager/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/manager/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/editTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/editTask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/projects.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/tasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/tasks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewSuggestedTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewSuggestedTask.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewTask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userManager/editTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/ProjectworkApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/ProjectworkApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/taskTest/TaskSortingTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/userTest/RegisterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/projects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -434,7 +386,7 @@
       <workItem from="1603993711330" duration="3663000" />
       <workItem from="1604043427420" duration="813000" />
       <workItem from="1604044618973" duration="6647000" />
-      <workItem from="1604052765948" duration="3728000" />
+      <workItem from="1604052765948" duration="6911000" />
     </task>
     <task id="LOCAL-00001" summary="Login and Registration">
       <created>1600120723500</created>
@@ -471,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603874212299</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Frontend improvements">
+      <created>1604057473930</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604057473930</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,10 +490,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="312" y="456" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603103385023" />
-    <state x="0" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603977287459">
-      <screen x="0" y="23" width="1680" height="895" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604064343390">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603893111057" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1604064343390" />
     <state x="0" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.895@0.23.1680.895" timestamp="1603977287459" />
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603912220863">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -548,10 +507,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="140" y="186" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1603746875029" />
-    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2" timestamp="1604057102859">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2" timestamp="1604057472926">
+      <screen x="0" y="23" width="1680" height="895" />
     </state>
     <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1604057102859" />
+    <state x="323" y="23" key="CommitChangelistDialog2/0.23.1680.895@0.23.1680.895" timestamp="1604057472926" />
     <state x="323" y="23" key="CommitChangelistDialog2/0.23.1680.899@0.23.1680.899" timestamp="1602537283000" />
     <state x="575" y="60" key="Diagram.Print.Preview.Dialog" timestamp="1603267189006">
       <screen x="0" y="23" width="1680" height="895" />
@@ -681,10 +641,11 @@
     <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1603958939643" />
     <state x="328" y="113" key="SettingsEditor/0.23.1680.895@0.23.1680.895" timestamp="1603982263966" />
     <state x="328" y="106" key="SettingsEditor/0.23.1680.899@0.23.1680.899" timestamp="1602531970144" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1604056999503">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="440" y="249" key="Vcs.Push.Dialog.v2" timestamp="1604057573329">
+      <screen x="0" y="23" width="1680" height="895" />
     </state>
     <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1604056999503" />
+    <state x="440" y="249" key="Vcs.Push.Dialog.v2/0.23.1680.895@0.23.1680.895" timestamp="1604057573329" />
     <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602532101237">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

@@ -3,9 +3,9 @@ package de.hsba.bi.projectwork.booking;
 import de.hsba.bi.projectwork.project.Project;
 import de.hsba.bi.projectwork.project.ProjectRepository;
 import de.hsba.bi.projectwork.project.ProjectService;
-import de.hsba.bi.projectwork.task.Task;
-import de.hsba.bi.projectwork.task.TaskRepository;
-import de.hsba.bi.projectwork.task.TaskService;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTask;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTaskRepository;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTaskService;
 import de.hsba.bi.projectwork.user.User;
 import de.hsba.bi.projectwork.user.UserService;
 import de.hsba.bi.projectwork.web.booking.BookingForm;
@@ -27,8 +27,8 @@ public class BookingService {
     private final BookingRepository bookingRepository;
     private final ProjectService projectService;
     private final ProjectRepository projectRepository;
-    private final TaskRepository taskRepository;
-    private final TaskService taskService;
+    private final AcceptedTaskRepository acceptedTaskRepository;
+    private final AcceptedTaskService acceptedTaskService;
 
 
     // find tasks
@@ -60,16 +60,16 @@ public class BookingService {
 
         // get all entities
         Project project = projectService.findById(projectId);
-        Task task = taskService.findById(taskId);
+        AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
         Booking booking = new Booking(user, localDate, timeSpent);
 
         // link booking to task
-        booking.setTask(task);
+        booking.setAcceptedTask(acceptedTask);
         booking.setProject(project);
         bookingRepository.save(booking);
 
         // refresh task
-        task.setTotalTime(task.calcTotalTime());
+        acceptedTask.setTotalTime(acceptedTask.calcTotalTime());
 
     }
 
@@ -79,24 +79,24 @@ public class BookingService {
 
         // get all entities
         Project project = projectService.findById(projectId);
-        Task task = taskService.findById(taskId);
+        AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
         Booking booking = new Booking(user, localDate, bookingForm.getTimeSpent());
 
         // link booking to task
-        booking.setTask(task);
+        booking.setAcceptedTask(acceptedTask);
         booking.setProject(project);
         bookingRepository.save(booking);
 
         // refresh task
-        task.setTotalTime(task.calcTotalTime());
+        acceptedTask.setTotalTime(acceptedTask.calcTotalTime());
 
     }
 
-    public void deleteBooking(Task task, Booking booking) {
+    public void deleteBooking(AcceptedTask acceptedTask, Booking booking) {
         // delete booking in task and refresh task
-        task.getTimes().remove(booking);
-        task.setTotalTime(task.calcTotalTime());
-        taskRepository.save(task);
+        acceptedTask.getTimes().remove(booking);
+        acceptedTask.setTotalTime(acceptedTask.calcTotalTime());
+        acceptedTaskRepository.save(acceptedTask);
 
         // delete booking
         bookingRepository.delete(booking);

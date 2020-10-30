@@ -1,7 +1,7 @@
-package de.hsba.bi.projectwork.web.task;
+package de.hsba.bi.projectwork.web.task.suggestedtask;
 
 import de.hsba.bi.projectwork.project.Project;
-import de.hsba.bi.projectwork.task.SuggestedTask;
+import de.hsba.bi.projectwork.task.suggestedtask.SuggestedTask;
 import de.hsba.bi.projectwork.user.User;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

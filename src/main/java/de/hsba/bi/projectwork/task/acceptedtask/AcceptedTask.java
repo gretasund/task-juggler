@@ -1,7 +1,9 @@
-package de.hsba.bi.projectwork.task;
+package de.hsba.bi.projectwork.task.acceptedtask;
 
 import de.hsba.bi.projectwork.booking.Booking;
 import de.hsba.bi.projectwork.project.Project;
+import de.hsba.bi.projectwork.task.AbstractTask;
+import de.hsba.bi.projectwork.task.suggestedtask.SuggestedTask;
 import de.hsba.bi.projectwork.user.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -20,10 +22,10 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Data
-@IdClass(BaseTask.class)
-public class Task extends BaseTask implements Comparable<Task>, Serializable {
+@IdClass(AbstractTask.class)
+public class AcceptedTask extends AbstractTask implements Comparable<AcceptedTask>, Serializable {
 
-    // FIELDS
+    // fields
     @ManyToOne
     private User assignee;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "task")
@@ -34,8 +36,8 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
     private int totalTime;
 
 
-    // CONSTRUCTORS
-    public Task(User creator, String name, String description, int estimation, Enum<Status> status, LocalDate dueDate, Project project) {
+    // constructors
+    public AcceptedTask(User creator, String name, String description, int estimation, Enum<Status> status, LocalDate dueDate, Project project) {
         // set due date if present
         if(dueDate != null) {
             this.dueDate = dueDate;
@@ -53,7 +55,7 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
 
     }
 
-    public Task(SuggestedTask suggestedTask) {
+    public AcceptedTask(SuggestedTask suggestedTask) {
         this.creator = suggestedTask.getCreator();
         this.name = suggestedTask.getName();
         this.description = suggestedTask.getDescription();
@@ -64,13 +66,13 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
     }
 
 
-    // METHODS
+    // methods
     @Override
-    public int compareTo(Task task) {
-        if (this.getDueDate() == null || task.getDueDate() == null) {
+    public int compareTo(AcceptedTask acceptedTask) {
+        if (this.getDueDate() == null || acceptedTask.getDueDate() == null) {
             return 0;
         }
-        return this.getDueDate().compareTo(task.getDueDate());
+        return this.getDueDate().compareTo(acceptedTask.getDueDate());
     }
 
     @Scheduled(cron = "0 0 * * * ?") // refreshes daysLeft everyday at midnight
@@ -95,7 +97,7 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
     }
 
 
-    // ENUM
+    // enum
     public enum Status {
         ACCEPTED("Accepted"),
         WORK_IN_PROGRESS("Work in progress"),

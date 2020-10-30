@@ -1,7 +1,6 @@
-package de.hsba.bi.projectwork.task;
+package de.hsba.bi.projectwork.task.suggestedtask;
 
-import de.hsba.bi.projectwork.project.Project;
-import de.hsba.bi.projectwork.user.User;
+import de.hsba.bi.projectwork.task.AbstractTask;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -16,26 +15,14 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Data
-@IdClass(BaseTask.class)
-public class SuggestedTask extends BaseTask {
+@IdClass(AbstractTask.class)
+public class SuggestedTask extends AbstractTask {
 
-    // Field
+    // field
     protected Enum<Status> status = SuggestedTask.Status.IDEA;
 
 
-    // Constructor
-    // TODO delete
-    public SuggestedTask(Project project, String name, String description, int estimation, User creator) {
-        this.project = project;
-        this.name = name;
-        this.description = description;
-        this.estimation = estimation;
-        this.status = SuggestedTask.Status.IDEA;
-        this.creator = creator;
-    }
-
-
-    // Enum
+    // enum
     public enum Status {
         IDEA("Idea"),
         ACCEPTED("Accepted"),

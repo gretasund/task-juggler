@@ -20,33 +20,33 @@
 
                 <form th:action="@{/userDeveloper/editTask}" method="post">
 
-                    <input th:field="*{task.name}" th:name="name" class="form-control form-control-lg col-lg-6">
-                    <label class="text-danger small" th:errors="*{taskForm.name}"></label>
+                    <input th:field="*{acceptedTask.name}" th:name="name" class="form-control form-control-lg col-lg-6">
+                    <label class="text-danger small" th:errors="*{acceptedTaskForm.name}"></label>
 
                     <br>
 
                    <div class="row">
                         <div class="col-3">
-                            <div th:text="${task.getProject().getName()}" th:name="project" class="form-control"></div>
+                            <div th:text="${acceptedTask.getProject().getName()}" th:name="project" class="form-control"></div>
                         </div>
                         <div class="col-3">
 
-                            <!--If the task has an assignee-->
-                            <select th:if="${task.getAssignee() != null}" th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
-                                <option th:text="'Assigned to ' + ${task.getAssignee()}"
-                                        th:value="${task.getAssignee().getId()}">
+                            <!--If the acceptedTask has an assignee-->
+                            <select th:if="${acceptedTask.getAssignee() != null}" th:field="*{acceptedTask.assignee}" th:name="assignee" class="form-control" id="assignee">
+                                <option th:text="'Assigned to ' + ${acceptedTask.getAssignee()}"
+                                        th:value="${acceptedTask.getAssignee().getId()}">
                                 </option>
                                 <option th:each="member : ${project.members}"
-                                        th:if="${!task.getAssignee().equals(member)}"
+                                        th:if="${!acceptedTask.getAssignee().equals(member)}"
                                         th:text="'Assign to ' + ${member.getName()}"
-                                        th:selected="${task.getAssignee()}"
+                                        th:selected="${acceptedTask.getAssignee()}"
                                         th:value="${member.id}"
                                         class="dropdown-item">
                                 </option>
                             </select>
 
-                            <!--If the task doesn´t have an assignee-->
-                            <select th:if="${task.getAssignee() == null}" th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
+                            <!--If the acceptedTask doesn´t have an assignee-->
+                            <select th:if="${acceptedTask.getAssignee() == null}" th:field="*{acceptedTask.assignee}" th:name="assignee" class="form-control" id="assignee">
                                 <option th:text="'Not assigned'"
                                         th:value="${null}">
                                 </option>
@@ -57,7 +57,7 @@
                                 </option>
                             </select>
 
-                            <label class="text-danger small" th:errors="*{taskForm.assignee}"></label>
+                            <label class="text-danger small" th:errors="*{acceptedTaskForm.assignee}"></label>
 
                         </div>
                     </div>
@@ -75,9 +75,9 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Time Management</h4>
                                     <label data-error="wrong" data-success="right" for="dueDate">Due Date</label>
-                                    <input th:value="${task.getDueDate()}" th:name="dueDate" class="datepicker form-control validate" data-val="true" data-val-date="The field DateTakenFrom must be a date." id="dueDate" name="Criteria.DateTakenFrom" type="date">
+                                    <input th:value="${acceptedTask.getDueDate()}" th:name="dueDate" class="datepicker form-control validate" data-val="true" data-val-date="The field DateTakenFrom must be a date." id="dueDate" name="Criteria.DateTakenFrom" type="date">
                                 </div>
-                                <label class="text-danger small" th:errors="*{taskForm.dueDate}"></label>
+                                <label class="text-danger small" th:errors="*{acceptedTaskForm.dueDate}"></label>
                             </div>
                         </div>
                         <div class="col">
@@ -86,12 +86,12 @@
                                     <h4 class="card-title">Effort</h4>
                                     <label data-error="wrong" data-success="right" for="time">Time spent</label>
                                     <div class="input-group">
-                                        <input th:field="*{task.estimation}" th:name="estimation" type="number" id="time" class="form-control validate"><!--th:value="${task.getEstimation()}"-->
+                                        <input th:field="*{acceptedTask.estimation}" th:name="estimation" type="number" id="time" class="form-control validate"><!--th:value="${acceptedTask.getEstimation()}"-->
                                         <div class="input-group-append">
                                             <span class="input-group-text"> hours </span>
                                         </div>
                                     </div>
-                                    <label class="text-danger small" th:errors="*{taskForm.estimation}"></label>
+                                    <label class="text-danger small" th:errors="*{acceptedTaskForm.estimation}"></label>
                                 </div>
                             </div>
                         </div>
@@ -102,10 +102,10 @@
                                     <label data-error="wrong" data-success="right" for="status">Status</label>
                                     <!--Select for TaskFormConverter with String status-->
                                     <select th:name="status" th:id="status" class="form-control">
-                                        <option th:value="${task.getStatus().getDisplayValue()}" th:text="${task.getStatus().getDisplayValue()}"></option>
+                                        <option th:value="${acceptedTask.getStatus().getDisplayValue()}" th:text="${acceptedTask.getStatus().getDisplayValue()}"></option>
                                         <option th:each="status : ${allStatus}"
                                                 th:text="${status.getDisplayValue()}"
-                                                th:if="${!task.getStatus().getDisplayValue().equals(status.getDisplayValue())}"
+                                                th:if="${!acceptedTask.getStatus().getDisplayValue().equals(status.getDisplayValue())}"
                                                 th:value="${status.getDisplayValue()}">
                                         </option>
                                     </select>
@@ -125,9 +125,9 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Description</h4>
                                     <div class="scroll-box">
-                                        <textarea th:field="*{task.description}" th:name="description" class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 250px;"></textarea>
+                                        <textarea th:field="*{acceptedTask.description}" th:name="description" class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 250px;"></textarea>
                                     </div>
-                                    <label class="text-danger small" th:errors="*{taskForm.description}"></label>
+                                    <label class="text-danger small" th:errors="*{acceptedTaskForm.description}"></label>
                                 </div>
                             </div>
                         </div>
@@ -143,9 +143,9 @@
                             <div class="card mb-6 h-100">
                                 <div class="card-body">
                                     <div style="float: right">
-                                        <a th:href="@{/userDeveloper/viewTask/{taskId}(taskId=${task.id})}" class="btn btn-primary mb-2">Cancel</a>
-                                        <input type="hidden" th:value="${task.id}" th:name="taskId">
-                                        <input type="hidden" th:value="${task.project.id}" th:name="project">
+                                        <a th:href="@{/userDeveloper/viewTask/{taskId}(taskId=${acceptedTask.id})}" class="btn btn-primary mb-2">Cancel</a>
+                                        <input type="hidden" th:value="${acceptedTask.id}" th:name="taskId">
+                                        <input type="hidden" th:value="${acceptedTask.project.id}" th:name="project">
                                         <button type="submit" class="btn btn-primary mb-2">Save</button>
                                     </div>
                                 </div>
@@ -165,33 +165,33 @@
 
                 <form th:action="@{/userManager/editTask}" method="post">
 
-                    <input th:field="*{task.name}" th:name="name" class="form-control form-control-lg col-lg-6">
-                    <label class="text-danger small" th:errors="*{taskForm.name}"></label>
+                    <input th:field="*{acceptedTask.name}" th:name="name" class="form-control form-control-lg col-lg-6">
+                    <label class="text-danger small" th:errors="*{acceptedTaskForm.name}"></label>
 
                     <br>
 
                     <div class="row">
                         <div class="col-3">
-                            <div th:text="${task.getProject().getName()}" th:name="project" class="form-control"></div>
+                            <div th:text="${acceptedTask.getProject().getName()}" th:name="project" class="form-control"></div>
                         </div>
                         <div class="col-3">
 
-                            <!--If the task has an assignee-->
-                            <select th:if="${task.getAssignee() != null}" th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
-                                <option th:text="'Assigned to ' + ${task.getAssignee()}"
-                                        th:value="${task.getAssignee().getId()}">
+                            <!--If the acceptedTask has an assignee-->
+                            <select th:if="${acceptedTask.getAssignee() != null}" th:field="*{acceptedTask.assignee}" th:name="assignee" class="form-control" id="assignee">
+                                <option th:text="'Assigned to ' + ${acceptedTask.getAssignee()}"
+                                        th:value="${acceptedTask.getAssignee().getId()}">
                                 </option>
                                 <option th:each="member : ${project.members}"
-                                        th:if="${!task.getAssignee().equals(member)}"
+                                        th:if="${!acceptedTask.getAssignee().equals(member)}"
                                         th:text="'Assign to ' + ${member.getName()}"
-                                        th:selected="${task.getAssignee()}"
+                                        th:selected="${acceptedTask.getAssignee()}"
                                         th:value="${member.id}"
                                         class="dropdown-item">
                                 </option>
                             </select>
 
-                            <!--If the task doesn´t have an assignee-->
-                            <select th:if="${task.getAssignee() == null}" th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
+                            <!--If the acceptedTask doesn´t have an assignee-->
+                            <select th:if="${acceptedTask.getAssignee() == null}" th:field="*{acceptedTask.assignee}" th:name="assignee" class="form-control" id="assignee">
                                 <option th:text="'Not assigned'"
                                         th:value="${null}">
                                 </option>
@@ -218,9 +218,9 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Time Management</h4>
                                     <label data-error="wrong" data-success="right" for="dueDate">Due Date</label>
-                                    <input th:value="${task.getDueDate()}" th:name="dueDate" class="datepicker form-control validate" data-val="true" data-val-date="The field DateTakenFrom must be a date." id="dueDate" name="Criteria.DateTakenFrom" type="date">
+                                    <input th:value="${acceptedTask.getDueDate()}" th:name="dueDate" class="datepicker form-control validate" data-val="true" data-val-date="The field DateTakenFrom must be a date." id="dueDate" name="Criteria.DateTakenFrom" type="date">
                                 </div>
-                                <label class="text-danger small" th:errors="*{taskForm.dueDate}"></label>
+                                <label class="text-danger small" th:errors="*{acceptedTaskForm.dueDate}"></label>
                             </div>
                         </div>
                         <div class="col">
@@ -229,12 +229,12 @@
                                     <h4 class="card-title">Effort</h4>
                                     <label data-error="wrong" data-success="right" for="time">Time spent</label>
                                     <div class="input-group">
-                                        <input th:field="*{task.estimation}" th:name="estimation" type="number" id="time" class="form-control validate"><!--th:value="${task.getEstimation()}"-->
+                                        <input th:field="*{acceptedTask.estimation}" th:name="estimation" type="number" id="time" class="form-control validate"><!--th:value="${acceptedTask.getEstimation()}"-->
                                         <div class="input-group-append">
                                             <span class="input-group-text"> hours </span>
                                         </div>
                                     </div>
-                                    <label class="text-danger small" th:errors="*{taskForm.estimation}"></label>
+                                    <label class="text-danger small" th:errors="*{acceptedTaskForm.estimation}"></label>
                                 </div>
                             </div>
                         </div>
@@ -245,10 +245,10 @@
                                     <label data-error="wrong" data-success="right" for="status">Status</label>
                                     <!--Select for TaskFormConverter with String status-->
                                     <select th:name="status" th:id="status" class="form-control">
-                                        <option th:value="${task.getStatus().getDisplayValue()}" th:text="${task.getStatus().getDisplayValue()}"></option>
+                                        <option th:value="${acceptedTask.getStatus().getDisplayValue()}" th:text="${acceptedTask.getStatus().getDisplayValue()}"></option>
                                         <option th:each="status : ${allStatus}"
                                                 th:text="${status.getDisplayValue()}"
-                                                th:if="${!task.getStatus().getDisplayValue().equals(status.getDisplayValue())}"
+                                                th:if="${!acceptedTask.getStatus().getDisplayValue().equals(status.getDisplayValue())}"
                                                 th:value="${status.getDisplayValue()}">
                                         </option>
                                     </select>
@@ -268,9 +268,9 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Description</h4>
                                     <div class="scroll-box">
-                                        <textarea th:field="*{task.description}" th:name="description" class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 250px;"></textarea>
+                                        <textarea th:field="*{acceptedTask.description}" th:name="description" class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 250px;"></textarea>
                                     </div>
-                                    <label class="text-danger small" th:errors="*{taskForm.description}"></label>
+                                    <label class="text-danger small" th:errors="*{acceptedTaskForm.description}"></label>
                                 </div>
                             </div>
                         </div>
@@ -286,9 +286,9 @@
                             <div class="card mb-6 h-100">
                                 <div class="card-body">
                                     <div style="float: right">
-                                        <a th:href="@{/userManager/viewTask/{taskId}(taskId=${task.id})}" class="btn btn-primary mb-2">Cancel</a>
-                                        <input type="hidden" th:value="${task.id}" th:name="taskId">
-                                        <input type="hidden" th:value="${task.project.id}" th:name="project">
+                                        <a th:href="@{/userManager/viewTask/{taskId}(taskId=${acceptedTask.id})}" class="btn btn-primary mb-2">Cancel</a>
+                                        <input type="hidden" th:value="${acceptedTask.id}" th:name="taskId">
+                                        <input type="hidden" th:value="${acceptedTask.project.id}" th:name="project">
                                         <button type="submit" class="btn btn-primary mb-2">Save</button>
                                     </div>
                                 </div>

@@ -3,12 +3,12 @@ package de.hsba.bi.projectwork.web;
 import de.hsba.bi.projectwork.booking.Booking;
 import de.hsba.bi.projectwork.booking.BookingService;
 import de.hsba.bi.projectwork.project.ProjectService;
-import de.hsba.bi.projectwork.task.SuggestedTask;
-import de.hsba.bi.projectwork.task.SuggestedTaskService;
-import de.hsba.bi.projectwork.task.Task;
-import de.hsba.bi.projectwork.task.TaskService;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTask;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTaskService;
+import de.hsba.bi.projectwork.task.suggestedtask.SuggestedTask;
+import de.hsba.bi.projectwork.task.suggestedtask.SuggestedTaskService;
 import de.hsba.bi.projectwork.user.User;
-import de.hsba.bi.projectwork.web.task.TaskForm;
+import de.hsba.bi.projectwork.web.task.acceptedtask.AcceptedTaskForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -25,7 +25,7 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class UserManagerController {
 
-    private final TaskService taskService;
+    private final AcceptedTaskService acceptedTaskService;
     private final BookingService bookingService;
     private final SuggestedTaskService suggestedTaskService;
     private final ProjectService projectService;
@@ -35,9 +35,9 @@ public class UserManagerController {
     @GetMapping
     public String dashboard(Model model) {
         model.addAttribute("projects", projectService.findProjectsByUser());
-        model.addAttribute("tasksAlmostDue", taskService.findUsersTasks(taskService.findOpenTasks(taskService.findAll())));
+        model.addAttribute("tasksAlmostDue", acceptedTaskService.findUsersTasks(acceptedTaskService.findOpenTasks(acceptedTaskService.findAll())));
         model.addAttribute("suggestedTasks", suggestedTaskService.findSuggestedTaskByUser(suggestedTaskService.findByStatus(SuggestedTask.Status.IDEA)));
-        model.addAttribute("unassignedAndUnscheduled", taskService.findUsersTasks(taskService.findUnassignedAndUnscheduled()));
+        model.addAttribute("unassignedAndUnscheduled", acceptedTaskService.findUsersTasks(acceptedTaskService.findUnassignedAndUnscheduled()));
         return "user/dashboard";
     }
 
@@ -57,13 +57,13 @@ public class UserManagerController {
         if(edited) {
             model.addAttribute("message", "Task successfully edited.");
         }
-        Task task = taskService.findById(taskId);
-        task.calcDaysLeft();
-        model.addAttribute("task", task);
+        AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
+        acceptedTask.calcDaysLeft();
+        model.addAttribute("task", acceptedTask);
         model.addAttribute("dueDate", "");
         model.addAttribute("assignee", new User());
-        model.addAttribute("project", projectService.findById(task.getProject().getId()));
-        model.addAttribute("allStatus", Task.Status.getAllStatus());
+        model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
+        model.addAttribute("allStatus", AcceptedTask.Status.getAllStatus());
         return "user/managerDeveloper/viewTask";
     }
 
@@ -79,33 +79,33 @@ public class UserManagerController {
     // edit a task
     @GetMapping("/editTask/{taskId}")
     public String editTask(@PathVariable("taskId") Long taskId, Model model) {
-        Task task = taskService.findById(taskId);
-        model.addAttribute("task", task);
-        model.addAttribute("taskForm", new TaskForm(taskId));
-        model.addAttribute("project", projectService.findById(task.getProject().getId()));
-        model.addAttribute("allStatus", Task.Status.getAllStatus());
+        AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
+        model.addAttribute("task", acceptedTask);
+        model.addAttribute("taskForm", new AcceptedTaskForm(taskId));
+        model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
+        model.addAttribute("allStatus", AcceptedTask.Status.getAllStatus());
         return "user/managerDeveloper/editTask";
     }
 
     @PostMapping("/editTask")
-    public String editTask(@ModelAttribute("taskForm") @Valid TaskForm taskForm, BindingResult bindingResult, Model model) {
+    public String editTask(@ModelAttribute("taskForm") @Valid AcceptedTaskForm acceptedTaskForm, BindingResult bindingResult, Model model) {
         if (!bindingResult.hasErrors()) {
-            taskService.editTask(taskForm);
-            return "redirect:/userManager/viewTask/" + taskForm.getTaskId() + "?edited=true";
+            acceptedTaskService.editTask(acceptedTaskForm);
+            return "redirect:/userManager/viewTask/" + acceptedTaskForm.getTaskId() + "?edited=true";
         }
-        Task task = taskService.findById(taskForm.getTaskId());
-        model.addAttribute("task", task);
-        model.addAttribute("taskForm", taskForm);
-        model.addAttribute("project", projectService.findById(task.getProject().getId()));
-        model.addAttribute("allStatus", Task.Status.getAllStatus());
+        AcceptedTask acceptedTask = acceptedTaskService.findById(acceptedTaskForm.getTaskId());
+        model.addAttribute("task", acceptedTask);
+        model.addAttribute("taskForm", acceptedTaskForm);
+        model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
+        model.addAttribute("allStatus", AcceptedTask.Status.getAllStatus());
         return "user/managerDeveloper/editTask";
     }
 
     @PostMapping("/deleteBookedTime")
     public String deleteBookedTime(@RequestParam("taskId") Long taskId, @RequestParam("bookingId") Long bookingId) {
-        Task task = taskService.findById(taskId);
+        AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
         Booking booking = bookingService.findById(bookingId);
-        bookingService.deleteBooking(task, booking);
+        bookingService.deleteBooking(acceptedTask, booking);
         return "redirect:/userManager/viewTask/" + taskId;
     }
 
@@ -113,7 +113,7 @@ public class UserManagerController {
     // view tasks and filter them by status
     @GetMapping("/tasks")
     public String viewTasks(@RequestParam(value = "status", required = false) String status, Model model) {
-        model.addAttribute("tasks", taskService.findUsersTasks(taskService.findByStatus(Task.Status.getEnumByDisplayValue(status))));
+        model.addAttribute("tasks", acceptedTaskService.findUsersTasks(acceptedTaskService.findByStatus(AcceptedTask.Status.getEnumByDisplayValue(status))));
         return "user/managerDeveloper/tasks";
     }
 

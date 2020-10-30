@@ -1,8 +1,8 @@
 package de.hsba.bi.projectwork.project;
 
 import de.hsba.bi.projectwork.booking.Booking;
-import de.hsba.bi.projectwork.task.SuggestedTask;
-import de.hsba.bi.projectwork.task.Task;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTask;
+import de.hsba.bi.projectwork.task.suggestedtask.SuggestedTask;
 import de.hsba.bi.projectwork.user.User;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -28,7 +28,7 @@ public class Project {
     private List<User> members = new ArrayList<>();
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "project")
     @OrderBy
-    private List<Task> tasks = new ArrayList<>();
+    private List<AcceptedTask> acceptedTasks = new ArrayList<>();
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "project")
     @OrderBy
     private List<SuggestedTask> suggestedTasks = new ArrayList<>();
@@ -46,17 +46,17 @@ public class Project {
 
     // METHODS
     public int findTasks(String status) {
-        List<Task> allTasks = this.getTasks();
-        List<Task> tasksWithStatus = new ArrayList<>();
-        Enum<Task.Status> statusEnum = Task.Status.getEnumByDisplayValue(status);
+        List<AcceptedTask> allAcceptedTasks = this.getAcceptedTasks();
+        List<AcceptedTask> tasksWithStatuses = new ArrayList<>();
+        Enum<AcceptedTask.Status> statusEnum = AcceptedTask.Status.getEnumByDisplayValue(status);
 
-        for (Task task : allTasks) {
-            if (task.getStatus() == statusEnum) {
-                tasksWithStatus.add(task);
+        for (AcceptedTask acceptedTask : allAcceptedTasks) {
+            if (acceptedTask.getStatus() == statusEnum) {
+                tasksWithStatuses.add(acceptedTask);
             }
 
         }
-        return tasksWithStatus.size();
+        return tasksWithStatuses.size();
     }
 
 }

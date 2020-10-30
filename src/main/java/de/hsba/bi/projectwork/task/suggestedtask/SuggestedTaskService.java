@@ -1,11 +1,14 @@
-package de.hsba.bi.projectwork.task;
+package de.hsba.bi.projectwork.task.suggestedtask;
 
 import de.hsba.bi.projectwork.project.Project;
 import de.hsba.bi.projectwork.project.ProjectService;
+import de.hsba.bi.projectwork.task.AbstractTask;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTask;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTaskService;
 import de.hsba.bi.projectwork.user.User;
 import de.hsba.bi.projectwork.user.UserService;
-import de.hsba.bi.projectwork.web.task.SuggestedTaskForm;
-import de.hsba.bi.projectwork.web.task.SuggestedTaskFormConverter;
+import de.hsba.bi.projectwork.web.task.suggestedtask.SuggestedTaskForm;
+import de.hsba.bi.projectwork.web.task.suggestedtask.SuggestedTaskFormConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +26,7 @@ public class SuggestedTaskService {
     private final SuggestedTaskRepository suggestedTaskRepository;
 
     private final UserService userService;
-    private final TaskService taskService;
+    private final AcceptedTaskService acceptedTaskService;
     private final ProjectService projectService;
     private final SuggestedTaskFormConverter suggestedTaskFormConverter;
 
@@ -77,7 +80,7 @@ public class SuggestedTaskService {
         switch (evaluation) {
             case "accept":
                 suggestedTask.setStatus(SuggestedTask.Status.ACCEPTED);
-                taskService.save(new Task(suggestedTask));
+                acceptedTaskService.save(new AcceptedTask(suggestedTask));
                 break;
             case "decline":
                 suggestedTask.setStatus(SuggestedTask.Status.DECLINED);
@@ -103,7 +106,7 @@ public class SuggestedTaskService {
         suggestedTasksProject.add(suggestedTask);
 
         // link suggestedTask in user/creator
-        List<BaseTask> suggestedTasksUser = creator.getCreatedTasks();
+        List<AbstractTask> suggestedTasksUser = creator.getCreatedTasks();
         suggestedTasksUser.add(suggestedTask);
 
         // persist entities

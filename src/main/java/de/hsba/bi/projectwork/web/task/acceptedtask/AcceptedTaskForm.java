@@ -1,4 +1,4 @@
-package de.hsba.bi.projectwork.web.task;
+package de.hsba.bi.projectwork.web.task.acceptedtask;
 
 import de.hsba.bi.projectwork.project.Project;
 import de.hsba.bi.projectwork.user.User;
@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 
 
 @Data
-public class TaskForm {
+public class AcceptedTaskForm {
 
     @NotNull
     private long taskId;
@@ -41,7 +41,7 @@ public class TaskForm {
     private User assignee;
 
 
-    public TaskForm(long taskId) {
+    public AcceptedTaskForm(long taskId) {
         this.taskId = taskId;
     }
 

@@ -1,4 +1,4 @@
-package de.hsba.bi.projectwork.task;
+package de.hsba.bi.projectwork.task.suggestedtask;
 
 import de.hsba.bi.projectwork.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -21,14 +21,14 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
 
 
-    // CONSTRUCTOR
+    // constructor
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
 
-    // CREATE AND SAVE
+    // create and save methods
     public User save(User user) {
         return userRepository.save(user);
     }
@@ -45,7 +45,7 @@ public class UserService {
     }
 
 
-    // FIND
+    // find methods
     public static String getCurrentUsername() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
@@ -69,7 +69,7 @@ public class UserService {
     }
 
 
-    // CHECK
+    // check methods
     public boolean usernameExists(String name) {
         return userRepository.findByName(name).isPresent();
     }
@@ -79,7 +79,7 @@ public class UserService {
     }
 
 
-    // EDIT
+    // edit methods
     public ChangePasswordForm changePassword(ChangePasswordForm changePasswordForm) throws IncorrectPasswordException {
         // TODO Als Nutzer kann ich mein Passwort ändern
 

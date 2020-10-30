@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="azure">
+    <output-path>$PROJECT_DIR$/out/artifacts/azure</output-path>
+    <root id="archive" name="azure.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="project-management-application" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

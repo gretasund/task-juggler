@@ -2,8 +2,8 @@ package de.hsba.bi.projectwork.user;
 
 import de.hsba.bi.projectwork.booking.Booking;
 import de.hsba.bi.projectwork.project.Project;
-import de.hsba.bi.projectwork.task.BaseTask;
-import de.hsba.bi.projectwork.task.Task;
+import de.hsba.bi.projectwork.task.AbstractTask;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTask;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,7 +21,7 @@ public class User implements Comparable<User> {
     public static String MANAGER_ROLE = "MANAGER";
 
 
-    // FIELDS
+    // fields
     @Id
     @GeneratedValue
     @Setter(AccessLevel.NONE)
@@ -40,13 +40,13 @@ public class User implements Comparable<User> {
     private List<Booking> bookedTimes;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "creator")
     @OrderBy
-    private List<BaseTask> createdTasks = new ArrayList<>();
+    private List<AbstractTask> createdTasks = new ArrayList<>();
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "assignee")
     @OrderBy
-    private List<Task> assignedTasks = new ArrayList<>();
+    private List<AcceptedTask> assignedAcceptedTasks = new ArrayList<>();
 
 
-    // METHODS
+    // methods
     @Override
     public int compareTo(User other) {
         return this.name.compareTo(other.name);
@@ -58,7 +58,7 @@ public class User implements Comparable<User> {
     }
 
 
-    // ENUM
+    // enum
     @Getter
     public enum Role {
         ADMIN("Admin"),

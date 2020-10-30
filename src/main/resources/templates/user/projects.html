@@ -103,40 +103,40 @@
                                             </div>
                                         </div>
 
-                                        <!--If there are tasks in the project-->
-                                        <div th:if="${project.tasks.size() > 0}" th:each="task : ${project.tasks}" class="row mx-lg-n5">
+                                        <!--If there are acceptedTasks in the project-->
+                                        <div th:if="${project.acceptedTasks.size() > 0}" th:each="acceptedTask : ${project.acceptedTasks}" class="row mx-lg-n5">
                                             <div class="col-4 py-3">
-                                                <a th:href="@{'/userManager/viewTask/' + ${task.id}}" th:text="${task.name}"></a>
+                                                <a th:href="@{'/userManager/viewTask/' + ${acceptedTask.id}}" th:text="${acceptedTask.name}"></a>
                                             </div>
-                                            <div class="col py-3" th:text="${task.status.getDisplayValue()}"></div>
+                                            <div class="col py-3" th:text="${acceptedTask.status.getDisplayValue()}"></div>
                                             <div class="col py-3">
-                                                <div th:if="${task.assignee != null}" th:text="${task.assignee}"></div>
-                                                <div th:if="${task.assignee == null}">
-                                                    <button th:text="'Not set'" type="button" class="alert alert-dark" data-toggle="tooltip" data-placement="right" title="Please open the task and choose an assignee."></button>
-                                                </div>
-                                            </div>
-                                            <div class="col py-3">
-                                                <div th:if="${task.dueDate != null}" th:text="${task.dueDate}"></div>
-                                                <div th:if="${task.dueDate == null}">
-                                                    <button th:text="'Not set'" type="button" class="alert alert-dark" data-toggle="tooltip" data-placement="right" title="Please open the task and choose an assignee."></button>
+                                                <div th:if="${acceptedTask.assignee != null}" th:text="${acceptedTask.assignee}"></div>
+                                                <div th:if="${acceptedTask.assignee == null}">
+                                                    <button th:text="'Not set'" type="button" class="alert alert-dark" data-toggle="tooltip" data-placement="right" title="Please open the acceptedTask and choose an assignee."></button>
                                                 </div>
                                             </div>
                                             <div class="col py-3">
-                                                <div th:if="${task.totalTime} <= ${task.estimation}">
-                                                    <button th:text="${task.totalTime} + ' / ' +${task.estimation}" type="button" class="alert alert-success" data-toggle="tooltip" data-placement="right" title="So far the time spent on this task is within its limits."></button>
+                                                <div th:if="${acceptedTask.dueDate != null}" th:text="${acceptedTask.dueDate}"></div>
+                                                <div th:if="${acceptedTask.dueDate == null}">
+                                                    <button th:text="'Not set'" type="button" class="alert alert-dark" data-toggle="tooltip" data-placement="right" title="Please open the acceptedTask and choose an assignee."></button>
                                                 </div>
-                                                <div th:if="${task.totalTime} > ${task.estimation} and ${task.totalTime} < ${task.estimation + 2}">
-                                                    <button th:text="${task.totalTime} + ' / ' +${task.estimation}" type="button" class="alert alert-warning" data-toggle="tooltip" data-placement="right" title="The time spent on this task slightly exceeds the original estimation."></button>
+                                            </div>
+                                            <div class="col py-3">
+                                                <div th:if="${acceptedTask.totalTime} <= ${acceptedTask.estimation}">
+                                                    <button th:text="${acceptedTask.totalTime} + ' / ' +${acceptedTask.estimation}" type="button" class="alert alert-success" data-toggle="tooltip" data-placement="right" title="So far the time spent on this acceptedTask is within its limits."></button>
                                                 </div>
-                                                <div th:if="${task.totalTime} >= ${task.estimation + 2}">
-                                                    <button th:text="${task.totalTime} + ' / ' +${task.estimation}" type="button" class="alert alert-danger" data-toggle="tooltip" data-placement="right" title="The time spent on this task exceeds the original estimation."></button>
+                                                <div th:if="${acceptedTask.totalTime} > ${acceptedTask.estimation} and ${acceptedTask.totalTime} < ${acceptedTask.estimation + 2}">
+                                                    <button th:text="${acceptedTask.totalTime} + ' / ' +${acceptedTask.estimation}" type="button" class="alert alert-warning" data-toggle="tooltip" data-placement="right" title="The time spent on this acceptedTask slightly exceeds the original estimation."></button>
+                                                </div>
+                                                <div th:if="${acceptedTask.totalTime} >= ${acceptedTask.estimation + 2}">
+                                                    <button th:text="${acceptedTask.totalTime} + ' / ' +${acceptedTask.estimation}" type="button" class="alert alert-danger" data-toggle="tooltip" data-placement="right" title="The time spent on this acceptedTask exceeds the original estimation."></button>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <!--If there are no tasks in the project-->
-                                        <div th:if="${project.tasks.size() <= 0}">
-                                            So far there are no tasks in this project.
+                                        <!--If there are no acceptedTasks in the project-->
+                                        <div th:if="${project.acceptedTasks.size() <= 0}">
+                                            So far there are no acceptedTasks in this project.
                                         </div>
 
                                     </div>
@@ -185,30 +185,30 @@
                                             <th>Time spent</th>
                                         </tr>
 
-                                        <!--If there are tasks in the project-->
-                                        <tr th:if="${projectObject.tasks.size() > 0}" th:each="task : ${projectObject.tasks}">
+                                        <!--If there are acceptedTasks in the project-->
+                                        <tr th:if="${projectObject.acceptedTasks.size() > 0}" th:each="acceptedTask : ${projectObject.acceptedTasks}">
                                             <td>
-                                                <a th:href="@{'/userDeveloper/viewTask/' + ${task.id}}" th:text="${task.name}"></a>
+                                                <a th:href="@{'/userDeveloper/viewTask/' + ${acceptedTask.id}}" th:text="${acceptedTask.name}"></a>
                                             </td>
-                                            <td th:text="${task.status.getDisplayValue()}"></td>
+                                            <td th:text="${acceptedTask.status.getDisplayValue()}"></td>
                                             <td>
-                                                <div th:if="${task.assignee != null}" th:text="${task.assignee}"></div>
-                                                <div th:if="${task.assignee == null}" th:text="'Not set'"></div>
+                                                <div th:if="${acceptedTask.assignee != null}" th:text="${acceptedTask.assignee}"></div>
+                                                <div th:if="${acceptedTask.assignee == null}" th:text="'Not set'"></div>
                                             </td>
-                                            <td th:text="${task.estimation} + ' h'"></td>
-                                            <td th:text="${#aggregates.sum(task.times.![timeSpent])} + ' h'"></td>
+                                            <td th:text="${acceptedTask.estimation} + ' h'"></td>
+                                            <td th:text="${#aggregates.sum(acceptedTask.times.![timeSpent])} + ' h'"></td>
                                         </tr>
 
-                                        <!--If there are no tasks in the project-->
-                                        <tr th:if="${projectObject.tasks.size() <= 0}">
-                                            <td colspan="5">So far there are no tasks in this project.</td>
+                                        <!--If there are no acceptedTasks in the project-->
+                                        <tr th:if="${projectObject.acceptedTasks.size() <= 0}">
+                                            <td colspan="5">So far there are no acceptedTasks in this project.</td>
                                         </tr>
 
                                         <tr>
                                             <td colspan="4"></td>
                                             <td>
                                                 <form th:action="@{/userDeveloper/addTask/{projectId}(projectId=${projectObject.id})}">
-                                                    <button type="submit"  class="btn btn-outline-primary">Suggest task</button>
+                                                    <button type="submit"  class="btn btn-outline-primary">Suggest acceptedTask</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -217,7 +217,7 @@
                                         </tr>
                                     </table>
 
-                                    <p th:if="${projectObject.tasks.size() > 0}" th:text="'So far you spent ' + ${#aggregates.sum(usersBookings.?[project.id == __${projectObject.id}__].![timeSpent])} + ' hours in this project'"></p>
+                                    <p th:if="${projectObject.acceptedTasks.size() > 0}" th:text="'So far you spent ' + ${#aggregates.sum(usersBookings.?[project.id == __${projectObject.id}__].![timeSpent])} + ' hours in this project'"></p>
 
                                 </div>
                             </div>

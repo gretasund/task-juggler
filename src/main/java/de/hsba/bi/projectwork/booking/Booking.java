@@ -1,7 +1,7 @@
 package de.hsba.bi.projectwork.booking;
 
 import de.hsba.bi.projectwork.project.Project;
-import de.hsba.bi.projectwork.task.Task;
+import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTask;
 import de.hsba.bi.projectwork.user.User;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -29,7 +29,7 @@ public class Booking {
     @ManyToOne(optional = false)
     private User user;
     @ManyToOne(optional = false)
-    private Task task;
+    private AcceptedTask acceptedTask;
     @ManyToOne(optional = false)
     private Project project;
 
