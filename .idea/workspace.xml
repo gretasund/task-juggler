@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="azure" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
@@ -13,132 +18,87 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/booking/BookingForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/ProjectForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/addProject.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/editProject.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/projects.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/users.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewTask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="Frontend improvements">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/azure.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/ApplicationInUse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/Initializr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/OnlyProjects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/OnlyUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a31c590-c7f0-4e52-9756-14e23bbfaf4b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a31c590-c7f0-4e52-9756-14e23bbfaf4b/storage_v2/_src_/database/PROJECTWORK.inFeSA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a31c590-c7f0-4e52-9756-14e23bbfaf4b/storage_v2/_src_/database/PROJECTWORK.inFeSA/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a31c590-c7f0-4e52-9756-14e23bbfaf4b/storage_v2/_src_/database/PROJECTWORK.inFeSA/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cb1b7867-bc48-4e3a-8df1-be17a29adabe/storage_v2/_src_/database/PROJECTWORK.inFeSA/schema/PUBLIC.aaZQjQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/Booking.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/BookingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/init/AdminInitializr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/init/AdminInitializr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/init/FirstDepartmentInitializr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/init/FirstDepartmentInitializr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/init/AdminInitializr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/init/FirstDepartmentInitializr.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/Project.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/ProjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/ProjectRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/ProjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/ProjectService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/BaseTask$Status.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/BaseTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/BaseTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTaskRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task$Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task$Status.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/TaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/TaskRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/TaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Test.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrectValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrectValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/IndexController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserAdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserDeveloperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserDeveloperController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/project/UpdateProjectForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/project/UpdateProjectForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/project/UpdateProjectForm.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskFormConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskFormConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/user/ChangePasswordForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/user/ChangePasswordForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/user/RegisterUserForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/user/RegisterUserForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/account.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/error/403.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/error/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userAdmin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/addTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/editTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/projects.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/tasks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/viewSuggestedTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userDeveloper/viewTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userManager/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userManager/projects.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userManager/tasks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userManager/users.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userManager/viewSuggestedTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userManager/viewTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/userManager/editTask.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/ProjectworkApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/ProjectworkApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/taskTest/TaskSortingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/taskTest/TaskSortingTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/userTest/RegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/de/hsba/bi/projectwork/userTest/RegisterTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/AdminInitializr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/AdminInitializr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/FirstDepartmentInitializr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/FirstDepartmentInitializr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/AdminInitializr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/FirstDepartmentInitializr.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/BaseTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/BaseTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Test.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrectValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrectValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/UpdateProjectForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/UpdateProjectForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/ProjectForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/ProjectForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/project/UpdateProjectForm.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskFormConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskFormConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/ChangePasswordForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/ChangePasswordForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/RegisterUserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/user/RegisterUserForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/account.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userAdmin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDeveloper/addTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/developer/addTask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDeveloper/editTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/editTask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDeveloper/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDeveloper/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDeveloper/tasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/tasks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDeveloper/viewSuggestedTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewSuggestedTask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDeveloper/viewTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userManager/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userManager/projects.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userManager/tasks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userManager/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/manager/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userManager/viewSuggestedTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userManager/viewTask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/userTest/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/userTest/RegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/admin/addProject.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/addProject.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/admin/editProject.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/editProject.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/admin/projects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/admin/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/admin/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/manager/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/manager/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/editTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/editTask.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/projects.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/tasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/tasks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewSuggestedTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewSuggestedTask.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewTask.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userManager/editTask.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/ProjectworkApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/ProjectworkApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/taskTest/TaskSortingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/hsba/bi/projectwork/userTest/RegisterTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,8 +132,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -212,23 +172,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33793104" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/templates/user" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloperAdmin" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/user/manager" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/userManager" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/user/developer" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="de.hsba.bi.projectwork.init" />
@@ -251,8 +213,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ProjectWorkApplication">
-    <configuration name="RegisterTest.findBlacklistedIBAN" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="expenses.test" />
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectworkApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-management-application.test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="de.hsba.bi.projectwork.*" />
@@ -260,8 +233,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="de.hsba.bi.projectwork" />
-      <option name="MAIN_CLASS_NAME" value="de.hsba.bi.projectwork.RegisterTest" />
-      <option name="METHOD_NAME" value="findBlacklistedIBAN" />
+      <option name="MAIN_CLASS_NAME" value="de.hsba.bi.projectwork.ProjectworkApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -278,6 +251,38 @@
       <option name="PACKAGE_NAME" value="de.hsba.bi.projectwork" />
       <option name="MAIN_CLASS_NAME" value="de.hsba.bi.projectwork.RegisterTest" />
       <option name="METHOD_NAME" value="registerUserController" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskSortingTest.setup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-management-application.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.hsba.bi.projectwork.taskTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.hsba.bi.projectwork.taskTest" />
+      <option name="MAIN_CLASS_NAME" value="de.hsba.bi.projectwork.taskTest.TaskSortingTest" />
+      <option name="METHOD_NAME" value="setup" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskSortingTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-management-application.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.hsba.bi.projectwork.taskTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.hsba.bi.projectwork.taskTest" />
+      <option name="MAIN_CLASS_NAME" value="de.hsba.bi.projectwork.taskTest.TaskSortingTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -365,15 +370,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.RegisterTest.findBlacklistedIBAN" />
+      <item itemvalue="JUnit.ProjectworkApplicationTests.contextLoads" />
       <item itemvalue="JUnit.RegisterTest.registerUserController" />
+      <item itemvalue="JUnit.TaskSortingTest.setup" />
+      <item itemvalue="JUnit.TaskSortingTest.test" />
       <item itemvalue="Spring Boot.ProjectWorkApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ProjectWorkApplication" />
+        <item itemvalue="JUnit.TaskSortingTest.test" />
+        <item itemvalue="JUnit.TaskSortingTest.setup" />
         <item itemvalue="JUnit.RegisterTest.registerUserController" />
-        <item itemvalue="JUnit.RegisterTest.findBlacklistedIBAN" />
+        <item itemvalue="JUnit.ProjectworkApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -417,6 +426,15 @@
       <workItem from="1603753710669" duration="112000" />
       <workItem from="1603753865307" duration="164000" />
       <workItem from="1603871868071" duration="12000" />
+      <workItem from="1603874368611" duration="4000" />
+      <workItem from="1603874473303" duration="8000" />
+      <workItem from="1603875298535" duration="19970000" />
+      <workItem from="1603966182517" duration="12772000" />
+      <workItem from="1603982294538" duration="2964000" />
+      <workItem from="1603993711330" duration="3663000" />
+      <workItem from="1604043427420" duration="813000" />
+      <workItem from="1604044618973" duration="6647000" />
+      <workItem from="1604052765948" duration="3728000" />
     </task>
     <task id="LOCAL-00001" summary="Login and Registration">
       <created>1600120723500</created>
@@ -446,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602537283798</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="resolved merge conflict">
+      <created>1603874212299</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603874212299</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +496,9 @@
     <MESSAGE value="Added task functionality:&#10;- Add tasks to a project&#10;- Remove a task from a project&#10;- Change the status of a task" />
     <MESSAGE value="Added booking functionality&#10;Developers can&#10;- book times on tasks in their projects&#10;- see how much times is already booked on a task (but not from whom)&#10;- but not delete booked times&#10;&#10;Managers can&#10;- see bookings belonging to their projects&#10;- delete bookings&#10;&#10;___________________________________________________________&#10;&#10;Enhanced task functionality&#10;Developers can&#10;- edit an existing task\&#10;- suggest a task&#10;&#10;___________________________________________________________&#10;&#10;Refactoring&#10;- changed strategy for daysLeft in the Task.class&#10;&#10;___________________________________________________________&#10;&#10;Issue:&#10;- when a task is added the dueDate does not get passed to the controller" />
     <MESSAGE value="Added booking functionality&#10;Developers can&#10;- book times on tasks in their projects&#10;- see how much times is already booked on a task (but not from whom)&#10;- but not delete booked times&#10;&#10;Managers can&#10;- see bookings belonging to their projects&#10;- delete bookings&#10;&#10;________________________________________________________________________________________&#10;&#10;Enhanced task functionality&#10;Developers can&#10;- edit an existing task&#10;- suggest a task&#10;&#10;&#10;________________________________________________________________________________________&#10;&#10;Refactoring&#10;- changed strategy for daysLeft in the Task.class&#10;&#10;&#10;________________________________________________________________________________________&#10;&#10;Issue:&#10;- when a task is added the dueDate does not get passed to the controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added booking functionality&#10;Developers can&#10;- book times on tasks in their projects&#10;- see how much times is already booked on a task (but not from whom)&#10;- but not delete booked times&#10;&#10;Managers can&#10;- see bookings belonging to their projects&#10;- delete bookings&#10;&#10;________________________________________________________________________________________&#10;&#10;Enhanced task functionality&#10;Developers can&#10;- edit an existing task&#10;- suggest a task&#10;&#10;&#10;________________________________________________________________________________________&#10;&#10;Refactoring&#10;- changed strategy for daysLeft in the Task.class&#10;&#10;&#10;________________________________________________________________________________________&#10;&#10;Issue:&#10;- when a task is added the dueDate does not get passed to the controller" />
+    <MESSAGE value="resolved merge conflict" />
+    <MESSAGE value="Frontend improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frontend improvements" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -479,14 +506,15 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="456" y="0" width="767" height="1050" key="#ProjectWorkApplication/0.0.1680.1050@0.0.1680.1050" timestamp="1602589932289" />
-    <state x="328" y="106" key="#Project_Structure" timestamp="1600120401306">
+    <state x="328" y="106" key="#Project_Structure" timestamp="1603956993333">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="328" y="106" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1600120401306" />
-    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603028462761">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="328" y="106" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1603956993333" />
+    <state x="304" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604044286117">
+      <screen x="0" y="23" width="1680" height="895" />
     </state>
     <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603028462761" />
+    <state x="304" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.895@0.23.1680.895" timestamp="1604044286117" />
     <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1601223368937">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -503,10 +531,15 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="312" y="456" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603103385023" />
-    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603751990690">
+    <state x="0" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603977287459">
+      <screen x="0" y="23" width="1680" height="895" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603893111057" />
+    <state x="0" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.895@0.23.1680.895" timestamp="1603977287459" />
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603912220863">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603751990690" />
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603912220863" />
     <state x="578" y="279" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1602743360273">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -515,10 +548,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="140" y="186" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1603746875029" />
-    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2" timestamp="1602537283000">
-      <screen x="0" y="23" width="1680" height="899" />
+    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2" timestamp="1604057102859">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1602537147872" />
+    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1604057102859" />
     <state x="323" y="23" key="CommitChangelistDialog2/0.23.1680.899@0.23.1680.899" timestamp="1602537283000" />
     <state x="575" y="60" key="Diagram.Print.Preview.Dialog" timestamp="1603267189006">
       <screen x="0" y="23" width="1680" height="895" />
@@ -528,105 +561,105 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="710" y="429" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600120842026" />
-    <state width="1283" height="251" key="GridCell.Tab.0.bottom" timestamp="1603753611796">
+    <state width="1283" height="314" key="GridCell.Tab.0.bottom" timestamp="1604056803494">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611796" />
-    <state width="1283" height="251" key="GridCell.Tab.0.bottom/0.23.1680.895@0.23.1680.895" timestamp="1603752351457" />
+    <state width="1283" height="314" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803494" />
+    <state width="1283" height="314" key="GridCell.Tab.0.bottom/0.23.1680.895@0.23.1680.895" timestamp="1604056604133" />
     <state width="1283" height="335" key="GridCell.Tab.0.bottom/0.23.1680.899@0.23.1680.899" timestamp="1602535204421" />
-    <state width="630" height="335" key="GridCell.Tab.0.bottom/0.23.1680.901@0.23.1680.901" timestamp="1602589946069" />
+    <state width="1283" height="384" key="GridCell.Tab.0.bottom/0.23.1680.901@0.23.1680.901" timestamp="1604044644177" />
     <state width="1638" height="619" key="GridCell.Tab.0.bottom/0.23.1680.902@0.23.1680.902" timestamp="1601731411372" />
-    <state width="1283" height="251" key="GridCell.Tab.0.center" timestamp="1603753611795">
+    <state width="1283" height="314" key="GridCell.Tab.0.center" timestamp="1604056803487">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611795" />
-    <state width="1283" height="251" key="GridCell.Tab.0.center/0.23.1680.895@0.23.1680.895" timestamp="1603752351455" />
+    <state width="1283" height="314" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803487" />
+    <state width="1283" height="314" key="GridCell.Tab.0.center/0.23.1680.895@0.23.1680.895" timestamp="1604056604132" />
     <state width="1283" height="335" key="GridCell.Tab.0.center/0.23.1680.899@0.23.1680.899" timestamp="1602535204419" />
-    <state width="630" height="335" key="GridCell.Tab.0.center/0.23.1680.901@0.23.1680.901" timestamp="1602589946067" />
+    <state width="1283" height="384" key="GridCell.Tab.0.center/0.23.1680.901@0.23.1680.901" timestamp="1604044644174" />
     <state width="1638" height="619" key="GridCell.Tab.0.center/0.23.1680.902@0.23.1680.902" timestamp="1601731411370" />
-    <state width="1283" height="251" key="GridCell.Tab.0.left" timestamp="1603753611794">
+    <state width="1283" height="314" key="GridCell.Tab.0.left" timestamp="1604056803485">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611794" />
+    <state width="1283" height="314" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803485" />
     <state width="1283" height="360" key="GridCell.Tab.0.left/0.0.1680.1050@0.23.1680.895" timestamp="1603102234112" />
     <state width="1638" height="364" key="GridCell.Tab.0.left/0.0.1680.928@0.0.1680.928" timestamp="1601227173852" />
-    <state width="1283" height="251" key="GridCell.Tab.0.left/0.23.1680.895@0.23.1680.895" timestamp="1603752351452" />
+    <state width="1283" height="314" key="GridCell.Tab.0.left/0.23.1680.895@0.23.1680.895" timestamp="1604056604131" />
     <state width="1283" height="335" key="GridCell.Tab.0.left/0.23.1680.899@0.23.1680.899" timestamp="1602535204418" />
-    <state width="630" height="335" key="GridCell.Tab.0.left/0.23.1680.901@0.23.1680.901" timestamp="1602589946067" />
+    <state width="1283" height="384" key="GridCell.Tab.0.left/0.23.1680.901@0.23.1680.901" timestamp="1604044644171" />
     <state width="1638" height="619" key="GridCell.Tab.0.left/0.23.1680.902@0.23.1680.902" timestamp="1601731411370" />
-    <state width="1283" height="251" key="GridCell.Tab.0.right" timestamp="1603753611795">
+    <state width="1283" height="314" key="GridCell.Tab.0.right" timestamp="1604056803492">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611795" />
-    <state width="1283" height="251" key="GridCell.Tab.0.right/0.23.1680.895@0.23.1680.895" timestamp="1603752351456" />
+    <state width="1283" height="314" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803492" />
+    <state width="1283" height="314" key="GridCell.Tab.0.right/0.23.1680.895@0.23.1680.895" timestamp="1604056604132" />
     <state width="1283" height="335" key="GridCell.Tab.0.right/0.23.1680.899@0.23.1680.899" timestamp="1602535204419" />
-    <state width="630" height="335" key="GridCell.Tab.0.right/0.23.1680.901@0.23.1680.901" timestamp="1602589946068" />
+    <state width="1283" height="384" key="GridCell.Tab.0.right/0.23.1680.901@0.23.1680.901" timestamp="1604044644175" />
     <state width="1638" height="619" key="GridCell.Tab.0.right/0.23.1680.902@0.23.1680.902" timestamp="1601731411371" />
-    <state width="1283" height="251" key="GridCell.Tab.1.bottom" timestamp="1603753611798">
+    <state width="1283" height="314" key="GridCell.Tab.1.bottom" timestamp="1604056803502">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611798" />
-    <state width="1283" height="251" key="GridCell.Tab.1.bottom/0.23.1680.895@0.23.1680.895" timestamp="1603752351459" />
+    <state width="1283" height="314" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803502" />
+    <state width="1283" height="314" key="GridCell.Tab.1.bottom/0.23.1680.895@0.23.1680.895" timestamp="1604056604136" />
     <state width="1283" height="335" key="GridCell.Tab.1.bottom/0.23.1680.899@0.23.1680.899" timestamp="1602535905530" />
     <state width="630" height="335" key="GridCell.Tab.1.bottom/0.23.1680.901@0.23.1680.901" timestamp="1602589946082" />
     <state width="1638" height="282" key="GridCell.Tab.1.bottom/0.23.1680.902@0.23.1680.902" timestamp="1601741831668" />
     <state width="1638" height="364" key="GridCell.Tab.1.bottom/0.23.1680.905@0.23.1680.905" timestamp="1601125249525" />
-    <state width="1283" height="251" key="GridCell.Tab.1.center" timestamp="1603753611797">
+    <state width="1283" height="314" key="GridCell.Tab.1.center" timestamp="1604056803499">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611797" />
-    <state width="1283" height="251" key="GridCell.Tab.1.center/0.23.1680.895@0.23.1680.895" timestamp="1603752351458" />
+    <state width="1283" height="314" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803499" />
+    <state width="1283" height="314" key="GridCell.Tab.1.center/0.23.1680.895@0.23.1680.895" timestamp="1604056604135" />
     <state width="1283" height="335" key="GridCell.Tab.1.center/0.23.1680.899@0.23.1680.899" timestamp="1602535905529" />
     <state width="630" height="335" key="GridCell.Tab.1.center/0.23.1680.901@0.23.1680.901" timestamp="1602589946081" />
     <state width="1638" height="282" key="GridCell.Tab.1.center/0.23.1680.902@0.23.1680.902" timestamp="1601741831666" />
     <state width="1638" height="364" key="GridCell.Tab.1.center/0.23.1680.905@0.23.1680.905" timestamp="1601125249523" />
-    <state width="1283" height="251" key="GridCell.Tab.1.left" timestamp="1603753611796">
+    <state width="1283" height="314" key="GridCell.Tab.1.left" timestamp="1604056803497">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611796" />
-    <state width="1283" height="251" key="GridCell.Tab.1.left/0.23.1680.895@0.23.1680.895" timestamp="1603752351457" />
+    <state width="1283" height="314" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803497" />
+    <state width="1283" height="314" key="GridCell.Tab.1.left/0.23.1680.895@0.23.1680.895" timestamp="1604056604134" />
     <state width="1283" height="335" key="GridCell.Tab.1.left/0.23.1680.899@0.23.1680.899" timestamp="1602535905528" />
     <state width="630" height="335" key="GridCell.Tab.1.left/0.23.1680.901@0.23.1680.901" timestamp="1602589946069" />
     <state width="1638" height="282" key="GridCell.Tab.1.left/0.23.1680.902@0.23.1680.902" timestamp="1601741831663" />
     <state width="1638" height="364" key="GridCell.Tab.1.left/0.23.1680.905@0.23.1680.905" timestamp="1601125249522" />
-    <state width="1283" height="251" key="GridCell.Tab.1.right" timestamp="1603753611797">
+    <state width="1283" height="314" key="GridCell.Tab.1.right" timestamp="1604056803501">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611797" />
-    <state width="1283" height="251" key="GridCell.Tab.1.right/0.23.1680.895@0.23.1680.895" timestamp="1603752351459" />
+    <state width="1283" height="314" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803501" />
+    <state width="1283" height="314" key="GridCell.Tab.1.right/0.23.1680.895@0.23.1680.895" timestamp="1604056604135" />
     <state width="1283" height="335" key="GridCell.Tab.1.right/0.23.1680.899@0.23.1680.899" timestamp="1602535905529" />
     <state width="630" height="335" key="GridCell.Tab.1.right/0.23.1680.901@0.23.1680.901" timestamp="1602589946082" />
     <state width="1638" height="282" key="GridCell.Tab.1.right/0.23.1680.902@0.23.1680.902" timestamp="1601741831667" />
     <state width="1638" height="364" key="GridCell.Tab.1.right/0.23.1680.905@0.23.1680.905" timestamp="1601125249524" />
-    <state width="1283" height="251" key="GridCell.Tab.2.bottom" timestamp="1603753611799">
+    <state width="1283" height="314" key="GridCell.Tab.2.bottom" timestamp="1604056803506">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611799" />
-    <state width="1283" height="251" key="GridCell.Tab.2.bottom/0.23.1680.895@0.23.1680.895" timestamp="1603752351462" />
+    <state width="1283" height="314" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803506" />
+    <state width="1283" height="314" key="GridCell.Tab.2.bottom/0.23.1680.895@0.23.1680.895" timestamp="1604056604139" />
     <state width="1283" height="335" key="GridCell.Tab.2.bottom/0.23.1680.899@0.23.1680.899" timestamp="1602535204428" />
     <state width="630" height="335" key="GridCell.Tab.2.bottom/0.23.1680.901@0.23.1680.901" timestamp="1602589946084" />
     <state width="1638" height="619" key="GridCell.Tab.2.bottom/0.23.1680.902@0.23.1680.902" timestamp="1601731411378" />
-    <state width="1283" height="251" key="GridCell.Tab.2.center" timestamp="1603753611799">
+    <state width="1283" height="314" key="GridCell.Tab.2.center" timestamp="1604056803504">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611799" />
-    <state width="1283" height="251" key="GridCell.Tab.2.center/0.23.1680.895@0.23.1680.895" timestamp="1603752351461" />
+    <state width="1283" height="314" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803504" />
+    <state width="1283" height="314" key="GridCell.Tab.2.center/0.23.1680.895@0.23.1680.895" timestamp="1604056604137" />
     <state width="1283" height="335" key="GridCell.Tab.2.center/0.23.1680.899@0.23.1680.899" timestamp="1602535204426" />
     <state width="630" height="335" key="GridCell.Tab.2.center/0.23.1680.901@0.23.1680.901" timestamp="1602589946083" />
     <state width="1638" height="619" key="GridCell.Tab.2.center/0.23.1680.902@0.23.1680.902" timestamp="1601731411376" />
-    <state width="1283" height="251" key="GridCell.Tab.2.left" timestamp="1603753611798">
+    <state width="1283" height="314" key="GridCell.Tab.2.left" timestamp="1604056803503">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611798" />
-    <state width="1283" height="251" key="GridCell.Tab.2.left/0.23.1680.895@0.23.1680.895" timestamp="1603752351460" />
+    <state width="1283" height="314" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803503" />
+    <state width="1283" height="314" key="GridCell.Tab.2.left/0.23.1680.895@0.23.1680.895" timestamp="1604056604137" />
     <state width="1283" height="335" key="GridCell.Tab.2.left/0.23.1680.899@0.23.1680.899" timestamp="1602535204425" />
     <state width="630" height="335" key="GridCell.Tab.2.left/0.23.1680.901@0.23.1680.901" timestamp="1602589946083" />
     <state width="1638" height="619" key="GridCell.Tab.2.left/0.23.1680.902@0.23.1680.902" timestamp="1601731411375" />
-    <state width="1283" height="251" key="GridCell.Tab.2.right" timestamp="1603753611799">
+    <state width="1283" height="314" key="GridCell.Tab.2.right" timestamp="1604056803505">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="251" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1603753611799" />
-    <state width="1283" height="251" key="GridCell.Tab.2.right/0.23.1680.895@0.23.1680.895" timestamp="1603752351461" />
+    <state width="1283" height="314" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803505" />
+    <state width="1283" height="314" key="GridCell.Tab.2.right/0.23.1680.895@0.23.1680.895" timestamp="1604056604138" />
     <state width="1283" height="335" key="GridCell.Tab.2.right/0.23.1680.899@0.23.1680.899" timestamp="1602535204427" />
     <state width="630" height="335" key="GridCell.Tab.2.right/0.23.1680.901@0.23.1680.901" timestamp="1602589946084" />
     <state width="1638" height="619" key="GridCell.Tab.2.right/0.23.1680.902@0.23.1680.902" timestamp="1601731411377" />
@@ -634,39 +667,49 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="271" y="94" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1602526593024" />
-    <state x="721" y="398" width="443" height="253" key="MultipleFileMergeDialog" timestamp="1602537671046">
+    <state x="721" y="398" width="443" height="253" key="MultipleFileMergeDialog" timestamp="1603874185430">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="721" y="398" width="443" height="253" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1602537671046" />
+    <state x="721" y="398" width="443" height="253" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603874185430" />
     <state x="455" y="231" key="NewModule_or_Project.wizard" timestamp="1601222723402">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="455" y="231" key="NewModule_or_Project.wizard/0.0.1680.1050@0.0.1680.1050" timestamp="1601222723402" />
-    <state x="328" y="106" key="SettingsEditor" timestamp="1603105208861">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="328" y="113" key="SettingsEditor" timestamp="1603982263966">
+      <screen x="0" y="23" width="1680" height="895" />
     </state>
-    <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1603105208861" />
+    <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1603958939643" />
+    <state x="328" y="113" key="SettingsEditor/0.23.1680.895@0.23.1680.895" timestamp="1603982263966" />
     <state x="328" y="106" key="SettingsEditor/0.23.1680.899@0.23.1680.899" timestamp="1602531970144" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1602537726721">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1604056999503">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1602537726721" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1604056999503" />
     <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602532101237">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1602532101237" />
-    <state x="628" y="446" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602840118226">
+    <state x="628" y="446" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604056797692">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="628" y="446" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1602840118226" />
+    <state x="628" y="446" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1604056797692" />
     <state x="578" y="280" key="extract.method.dialog" timestamp="1603119554538">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="280" key="extract.method.dialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603119554538" />
-    <state x="541" y="157" width="612" height="735" key="find.popup" timestamp="1603746275243">
+    <state x="541" y="157" width="612" height="735" key="find.popup" timestamp="1603913006452">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="541" y="157" width="612" height="735" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1603746275243" />
+    <state x="541" y="157" width="612" height="735" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1603913006452" />
+    <state x="439" y="156" key="new project wizard" timestamp="1603986959400">
+      <screen x="0" y="23" width="1680" height="908" />
+    </state>
+    <state x="439" y="155" key="new project wizard/0.23.1680.901@0.23.1680.901" timestamp="1603984450052" />
+    <state x="439" y="156" key="new project wizard/0.23.1680.908@0.23.1680.908" timestamp="1603986959400" />
+    <state x="539" y="253" key="refactoring.ChangeSignatureDialog" timestamp="1603977529700">
+      <screen x="0" y="23" width="1680" height="895" />
+    </state>
+    <state x="539" y="253" key="refactoring.ChangeSignatureDialog/0.23.1680.895@0.23.1680.895" timestamp="1603977529700" />
     <state x="202" y="236" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1602526572055">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -676,35 +719,22 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectService.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskService.java</url>
-          <line>145</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectService.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/ProjectService.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/annotations/OldPasswordIsCorrectValidator.java</url>
           <line>24</line>
           <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserManagerController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo />
+        <PinnedItemInfo parentTag="de.hsba.bi.projectwork.task.SuggestedTask" memberName="status" />
+        <PinnedItemInfo parentTag="de.hsba.bi.projectwork.task.Task" memberName="dueDate" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

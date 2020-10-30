@@ -20,11 +20,11 @@ import java.util.List;
 public class SuggestedTask extends BaseTask {
 
     // Field
-    //protected String status;
-    protected Enum<Status> status;
+    protected Enum<Status> status = SuggestedTask.Status.IDEA;
 
 
     // Constructor
+    // TODO delete
     public SuggestedTask(Project project, String name, String description, int estimation, User creator) {
         this.project = project;
         this.name = name;

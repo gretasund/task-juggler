@@ -3,6 +3,7 @@ package de.hsba.bi.projectwork.web.task;
 import de.hsba.bi.projectwork.project.Project;
 import de.hsba.bi.projectwork.user.User;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -17,7 +18,7 @@ public class TaskForm {
     private long taskId;
 
     @Size(min = 5, message = "The task name has to be at least 5 characters long.")
-    @Size(max = 35, message = "The task name cannot be longer than 35 characters long.")
+    @Size(max = 50, message = "The task name cannot be longer than 50 characters.")
     private String name;
 
     @Size(min = 5, message = "The description has to be at least 15 characters long.")
@@ -34,6 +35,7 @@ public class TaskForm {
     @NotNull(message = "The task does not belong to a project.")
     private Project project;
 
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private String dueDate;
 
     private User assignee;

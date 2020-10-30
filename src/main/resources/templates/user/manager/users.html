@@ -28,7 +28,6 @@
                         <a th:text="${user.name}" th:attr="data-target='#collapseExample'+${user.id}, aria-controls='collapseExample'+${user.id}" class="btn btn-default" type="button" data-toggle="collapse" aria-expanded="false"></a>
                         <div class="collapse" th:id="'collapseExample'+${user.id}">
                             <div class="card card-body">
-                                <!-- TODO Als Manager kann ich die gebuchten Zeiten aller Entwickler einsehen-->
                                 <div th:if="${user.getBookedTimes().size() > 0}" class="scroll-box">
                                     <div th:each="project : ${user.projects}">
                                         <div th:text="${project.name}"></div>

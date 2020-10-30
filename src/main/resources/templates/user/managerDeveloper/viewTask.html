@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-3">
                         <div th:text="${task.getProject().getName()}"></div>
                     </div>
                     <div class="col-2">
@@ -214,40 +214,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!--
-                    <small>
-                        <button th:text="${task.getProject().getName()}" class="btn" id="dropdownMenuButton1">
-                            <div class="dropdown-item"></div>
-                        </button>
-                    </small>
-                    <small th:if="${task.getAssignee() == null}" class="dropdown">
-                        <button th:text="'Not yet assigned'" class="btn" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                            <form th:action="@{/userManager/setAssignee/__${task.getId()}__}" method="post">
-                                <div class="dropdown-item">
-                                    <select th:object="${assignee}" th:name="assignee">
-                                        <option th:each="member : ${project.members}" th:text="${member.getName()}" th:selected="${task.assignee}" th:value="${member.id}" class="dropdown-item"></option>
-                                    </select>
-                                    <button type='submit' class='btn btn-xs btn-success save' value='Save'>Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </small>
-                    <small th:if="${task.getAssignee() != null}" class="dropdown">
-                        <button th:text="'assigned to ' + ${task.getAssignee().getName()}" class="btn" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                            <form th:action="@{/userManager/setAssignee/__${task.getId()}__}" method="post">
-                                <div class="dropdown-item">
-                                    <select th:object="${assignee}" th:name="assignee" class="form-control">
-                                        <option th:each="member : ${project.members}" th:text="${member.getName()}" th:selected="${task.getAssignee()}" th:value="${member.id}" class="dropdown-item"></option>
-                                    </select>
-                                    <button type='submit' class='btn btn-xs btn-success save' value='Save'>Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </small>
-                    -->
-                    <div class="col-2">
+                    <div class="col-3">
                         <div th:text="${task.getProject().getName()}"></div>
                     </div>
                     <div class="col-2">
@@ -371,7 +338,7 @@
                                             <td><b>Total</b></td>
                                             <td></td>
                                             <td>
-                                                <b th:text="${#aggregates.sum(task.times.![timeSpent])} + ' hours'"></b>
+                                                <b th:text="${task.getTotalTime()} + ' hours'"></b>
                                             </td>
                                             <td></td>
                                         </tr>

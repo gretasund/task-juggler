@@ -11,7 +11,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,11 +35,10 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
 
 
     // CONSTRUCTORS
-    public Task(User creator, String name, String description, int estimation, Enum<Status> status, String dueDate, Project project) {
+    public Task(User creator, String name, String description, int estimation, Enum<Status> status, LocalDate dueDate, Project project) {
         // set due date if present
         if(dueDate != null) {
-            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            this.dueDate = LocalDate.parse(dueDate, dateTimeFormatter);
+            this.dueDate = dueDate;
             this.calcDaysLeft();
         }
 
@@ -63,21 +61,16 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
         this.status = Status.ACCEPTED;
         this.creationDate = suggestedTask.getCreationDate();
         this.project = suggestedTask.getProject();
-        this.calcDaysLeft();
-
     }
 
 
     // METHODS
     @Override
     public int compareTo(Task task) {
-            if (this.getDueDate() == null) {
-                return (task.getDueDate() == null) ? 0 : -1;
-            }
-            if (task.getDueDate() == null) {
-                return 1;
-            }
-            return task.getDueDate().compareTo(this.getDueDate());
+        if (this.getDueDate() == null || task.getDueDate() == null) {
+            return 0;
+        }
+        return this.getDueDate().compareTo(task.getDueDate());
     }
 
     @Scheduled(cron = "0 0 * * * ?") // refreshes daysLeft everyday at midnight
@@ -89,11 +82,6 @@ public class Task extends BaseTask implements Comparable<Task>, Serializable {
         LocalDate dueDate = this.dueDate;
         LocalDate todaysDate = LocalDate.now();
         this.daysLeft = (int) ChronoUnit.DAYS.between(todaysDate, dueDate);
-    }
-
-    public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
-        this.calcDaysLeft();
     }
 
     public int calcTotalTime() {

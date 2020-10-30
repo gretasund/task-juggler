@@ -66,12 +66,35 @@ public class SuggestedTaskService {
         return suggestedTaskRepository.save(suggestedTask);
     }
 
-    public SuggestedTask createNewSuggestedTask(SuggestedTask suggestedTask) {
+    public SuggestedTask addSuggestedTask(SuggestedTaskForm suggestedTaskForm) {
+        // TODO Als Entwickler in einem Projekt kann ich eine Aufgabe zu diesem Projekt hinzufügen, diese beinhaltet wenigstens einen Titel und eine Beschreibung
+        SuggestedTask suggestedTask = suggestedTaskFormConverter.convert(suggestedTaskForm);
+        return this.save(suggestedTask);
+    }
+
+    public void evaluateSuggestedTask(long taskId, String evaluation) {
+        SuggestedTask suggestedTask = this.findById(taskId);
+        switch (evaluation) {
+            case "accept":
+                suggestedTask.setStatus(SuggestedTask.Status.ACCEPTED);
+                taskService.save(new Task(suggestedTask));
+                break;
+            case "decline":
+                suggestedTask.setStatus(SuggestedTask.Status.DECLINED);
+                this.save(suggestedTask);
+                break;
+        }
+    }
+
+
+    // TODO delete
+    public SuggestedTask addSuggestedTask(SuggestedTask suggestedTask) {
         // load entities
         Project project = suggestedTask.getProject();
         User creator = suggestedTask.getCreator();
 
         // link project and user in suggestedTask
+        suggestedTask.status = SuggestedTask.Status.IDEA;
         suggestedTask.setProject(project);
         suggestedTask.setCreator(creator);
 
@@ -86,30 +109,9 @@ public class SuggestedTaskService {
         // persist entities
         suggestedTaskRepository.save(suggestedTask);
         projectService.save(project);
-        //userService.save(creator);
 
         return suggestedTask;
 
-    }
-
-    public SuggestedTask createNewSuggestedTask(SuggestedTaskForm suggestedTaskForm) {
-        // TODO Als Entwickler in einem Projekt kann ich eine Aufgabe zu diesem Projekt hinzufügen, diese beinhaltet wenigstens einen Titel und eine Beschreibung
-        SuggestedTask suggestedTask = suggestedTaskFormConverter.convert(suggestedTaskForm);
-        return this.save(suggestedTask);
-    }
-
-    public void evaluateSuggestedTask(long taskId, String evaluation) {
-        SuggestedTask suggestedTask = this.findById(taskId);
-        switch (evaluation) {
-            case "accept":
-                suggestedTask.setStatus(SuggestedTask.Status.ACCEPTED);
-                taskService.save(new Task(suggestedTask));
-            case "decline":
-                suggestedTask.setStatus(SuggestedTask.Status.DECLINED);
-                this.save(suggestedTask);
-            default:
-                // TODO
-        }
     }
 
 }

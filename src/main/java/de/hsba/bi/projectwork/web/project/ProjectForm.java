@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -19,13 +20,29 @@ public class ProjectForm {
     @Size(max = 35, message = "The project name cannot be longer than 35 characters long.")
     private String name;
 
-    List<User> members;
+    List<User> members = new ArrayList<>();
 
 
     public ProjectForm(Project project) {
         this.id = project.getId();
         this.name = project.getName();
         this.members = project.getMembers();
+    }
+
+    public ProjectForm(String name, List<User> users) {
+        this.name = name;
+
+        // set due date if present
+        if(users != null) {
+            this.members = users;
+        }
+    }
+
+    public ProjectForm(List<User> users) {
+        // set due date if present
+        if(users != null) {
+            this.members = users;
+        }
     }
 
 }

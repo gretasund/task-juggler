@@ -68,10 +68,6 @@ public class UserService {
         return userOptional.orElse(null);
     }
 
-    public List<User> findUsers() {
-        return userRepository.findByRole(User.DEVELOPER_ROLE);
-    }
-
 
     // CHECK
     public boolean usernameExists(String name) {

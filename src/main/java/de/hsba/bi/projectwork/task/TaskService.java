@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -50,10 +49,8 @@ public class TaskService {
             Task task = optionalTask.get();
             taskRepository.save(task);
             return task;
-        } else {
-            // TODO throw an exception
-            return null;
         }
+        return null;
     }
 
     public List<Task> findByStatus(Enum<Task.Status> status) {
@@ -77,7 +74,7 @@ public class TaskService {
 
     public List<Task> findOpenTasks(List<Task> tasks) {
         // remove tasks with status done
-        tasks.removeIf(task -> task.getStatus().equals(Task.Status.DONE));
+        tasks.removeIf(task -> (task.getStatus().equals(Task.Status.DONE) || task.getDueDate() == null));
         return tasks;
     }
 
@@ -87,24 +84,13 @@ public class TaskService {
         // load entities
         User currentUser = userService.findCurrentUser();
 
-        // init new list of usersTasks
-        List<Task> usersTasks = new ArrayList<>();
-
         // iterate over tasks
-        for (Task task: tasks) {
-            if(task.getProject().getMembers().contains(currentUser) && !usersTasks.contains(task)){
-                usersTasks.add(task);
-            }
-        }
+        tasks.removeIf(task -> !task.getProject().getMembers().contains(currentUser));
 
-        // TODO consider alternatives
-        // 1st java.util.function.Predicate
-        // 2nd tasks.removeIf(task -> !task.getProject().getMembers().contains(user));
+        // sort tasks
+        Collections.sort(tasks);
 
-        // sort tasks by dueDate
-        Collections.sort(usersTasks);
-
-        return usersTasks;
+        return tasks;
     }
 
     public List<Task> findTaskByAssignee(User assignee) {
@@ -117,16 +103,12 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-    public Task createNewTask(Task task, Long projectId) {
+    public Task addTask(Task task, Long projectId) {
         // TODO Als Entwickler in einem Projekt kann ich eine Aufgabe zu diesem Projekt hinzufügen, diese beinhaltet wenigstens einen Titel und eine Beschreibung
         // load entities
         Project project = projectService.findById(projectId);
-        User creator = task.getCreator();
 
-        if (project != null) { // checkStatusValidity(task) && project != null
-            // link task in user
-            creator.getCreatedTasks().add(task);
-
+        if (project != null) {
             // link task in project
             project.getTasks().add(task);
 
@@ -134,9 +116,8 @@ public class TaskService {
             taskRepository.save(task);
             projectRepository.save(project);
 
-        } else {
-            // TODO throw an expection
         }
+
         return task;
     }
 
@@ -149,15 +130,14 @@ public class TaskService {
         this.save(taskFormConverter.update(task, taskForm));
     }
 
-    public void setDueDate(Long taskId, String dueDate) {
-        Task task = this.findById(taskId);
-        task.setDueDate(LocalDate.parse(dueDate));
-        this.save(task);
-    }
-
     public void setAssignee(Long taskId, User assignee) {
+        // load entity
         Task task = this.findById(taskId);
+
+        // link user in task
         task.setAssignee(assignee);
+
+        // persist entity
         this.save(task);
     }
 

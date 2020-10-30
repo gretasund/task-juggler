@@ -46,4 +46,14 @@ public class SuggestedTaskForm {
         this.creationDate = LocalDate.now();
     }
 
+    public SuggestedTaskForm(Project project, String name, String description, int estimation, User creator) {
+        this.project = project;
+        this.name = name;
+        this.description = description;
+        this.estimation = estimation;
+        this.creator = creator;
+        this.status = SuggestedTask.Status.IDEA;
+        this.creationDate = LocalDate.now();
+    }
+
 }

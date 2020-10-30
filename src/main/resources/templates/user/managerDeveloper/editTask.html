@@ -30,11 +30,9 @@
                             <div th:text="${task.getProject().getName()}" th:name="project" class="form-control"></div>
                         </div>
                         <div class="col-3">
-                            <select th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
-                                <option th:if="${task.getAssignee() == null}"
-                                        th:text="'Not assigned'"
-                                        th:value="${null}">
-                                </option>
+
+                            <!--If the task has an assignee-->
+                            <select th:if="${task.getAssignee() != null}" th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
                                 <option th:text="'Assigned to ' + ${task.getAssignee()}"
                                         th:value="${task.getAssignee().getId()}">
                                 </option>
@@ -46,7 +44,21 @@
                                         class="dropdown-item">
                                 </option>
                             </select>
+
+                            <!--If the task doesn´t have an assignee-->
+                            <select th:if="${task.getAssignee() == null}" th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
+                                <option th:text="'Not assigned'"
+                                        th:value="${null}">
+                                </option>
+                                <option th:each="member : ${project.members}"
+                                        th:text="'Assign to ' + ${member.getName()}"
+                                        th:value="${member.id}"
+                                        class="dropdown-item">
+                                </option>
+                            </select>
+
                             <label class="text-danger small" th:errors="*{taskForm.assignee}"></label>
+
                         </div>
                     </div>
 
@@ -97,19 +109,6 @@
                                                 th:value="${status.getDisplayValue()}">
                                         </option>
                                     </select>
-                                    <!--Select for TaskFormConverter with Enum status-->
-                                    <!-- th:field="*{task.status}"  -->
-                                    <!--<select th:name="status" th:id="status" class="form-control">
-                                        <option th:value="${task.getStatus()}" th:text="${task.getStatus().getDisplayValue()}"></option>
-                                        <option th:each="status : ${T(de.hsba.bi.projectwork.task.Task.Status).values()}"
-                                                th:if="${!task.getStatus().getDisplayValue().equals(status.getDisplayValue())}"
-                                                th:text="${status.displayValue}"
-                                                th:value="${status}"></option>
-                                    </select>-->
-                                    <!--th:if="${task.getStatus().equals('Planned')}">
-                                    th:selected="${task.getStatus()} == ${(status.getDisplayValue())}";
-                                    th:selected="${task.isSelected(status.getDisplayValue())}"
-                                    th:selected="${task.getStatus().equals(status.getDisplayValue())}"-->
                                 </div>
                             </div>
                         </div>
@@ -176,11 +175,9 @@
                             <div th:text="${task.getProject().getName()}" th:name="project" class="form-control"></div>
                         </div>
                         <div class="col-3">
-                            <select th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
-                                <option th:if="${task.getAssignee() == null}"
-                                        th:text="'Not assigned'"
-                                        th:value="${null}">
-                                </option>
+
+                            <!--If the task has an assignee-->
+                            <select th:if="${task.getAssignee() != null}" th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
                                 <option th:text="'Assigned to ' + ${task.getAssignee()}"
                                         th:value="${task.getAssignee().getId()}">
                                 </option>
@@ -192,7 +189,19 @@
                                         class="dropdown-item">
                                 </option>
                             </select>
-                            <label class="text-danger small" th:errors="*{taskForm.assignee}"></label>
+
+                            <!--If the task doesn´t have an assignee-->
+                            <select th:if="${task.getAssignee() == null}" th:field="*{task.assignee}" th:name="assignee" class="form-control" id="assignee">
+                                <option th:text="'Not assigned'"
+                                        th:value="${null}">
+                                </option>
+                                <option th:each="member : ${project.members}"
+                                        th:text="'Assign to ' + ${member.getName()}"
+                                        th:value="${member.id}"
+                                        class="dropdown-item">
+                                </option>
+                            </select>
+
                         </div>
                     </div>
 
@@ -243,19 +252,6 @@
                                                 th:value="${status.getDisplayValue()}">
                                         </option>
                                     </select>
-                                    <!--Select for TaskFormConverter with Enum status-->
-                                    <!-- th:field="*{task.status}"  -->
-                                    <!--<select th:name="status" th:id="status" class="form-control">
-                                        <option th:value="${task.getStatus()}" th:text="${task.getStatus().getDisplayValue()}"></option>
-                                        <option th:each="status : ${T(de.hsba.bi.projectwork.task.Task.Status).values()}"
-                                                th:if="${!task.getStatus().getDisplayValue().equals(status.getDisplayValue())}"
-                                                th:text="${status.displayValue}"
-                                                th:value="${status}"></option>
-                                    </select>-->
-                                    <!--th:if="${task.getStatus().equals('Planned')}">
-                                    th:selected="${task.getStatus()} == ${(status.getDisplayValue())}";
-                                    th:selected="${task.isSelected(status.getDisplayValue())}"
-                                    th:selected="${task.getStatus().equals(status.getDisplayValue())}"-->
                                 </div>
                             </div>
                         </div>

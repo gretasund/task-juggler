@@ -16,16 +16,24 @@
                 <th>Role</th>
                 <th></th>
             </tr>
+
+            <!--If there aren´t any users registered-->
+            <tr th:if="${users.size() <= 0}">
+                <td colspan="4">So far no users have registered.</td>
+            </tr>
+
+            <!--If there registered users-->
             <tr th:each="user : ${users}">
                 <td th:text="${user.name}"></td>
                 <td>
                     <span th:each="a, stat : ${user.projects}"
                           th:text=" ${user.projects[__${stat.index}__].name} +  (${stat.size-1 > stat.index}? ', ':'') ">
                     </span>
+                    <span th:if="${user.projects.size() <= 0}">Not assigned to any projects</span>
                 </td>
                 <td th:text="${user.role.getDisplayValue()}"></td>
                 <td>
-                    <div th:if="${user.getRole() == 'DEVELOPER'}">
+                    <div th:if="${user.getRole().getDisplayValue() == 'Developer'}">
                         <form th:action="@{/userAdmin/changeRole}" method="post">
                             <div class="modal fade" id="modalChangeRoleDeveloper" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -37,12 +45,12 @@
                                             </button>
                                         </div>
                                         <div class="modal-body mx-3">
-                                            <div th:if="${user.role} != 'MANAGER'" class="custom-control custom-radio">
-                                                <input th:value="MANAGER" th:name="role" type="radio" id="developerRadio1" name="customRadio" class="custom-control-input">
+                                            <div th:if="${user.role.getDisplayValue()} != 'Manager'" class="custom-control custom-radio">
+                                                <input th:value="Manager" th:name="role" type="radio" id="developerRadio1" name="customRadio" class="custom-control-input">
                                                 <label class="custom-control-label" for="developerRadio1">Manager</label>
                                             </div>
-                                            <div th:if="${user.role} != 'ADMIN'" class="custom-control custom-radio">
-                                                <input th:value="ADMIN" th:name="role" type="radio" id="developerRadio2" name="customRadio" class="custom-control-input">
+                                            <div th:if="${user.role.getDisplayValue()} != 'Admin'" class="custom-control custom-radio">
+                                                <input th:value="Admin" th:name="role" type="radio" id="developerRadio2" name="customRadio" class="custom-control-input">
                                                 <label class="custom-control-label" for="developerRadio2">Admin</label>
                                             </div>
                                             <input type="hidden" class="userid" th:name="id">
@@ -58,7 +66,7 @@
                             <button th:attr="data-userrole=${user.getRole()}, data-userid=${user.getId()}" data-toggle="modal" data-target="#modalChangeRoleDeveloper" class="btn btn-outline-primary">Change Role</button>
                         </div>
                     </div>
-                    <div th:if="${user.getRole() == 'ADMIN'}">
+                    <div th:if="${user.getRole().getDisplayValue() == 'Admin'}">
                         <form th:action="@{/userAdmin/changeRole}" method="post">
                             <div class="modal fade" id="modalChangeRoleAdmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -71,11 +79,11 @@
                                         </div>
                                         <div class="modal-body mx-3">
                                             <div class="custom-control custom-radio">
-                                                <input th:value="DEVELOPER" th:name="role" type="radio" id="adminRadio1" name="customRadio" class="custom-control-input">
+                                                <input th:value="Developer" th:name="role" type="radio" id="adminRadio1" name="customRadio" class="custom-control-input">
                                                 <label class="custom-control-label" for="adminRadio1">Developer</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input th:value="MANAGER" th:name="role" type="radio" id="adminRadio2" name="customRadio" class="custom-control-input">
+                                                <input th:value="Manager" th:name="role" type="radio" id="adminRadio2" name="customRadio" class="custom-control-input">
                                                 <label class="custom-control-label" for="adminRadio2">Manager</label>
                                             </div>
                                             <input type="hidden" class="userid" th:name="id">
@@ -91,7 +99,7 @@
                             <button th:attr="data-userrole=${user.getRole()}, data-userid=${user.getId()}" data-toggle="modal" data-target="#modalChangeRoleAdmin" class="btn btn-outline-primary">Change Role</button>
                         </div>
                     </div>
-                    <div th:if="${user.getRole() == 'MANAGER'}">
+                    <div th:if="${user.getRole().getDisplayValue() == 'Manager'}">
                         <form th:action="@{/userAdmin/changeRole}" method="post">
                             <div class="modal fade" id="modalChangeRoleManager" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -103,12 +111,12 @@
                                             </button>
                                         </div>
                                         <div class="modal-body mx-3">
-                                            <div th:if="${user.role} != 'DEVELOPER'" class="custom-control custom-radio">
-                                                <input th:value="DEVELOPER" th:name="role" type="radio" id="managerRadio1" name="customRadio" class="custom-control-input">
+                                            <div th:if="${user.role.getDisplayValue()} != 'Developer'" class="custom-control custom-radio">
+                                                <input th:value="Developer" th:name="role" type="radio" id="managerRadio1" name="customRadio" class="custom-control-input">
                                                 <label class="custom-control-label" for="managerRadio1">Developer</label>
                                             </div>
-                                            <div th:if="${user.role} != 'ADMIN'" class="custom-control custom-radio">
-                                                <input th:value="ADMIN" th:name="role" type="radio" id="managerRadio2" name="customRadio" class="custom-control-input">
+                                            <div th:if="${user.role.getDisplayValue()} != 'Admin'" class="custom-control custom-radio">
+                                                <input th:value="Admin" th:name="role" type="radio" id="managerRadio2" name="customRadio" class="custom-control-input">
                                                 <label class="custom-control-label" for="managerRadio2">Admin</label>
                                             </div>
                                             <input type="hidden" class="userid" th:name="id">
@@ -126,6 +134,7 @@
                     </div>
                 </td>
             </tr>
+
         </table>
 
         <script>

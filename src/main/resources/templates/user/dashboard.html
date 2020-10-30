@@ -5,7 +5,12 @@
 <style>
     .scroll-box {
         overflow-y: scroll;
-        height: 290px;
+        height:250px;
+        padding: 1rem
+    }
+    .scroll-box-large {
+        overflow-y: scroll;
+        height:600px;
         padding: 1rem
     }
 </style>
@@ -17,9 +22,7 @@
 
         <!--Section for developers-->
         <div sec:authorize="hasRole('DEVELOPER')">
-            <h1>Dashboard</h1><br>
-
-            <div>
+            <div class="form-group">
                 <div class="row">
                     <div class="col">
                         <div class="card">
@@ -36,8 +39,10 @@
                                             <div th:if="${project.getTasks().size() <= 0 }" class="progress">
                                                 <div class="progress-bar" role="progressbar" th:attr="style='width: 0%', aria-valuenow=0, aria-valuemax=0" aria-valuemin="0"></div>
                                             </div>
-                                            <p></p>
                                         </div>
+                                    </div>
+                                    <div th:if="${projects.size() <= 0}">
+                                        Currently you´re not assigned to any project.
                                     </div>
                                 </div>
                             </div>
@@ -55,13 +60,14 @@
                             <div class="card-body">
                                 <div class="scroll-box">
                                     <div th:if="${myTasks != null}" class="list-group">
-                                        <a th:each="myTask : ${myTasks}" th:attr="href='viewTask/' + ${myTask.getId()}" class="list-group-item list-group-item-action">
+                                        <a th:each="myTask : ${myTasks}" th:href="@{'/userDeveloper/viewTask/' + ${myTask.getId()}}" class="list-group-item list-group-item-action">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1" th:text="${myTask.getName()}"></h5>
                                                 <small th:if="${myTask.getDaysLeft() > 0 && myTask.getDaysLeft() < 100}" th:text="${myTask.getDaysLeft()} + ' days left'" style="color: green"></small>
                                                 <small th:if="${myTask.getDaysLeft() > 0 && myTask.getDaysLeft() >= 100}" th:text="'+99 days left'" style="color: green"></small>
                                                 <small th:if="${myTask.getDaysLeft() == 0}" th:text="'Due today!'" style="color: darkorange"></small>
                                                 <small th:if="${myTask.getDaysLeft() < 0}" th:text="${myTask.getDaysLeft()} + ' days left'" style="color: red"></small>
+                                                <small th:if="${myTask.getDaysLeft() == null}" th:text="'Due date not set'" style="color: gray"></small>
                                             </div>
                                             <div>
                                                 <small th:text="${myTask.getProject().getName()}"></small>
@@ -71,7 +77,7 @@
                                             <p class="mb-1" th:text="${#strings.abbreviate(myTask.getDescription(), 120)}"></p>
                                         </a>
                                     </div>
-                                    <div th:if="${myTasks == null}" class="list-group">
+                                    <div th:if="${myTasks.size() <= 0}" class="list-group">
                                         You are not assigned to any tasks yet.
                                     </div>
                                 </div>
@@ -87,8 +93,8 @@
                             <div class="card-body">
                                 <div class="scroll-box">
                                     <div class="list-group">
-                                        <a th:each="suggestedTask : ${mySuggestedTasks}" th:attr="href='viewSuggestedTask/' + ${suggestedTask.getId()}" href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
+                                        <a th:each="suggestedTask : ${mySuggestedTasks}" th:href="@{'/userDeveloper/viewSuggestedTask/' + ${suggestedTask.getId()}}" class="list-group-item list-group-item-action">
+                                            <div th:if="${suggestedTask.getStatus() != null}" class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1" th:text="${suggestedTask.getName()}"></h5>
                                                 <h5 th:if="${suggestedTask.getStatus().getDisplayValue() == 'Accepted'}"><span class="badge badge-success">Accepted</span></h5>
                                                 <h5 th:if="${suggestedTask.getStatus().getDisplayValue() == 'Idea'}"><span class="badge badge-secondary">In Evaluation</span></h5>
@@ -98,6 +104,9 @@
                                                 <small th:text="${suggestedTask.getProject().getName()}"></small>
                                             </div>
                                             <p class="mb-1" th:text="${#strings.abbreviate(suggestedTask.getDescription(), 120)}"></p>
+                                        </a>
+                                        <a th:if="${mySuggestedTasks.size() <= 0}" class="list-group">
+                                            You haven´t suggested any tasks yet.
                                         </a>
                                     </div>
                                 </div>
@@ -116,7 +125,7 @@
                             <div class="card-body">
                                 <div class="scroll-box">
                                     <div th:if="${openTasks != null}" class="list-group">
-                                        <a th:each="openTask : ${openTasks}" th:attr="href='viewTask/' + ${openTask.getId()}" href="#" class="list-group-item list-group-item-action">
+                                        <a th:each="openTask : ${openTasks}" th:href="@{'/userDeveloper/viewTask/' + ${openTask.getId()}}" class="list-group-item list-group-item-action">
                                             <div th:if="${openTask.getDueDate() != null}" class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1" th:text="${openTask.getName()}"></h5>
                                                 <small th:if="${openTask.getDaysLeft() > 0 && openTask.getDaysLeft() < 100}" th:text="${openTask.getDaysLeft()} + ' days left'" style="color: green"></small>
@@ -136,7 +145,7 @@
                                             <p class="mb-1" th:text="${#strings.abbreviate(openTask.getDescription(), 120)}"></p>
                                         </a>
                                     </div>
-                                    <div th:if="${openTasks == null}" class="list-group">
+                                    <div th:if="${openTasks.size() <= 0}" class="list-group">
                                         You are not assigned to any tasks yet.
                                     </div>
                                 </div>
@@ -145,14 +154,11 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!--Section for managers-->
         <div sec:authorize="hasRole('MANAGER')">
-            <h1>Dashboard</h1><br>
-
-            <div>
+            <div class="form-group">
                 <div class="row">
                     <div class="col">
                         <div class="card">
@@ -169,8 +175,10 @@
                                             <div th:if="${project.getTasks().size() <= 0 }" class="progress">
                                                 <div class="progress-bar" role="progressbar" th:attr="style='width: 0%', aria-valuenow=0, aria-valuemax=0" aria-valuemin="0"></div>
                                             </div>
-                                            <p></p>
                                         </div>
+                                    </div>
+                                    <div th:if="${projects.size() <= 0}" class="list-group">
+                                        You currently don´t have any projects to manage.
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +190,7 @@
                             <div class="card-body">
                                 <div class="scroll-box">
                                     <div class="list-group">
-                                        <a th:each="taskAlmostDue : ${tasksAlmostDue}" th:attr="href='viewTask/' + ${taskAlmostDue.getId()}" href="#" class="list-group-item list-group-item-action">
+                                        <a th:each="taskAlmostDue : ${tasksAlmostDue}" th:href="@{'/userManager/viewTask/' + ${taskAlmostDue.getId()}}" class="list-group-item list-group-item-action">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1" th:text="${taskAlmostDue.getName()}"></h5>
                                                 <small th:if="${taskAlmostDue.getDaysLeft() > 0 && taskAlmostDue.getDaysLeft() < 100}" th:text="${taskAlmostDue.getDaysLeft()} + ' days left'" style="color: green"></small>
@@ -196,6 +204,9 @@
                                                 <small th:if="${taskAlmostDue.getAssignee() == null}" th:text="' - not assigned'" class="text-muted"></small>
                                             </div>
                                             <p class="mb-1" th:text="${#strings.abbreviate(taskAlmostDue.getDescription(), 100)}" ></p>
+                                        </a>
+                                        <a th:if="${tasksAlmostDue.size() <= 0}" class="list-group">
+                                            There are no open tasks with a due date.
                                         </a>
                                     </div>
                                 </div>
@@ -215,7 +226,7 @@
                                             <a th:href="@{'/userManager/viewSuggestedTask/' + ${suggestedTask.id}}" th:text="${suggestedTask.name}"></a>
                                             <br>
                                             <small th:text="${suggestedTask.getProject().getName()}"></small>
-                                            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="float:right;">
+                                            <div class="btn-group" role="group" style="float:right;">
                                                 <form th:action="@{/userManager/evaluateSuggestedTask/accept/__${suggestedTask.getId()}__}" method="post">
                                                     <button type="submit" class="btn btn-success">
                                                         <svg id="i-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -233,6 +244,9 @@
                                             </div>
                                         </li>
                                     </ul>
+                                    <div th:if="${suggestedTasks.size() <= 0}" class="list-group">
+                                        There are no suggested tasks that need to be evaluated.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -249,150 +263,75 @@
                                             <span th:if="${task.getAssignee() == null}" th:text="${'unassigned'}" class="badge badge-primary badge-pill"></span>
                                         </li>
                                     </ul>
+                                    <div th:if="${unassignedAndUnscheduled.size() <= 0}" class="list-group">
+                                        All tasks are assigned and scheduled.
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!--Section for admins-->
         <div sec:authorize="hasRole('ADMIN')">
-
-            <h1>Dashboard</h1><br>
-
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">Notifications</div>
-                        <div class="card-body">
-                            <div class="scroll-box">
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Projects without members</div>
+                            <div class="card-body">
+                                <div class="scroll-box-large">
+                                    <div th:if="${projects != null}" class="list-group">
+                                        <a th:each="project : ${projects}" th:if="${project.members.size() <= 0}" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1" th:text="${project.name}"></h5>
+                                            </div>
+                                            <div>
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">Notifications</div>
-                        <div class="card-body">
-                            <div class="scroll-box">
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Users without projects</div>
+                            <div class="card-body">
+                                <div class="scroll-box-large">
+                                    <div class="list-group">
+                                        <a th:each="user : ${users}" th:if="${user.projects.size() <= 0}" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1" th:text="${user.name}"></h5>
+                                            </div>
+                                            <div>
+                                                <small th:text="${user.role.getDisplayValue()}"></small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">Notifications</div>
-                        <div class="card-body">
-                            <div class="scroll-box">
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">Notifications</div>
-                        <div class="card-body">
-                            <div class="scroll-box">
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">Notifications</div>
-                        <div class="card-body">
-                            <div class="scroll-box">
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
-    </div><!-- /.container -->
+    </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
 
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
 </script>
-
-<!-- FOOTER -->
-<footer th:insert="fragments/footer"></footer>
 
 </body>
 </html>

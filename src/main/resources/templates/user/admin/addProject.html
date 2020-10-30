@@ -61,7 +61,7 @@
                                     <div class="form-check">
                                         <div th:each="user : ${users}">
                                             <input th:field="${projectForm.members}" th:value="${user.id}" class="form-check-input" type="checkbox" id="defaultCheck1">
-                                            <label th:text="${user.name}" class="form-check-label" for="defaultCheck1"></label>
+                                            <p th:text="${user.name + ' (' + user.role.getDisplayValue() + ')'}" class="form-check-label" for="defaultCheck1"></p>
                                         </div>
                                     </div>
                                 </div>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<header th:insert="fragments/header"></header>
+<body>
+
+
+<div class="wrapper">
+
+    <div class="container marketing">
+
+        <!--Section for admins-->
+        <div sec:authorize="hasRole('ADMIN')">
+
+            <div class="row">
+                <div class="col">
+                    <h1>Projects</h1>
+                </div>
+                <div class="col">
+                    <div th:if="${message} != null" th:text="${message}" class="text-success" style="float: right"></div>
+                </div>
+            </div>
+
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Members</th>
+                    <th>Edit</th>
+                </tr>
+
+                <!--If there are no existing projects-->
+                <tr th:if="${projects.size() <= 0}">
+                    <td colspan="3">So far there are no existing projects.</td>
+                </tr>
+
+                <!--If there existing projects-->
+                <tr th:each="project : ${projects}">
+                    <td th:text="${project.name}"></td>
+                    <td>
+
+                        <!--If there are no members in the project-->
+                        <span th:if="${project.members.size() <= 0}">This project doen´t have any members yet.</span>
+
+                        <!--If there are members in the project-->
+                        <span
+                                th:each="a, stat : ${project.members}"
+                                th:text=" ${project.members[__${stat.index}__].name} +  (${stat.size-1 > stat.index}? ', ':'') ">
+                        </span>
+
+                    </td>
+                    <td>
+                        <form th:action="@{/userAdmin/editProject/{projectId}(projectId=${project.id})}">
+                            <button type="submit"  class="btn btn-outline-primary">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+
+                <!--Add project button-->
+                <tr>
+                    <td colspan="3">
+                        <form th:action="@{/userAdmin/addProject}">
+                            <button type="submit"  class="btn btn-outline-primary">Add project</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--Section for managers-->
+        <div sec:authorize="hasRole('MANAGER')">
+
+            <h1>Projects</h1>
+
+            <div class="form-group">
+                <div th:if="${projects != null}" id="accordion">
+
+                    <!--If there are no existing projects-->
+                    <div th:if="${projects.size() <= 0}">
+                        So far you are not a member of any project.
+                    </div>
+
+                    <!--If there existing projects-->
+                    <div th:each="project : ${projects}">
+                        <div class='card'>
+                            <div class='card-header'>
+                                <h5 class='mb-0'>
+                                    <button th:text="${project.name}" th:attr="data-target='#collapse'+${project.getId()}, aria-controls='collapse'+${project.getId()}" class='btn btn-link' data-toggle='collapse' aria-expanded='false'></button>
+                                </h5>
+                            </div>
+                            <div th:id="'collapse'+${project.getId()}" class='collapse' aria-labelledby='headingOne' data-parent='#accordion'>
+                                <div class='card-body'>
+                                    <h4>Tasks in this project</h4>
+                                    <div class="container px-lg-5">
+                                        <div class="row mx-lg-n5">
+                                            <div class="col-4 py-3"><b>Name</b></div>
+                                            <div class="col py-3"><b>Status</b></div>
+                                            <div class="col py-3"><b>Assignee</b></div>
+                                            <div class="col py-3"><b>Due Date</b></div>
+                                            <div class="col py-3"><b>Effort</b>
+                                                <svg id="i-info" data-toggle="tooltip" data-placement="right" title="Actual effort / Estimated effort in hours" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                                    <path d="M16 14 L16 23 M16 8 L16 10" />
+                                                    <circle cx="16" cy="16" r="14" />
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <!--If there are tasks in the project-->
+                                        <div th:if="${project.tasks.size() > 0}" th:each="task : ${project.tasks}" class="row mx-lg-n5">
+                                            <div class="col-4 py-3">
+                                                <a th:href="@{'/userManager/viewTask/' + ${task.id}}" th:text="${task.name}"></a>
+                                            </div>
+                                            <div class="col py-3" th:text="${task.status.getDisplayValue()}"></div>
+                                            <div class="col py-3">
+                                                <div th:if="${task.assignee != null}" th:text="${task.assignee}"></div>
+                                                <div th:if="${task.assignee == null}">
+                                                    <button th:text="'Not set'" type="button" class="alert alert-dark" data-toggle="tooltip" data-placement="right" title="Please open the task and choose an assignee."></button>
+                                                </div>
+                                            </div>
+                                            <div class="col py-3">
+                                                <div th:if="${task.dueDate != null}" th:text="${task.dueDate}"></div>
+                                                <div th:if="${task.dueDate == null}">
+                                                    <button th:text="'Not set'" type="button" class="alert alert-dark" data-toggle="tooltip" data-placement="right" title="Please open the task and choose an assignee."></button>
+                                                </div>
+                                            </div>
+                                            <div class="col py-3">
+                                                <div th:if="${task.totalTime} <= ${task.estimation}">
+                                                    <button th:text="${task.totalTime} + ' / ' +${task.estimation}" type="button" class="alert alert-success" data-toggle="tooltip" data-placement="right" title="So far the time spent on this task is within its limits."></button>
+                                                </div>
+                                                <div th:if="${task.totalTime} > ${task.estimation} and ${task.totalTime} < ${task.estimation + 2}">
+                                                    <button th:text="${task.totalTime} + ' / ' +${task.estimation}" type="button" class="alert alert-warning" data-toggle="tooltip" data-placement="right" title="The time spent on this task slightly exceeds the original estimation."></button>
+                                                </div>
+                                                <div th:if="${task.totalTime} >= ${task.estimation + 2}">
+                                                    <button th:text="${task.totalTime} + ' / ' +${task.estimation}" type="button" class="alert alert-danger" data-toggle="tooltip" data-placement="right" title="The time spent on this task exceeds the original estimation."></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--If there are no tasks in the project-->
+                                        <div th:if="${project.tasks.size() <= 0}">
+                                            So far there are no tasks in this project.
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Section for developers-->
+        <div sec:authorize="hasRole('DEVELOPER')">
+
+            <h1>Projects</h1>
+
+            <div class="form-group">
+                <div th:if="${projects != null}" id="accordion">
+
+                    <!--If there are no existing projects-->
+                    <div th:if="${projects.size() <= 0}">
+                        So far you are not a member of any project.
+                    </div>
+
+                    <!--If there existing projects-->
+                    <div th:each="projectObject : ${projects}">
+                        <div class='card'>
+                            <div class='card-header'>
+                                <h5 class='mb-0'>
+                                    <button th:text="${projectObject.name}" th:attr="data-target='#collapse'+${projectObject.getId()}, aria-controls='collapse'+${projectObject.getId()}" class='btn btn-link' data-toggle='collapse' aria-expanded='false'>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div th:id="'collapse'+${projectObject.getId()}" class='collapse' aria-labelledby='headingOne' data-parent='#accordion'>
+                                <div class='card-body'>
+                                    <h4>Tasks in this project</h4>
+
+                                    <table class="table">
+
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Status</th>
+                                            <th>Assignee</th>
+                                            <th>Estimation</th>
+                                            <th>Time spent</th>
+                                        </tr>
+
+                                        <!--If there are tasks in the project-->
+                                        <tr th:if="${projectObject.tasks.size() > 0}" th:each="task : ${projectObject.tasks}">
+                                            <td>
+                                                <a th:href="@{'/userDeveloper/viewTask/' + ${task.id}}" th:text="${task.name}"></a>
+                                            </td>
+                                            <td th:text="${task.status.getDisplayValue()}"></td>
+                                            <td>
+                                                <div th:if="${task.assignee != null}" th:text="${task.assignee}"></div>
+                                                <div th:if="${task.assignee == null}" th:text="'Not set'"></div>
+                                            </td>
+                                            <td th:text="${task.estimation} + ' h'"></td>
+                                            <td th:text="${#aggregates.sum(task.times.![timeSpent])} + ' h'"></td>
+                                        </tr>
+
+                                        <!--If there are no tasks in the project-->
+                                        <tr th:if="${projectObject.tasks.size() <= 0}">
+                                            <td colspan="5">So far there are no tasks in this project.</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="4"></td>
+                                            <td>
+                                                <form th:action="@{/userDeveloper/addTask/{projectId}(projectId=${projectObject.id})}">
+                                                    <button type="submit"  class="btn btn-outline-primary">Suggest task</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5"></td>
+                                        </tr>
+                                    </table>
+
+                                    <p th:if="${projectObject.tasks.size() > 0}" th:text="'So far you spent ' + ${#aggregates.sum(usersBookings.?[project.id == __${projectObject.id}__].![timeSpent])} + ' hours in this project'"></p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer th:insert="fragments/footer"></footer>
+
+</body>
+</html>

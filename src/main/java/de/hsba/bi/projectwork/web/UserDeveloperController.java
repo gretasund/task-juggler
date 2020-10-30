@@ -44,14 +44,17 @@ public class UserDeveloperController {
     }
 
 
-    // Als Entwickler in einem Projekt kann ich eine Aufgabe zu diesem Projekt hinzufügen, diese beinhaltet wenigstens einen Titel und eine Beschreibung
+    // projects
     @GetMapping("/projects")
     public String viewProjects(Model model) {
         // TODO Als Entwickler in einem Projekt kann ich sehen, wieviel Zeit ich insgesamt (aufgabenübergreifend) gebucht habe (allerdings nicht die Zeiten anderer Entwickler)
         model.addAttribute("projects", projectService.findProjectsByUser());
-        return "user/managerDeveloper/projects";
+        model.addAttribute("usersBookings", userService.findCurrentUser().getBookedTimes());
+        return "user/projects";
     }
 
+
+    // add tasks
     @GetMapping("/addTask/{projectId}")
     public String addTask(Model model, @PathVariable("projectId") Long projectId) {
         model.addAttribute("suggestedTaskForm", new SuggestedTaskForm(projectService.findById(projectId), userService.findCurrentUser()));
@@ -61,7 +64,7 @@ public class UserDeveloperController {
     @PostMapping("/addTask")
     public String addTask(@ModelAttribute("suggestedTaskForm") @Valid SuggestedTaskForm suggestedTaskForm, BindingResult bindingResult, Model model) {
         if (!bindingResult.hasErrors()) {
-            SuggestedTask suggestedTask = suggestedTaskService.createNewSuggestedTask(suggestedTaskForm);
+            SuggestedTask suggestedTask = suggestedTaskService.addSuggestedTask(suggestedTaskForm);
             return "redirect:/userDeveloper/viewSuggestedTask/" + suggestedTask.getId() + "?created=true";
         }
         model.addAttribute("suggestedTaskForm", suggestedTaskForm);
@@ -69,18 +72,16 @@ public class UserDeveloperController {
     }
 
 
-    // Als Entwickler oder Manager kann ich pro Aufgabe sehen, wieviel Zeit insgesamt schon darauf gebucht wurde (allerdings nicht von wem)
+    // view task
     @GetMapping("/viewTask/{taskId}")
     public String viewTask(@PathVariable("taskId") Long taskId, @RequestParam(value="edited", required=false) boolean edited, Model model) {
         if(edited) {
             model.addAttribute("message", "Task successfully edited.");
         }
         Task task = taskService.findById(taskId);
-        task.calcTotalTime();
         model.addAttribute("task", task);
         model.addAttribute("bookingForm", new BookingForm());
         model.addAttribute("userObject", userService.findCurrentUser());
-        model.addAttribute("usersBookings", bookingService.findUsersBookings(task.getTimes()));
         model.addAttribute("project", projectService.findById(task.getProject().getId()));
         model.addAttribute("allStatus", SuggestedTask.Status.getAllStatus());
         return "user/managerDeveloper/viewTask";
@@ -101,7 +102,6 @@ public class UserDeveloperController {
     @GetMapping("/editTask/{taskId}")
     public String editTask(@PathVariable("taskId") Long taskId, Model model) {
         Task task = taskService.findById(taskId);
-        task.calcTotalTime();
         model.addAttribute("task", task);
         model.addAttribute("taskForm", new TaskForm(taskId));
         model.addAttribute("project", projectService.findById(task.getProject().getId()));
@@ -126,11 +126,10 @@ public class UserDeveloperController {
     @PostMapping("/bookTime")
     public String bookTime(@RequestParam("taskId") Long taskId, @RequestParam("projectId") Long projectId, @ModelAttribute("bookingForm") @Valid BookingForm bookingForm, BindingResult bindingResult, Model model) {
         if (!bindingResult.hasErrors()) {
-            bookingService.bookTime(taskId, projectId, bookingForm, userService.findCurrentUser());
+            bookingService.addBooking(taskId, projectId, bookingForm, userService.findCurrentUser());
             return "redirect:/userDeveloper/viewTask/" + taskId;
         }
         Task task = taskService.findById(taskId);
-        task.calcTotalTime();
         model.addAttribute("task", task);
         model.addAttribute("bookingForm", bookingForm);
         model.addAttribute("userObject", userService.findCurrentUser());
@@ -141,7 +140,7 @@ public class UserDeveloperController {
     }
 
 
-    // Als Entwickler oder Manager kann ich mir eine Liste der Aufgaben gefiltert nach Status anzeigen lassen.
+    // view all tasks
     @GetMapping("/tasks")
     public String viewTasks(@RequestParam(value = "status", required = false) String status, Model model) {
         model.addAttribute("tasks", taskService.findUsersTasks(taskService.findByStatus(Task.Status.getEnumByDisplayValue(status))));

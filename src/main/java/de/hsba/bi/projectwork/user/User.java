@@ -41,7 +41,7 @@ public class User implements Comparable<User> {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "creator")
     @OrderBy
     private List<BaseTask> createdTasks = new ArrayList<>();
-    @OneToMany(cascade = {CascadeType.PERSIST,CascadeType.REMOVE}, orphanRemoval = true, mappedBy = "assignee")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "assignee")
     @OrderBy
     private List<Task> assignedTasks = new ArrayList<>();
 
