@@ -47,19 +47,13 @@ class TaskServiceTest {
         //Create 2 additional tasks
         AcceptedTask task4 = acceptedTaskService.addTask(new AcceptedTask( ina, "Testing103", "content", 3, AcceptedTask.Status.TESTING, null, project1), project1.getId());
         AcceptedTask task5 = acceptedTaskService.addTask(new AcceptedTask( ina, "Testing103", "content", 3, AcceptedTask.Status.TESTING, null, project1), project1.getId());
-        //2 previous tasks + 3 tasks from the setup
-        assertThat(acceptedTaskService.findAll().size()).isEqualTo(3);
-        //2 previous tasks + 3 tasks from the setup==> All Unassigned
-        assertThat(acceptedTaskService.findUnassignedAndUnscheduled().size()==5);
         //Assign task4 to Greta
         Long Task4ID= task4.getId();
         acceptedTaskService.setAssignee(Task4ID, greta);
-        //Only 4 unassigned Tasks left
-        assertThat(acceptedTaskService.findUnassignedAndUnscheduled().size()==4);
         //Assign another task to greta
         Long Task5ID= task5.getId();
         acceptedTaskService.setAssignee(Task5ID, greta);
         //Greta should be assigned to 2 tasks
-        assertThat(acceptedTaskService.findTaskByAssignee(greta).size()==1);
+        assertThat(acceptedTaskService.findTaskByAssignee(greta).size()).isEqualTo(2);
     }
 }

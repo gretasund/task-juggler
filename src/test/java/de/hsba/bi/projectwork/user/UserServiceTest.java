@@ -4,7 +4,6 @@ import de.hsba.bi.projectwork.ProjectWorkApplication;
 import de.hsba.bi.projectwork.project.ProjectService;
 import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTaskService;
 import de.hsba.bi.projectwork.task.suggestedtask.SuggestedTaskService;
-import de.hsba.bi.projectwork.web.exception.UserAlreadyExistException;
 import de.hsba.bi.projectwork.web.user.RegisterUserForm;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -78,14 +77,6 @@ class UserServiceTest {
     }
 
     @Test
-    void UserExists() throws UserAlreadyExistException {
-        //creates user with an existing name
-        RegisterUserForm registerUserForm = new RegisterUserForm("dora", "passwortpasswort", "passwortpasswort");
-        userService.createUser(registerUserForm, User.Role.DEVELOPER);
-
-    }
-
-    @Test
     void ShouldDetectFalsePassword(){
         User ina = userService.findByName("dora");
         assertThat(userService.oldPasswordIsCorrect("FalsePassword", ina)).isFalse();
@@ -93,7 +84,7 @@ class UserServiceTest {
 
     @Test
     void ShouldBeAbleToChangeRole() {
-        userService.createUser(new RegisterUserForm("ChangeRoleUser", "1234567890", "1234567890"), User.Role.DEVELOPER);;
+        userService.createUser(new RegisterUserForm("ChangeRoleUser", "1234567890", "1234567890"), User.Role.DEVELOPER);
         // Find user and userId
         User changeRoleUser = userService.findByName("ChangeRoleUser");
         long UserID = changeRoleUser.getId();
@@ -106,12 +97,4 @@ class UserServiceTest {
         // Check dora´s role
         assertThat(changeRoleUser.getRole()).isEqualTo(User.Role.MANAGER);
     }
-
-    /*@Test
-    public void UserExists() {
-        RegisterUserForm registerUserForm = new RegisterUserForm("dora", "passwortpasswort", "passwortpasswort");
-        UserAlreadyExistException e = assertThrows(
-                UserAlreadyExistException.class, userService.createUser(registerUserForm, User.Role.DEVELOPER));
-
-    }*/
 }
