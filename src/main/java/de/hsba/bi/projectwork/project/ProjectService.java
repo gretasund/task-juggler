@@ -30,6 +30,10 @@ public class ProjectService {
         Optional<Project> project = projectRepository.findById(id);
         return project.orElse(null);
     }
+    public Project findByName(String name) {
+        Optional<Project> project = projectRepository.findByName(name);
+        return project.orElse(null);
+    }
 
 
     // find projects by user

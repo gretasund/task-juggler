@@ -52,7 +52,7 @@ public class BookingService {
 
 
     // Add / delete bookings
-    public void addBooking(Long taskId, Long projectId, int timeSpent, String date, User user) {
+    public Booking addBooking(Long taskId, Long projectId, int timeSpent, String date, User user) {
         // TODO Als Entwickler in einem Projekt kann ich aufgewendete Zeiten für eine Aufgabe buchen (diese Buchung gilt pro Aufgabe und Entwickler, außerdem kann ein Entwickler mehrmals Zeiten buchen, wenn die Bearbeitung beispielsweise mehrere Tage dauert)
         LocalDate localDate = LocalDate.parse(date);
 
@@ -69,6 +69,7 @@ public class BookingService {
         // refresh task
         acceptedTask.setTotalTime(acceptedTask.calcTotalTime());
 
+        return booking;
     }
 
     public void addBooking(Long taskId, Long projectId, BookingForm bookingForm, User user) {

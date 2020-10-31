@@ -75,18 +75,17 @@ public class SuggestedTaskService {
         return this.save(suggestedTask);
     }
 
-    public void evaluateSuggestedTask(long taskId, String evaluation) {
+    public AbstractTask evaluateSuggestedTask(long taskId, String evaluation) {
         SuggestedTask suggestedTask = this.findById(taskId);
         switch (evaluation) {
             case "accept":
                 suggestedTask.setStatus(SuggestedTask.Status.ACCEPTED);
-                acceptedTaskService.save(new AcceptedTask(suggestedTask));
-                break;
+                return acceptedTaskService.save(new AcceptedTask(suggestedTask));
             case "decline":
                 suggestedTask.setStatus(SuggestedTask.Status.DECLINED);
-                this.save(suggestedTask);
-                break;
+                return this.save(suggestedTask);
         }
+        return null;
     }
 
 
