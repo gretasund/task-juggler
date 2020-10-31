@@ -108,7 +108,7 @@ public class UserManagerController {
     // view tasks and filter them by status
     @GetMapping("/tasks")
     public String viewTasks(@RequestParam(value = "status", required = false) String status, Model model) {
-        model.addAttribute("tasks", acceptedTaskService.findUsersTasks(acceptedTaskService.findByStatus(AcceptedTask.Status.getEnumByDisplayValue(status))));
+        model.addAttribute("acceptedTasks", acceptedTaskService.findUsersTasks(acceptedTaskService.findByStatus(AcceptedTask.Status.getEnumByDisplayValue(status))));
         return "user/managerDeveloper/tasks";
     }
 

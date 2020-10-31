@@ -24,20 +24,20 @@
                             </a>
                             <div sec:authorize="hasRole('DEVELOPER')">
                                 <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" th:href="@{'/userDeveloper/acceptedTasks'}">Show All</a>
-                                    <a class="dropdown-item" th:href="@{'/userDeveloper/acceptedTasks?status=Accepted'}">Accepted</a>
-                                    <a class="dropdown-item" th:href="@{'/userDeveloper/acceptedTasks?status=Work in progress'}">Work in Progress</a>
-                                    <a class="dropdown-item" th:href="@{'/userDeveloper/acceptedTasks?status=Testing'}">Testing</a>
-                                    <a class="dropdown-item" th:href="@{'/userDeveloper/acceptedTasks?status=Done'}">Done</a>
+                                    <a class="dropdown-item" th:href="@{'/userDeveloper/tasks'}">Show All</a>
+                                    <a class="dropdown-item" th:href="@{'/userDeveloper/tasks?status=Accepted'}">Accepted</a>
+                                    <a class="dropdown-item" th:href="@{'/userDeveloper/tasks?status=Work in progress'}">Work in Progress</a>
+                                    <a class="dropdown-item" th:href="@{'/userDeveloper/tasks?status=Testing'}">Testing</a>
+                                    <a class="dropdown-item" th:href="@{'/userDeveloper/tasks?status=Done'}">Done</a>
                                 </div>
                             </div>
                             <div sec:authorize="hasRole('MANAGER')">
                                 <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" th:href="@{'/userManager/acceptedTasks'}">Show All</a>
-                                    <a class="dropdown-item" th:href="@{'/userManager/acceptedTasks?status=Accepted'}">Accepted</a>
-                                    <a class="dropdown-item" th:href="@{'/userManager/acceptedTasks?status=Work in progress'}">Work in Progress</a>
-                                    <a class="dropdown-item" th:href="@{'/userManager/acceptedTasks?status=Testing'}">Testing</a>
-                                    <a class="dropdown-item" th:href="@{'/userManager/acceptedTasks?status=Done'}">Done</a>
+                                    <a class="dropdown-item" th:href="@{'/userManager/tasks'}">Show All</a>
+                                    <a class="dropdown-item" th:href="@{'/userManager/tasks?status=Accepted'}">Accepted</a>
+                                    <a class="dropdown-item" th:href="@{'/userManager/tasks?status=Work in progress'}">Work in Progress</a>
+                                    <a class="dropdown-item" th:href="@{'/userManager/tasks?status=Testing'}">Testing</a>
+                                    <a class="dropdown-item" th:href="@{'/userManager/tasks?status=Done'}">Done</a>
                                 </div>
                             </div>
                         </div>
