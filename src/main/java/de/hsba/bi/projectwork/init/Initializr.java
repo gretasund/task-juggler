@@ -24,7 +24,7 @@ public class Initializr {
     public void init() {
 
         // creates admin user
-        if(userService.findByName("admin1") != null) {
+        if(userService.findByName("admin1") == null) {
             userService.createUser(new RegisterUserForm("admin1", "1234567890", "1234567890"), User.Role.ADMIN);
         }
 

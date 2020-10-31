@@ -103,21 +103,21 @@ public class UserDeveloperController {
     public String editTask(@PathVariable("taskId") Long taskId, Model model) {
         AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
         model.addAttribute("acceptedTask", acceptedTask);
-        model.addAttribute("taskForm", new AcceptedTaskForm(taskId));
+        model.addAttribute("acceptedTaskForm", new AcceptedTaskForm(taskId));
         model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
         model.addAttribute("allStatus", AcceptedTask.Status.getAllStatus());
         return "user/managerDeveloper/editTask";
     }
 
     @PostMapping("/editTask")
-    public String editTask(@ModelAttribute("taskForm") @Valid AcceptedTaskForm acceptedTaskForm, BindingResult bindingResult, Model model) {
+    public String editTask(@ModelAttribute("acceptedTaskForm") @Valid AcceptedTaskForm acceptedTaskForm, BindingResult bindingResult, Model model) {
        if (!bindingResult.hasErrors()) {
             acceptedTaskService.editTask(acceptedTaskForm);
             return "redirect:/userDeveloper/viewTask/" + acceptedTaskForm.getTaskId() + "?edited=true";
         }
         AcceptedTask acceptedTask = acceptedTaskService.findById(acceptedTaskForm.getTaskId());
         model.addAttribute("acceptedTask", acceptedTask);
-        model.addAttribute("taskForm", acceptedTaskForm);
+        model.addAttribute("acceptedTaskForm", acceptedTaskForm);
         model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
         return "user/managerDeveloper/editTask";
     }

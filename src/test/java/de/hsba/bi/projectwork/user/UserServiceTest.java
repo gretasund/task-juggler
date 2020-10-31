@@ -106,4 +106,12 @@ class UserServiceTest {
         // Check dora´s role
         assertThat(changeRoleUser.getRole()).isEqualTo(User.Role.MANAGER);
     }
+
+    /*@Test
+    public void UserExists() {
+        RegisterUserForm registerUserForm = new RegisterUserForm("dora", "passwortpasswort", "passwortpasswort");
+        UserAlreadyExistException e = assertThrows(
+                UserAlreadyExistException.class, userService.createUser(registerUserForm, User.Role.DEVELOPER));
+
+    }*/
 }
