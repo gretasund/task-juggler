@@ -31,6 +31,14 @@ public class ApplicationInUse {
     private final BookingService bookingService;
     private final SuggestedTaskService suggestedTaskService;
 
+    
+    public void init() {
+        this.createUsers();
+        this.firstProject();
+        this.secondProject();
+        this.emptyProjects();
+        this.usersWithoutProjects();
+    }
 
     public void createUsers() {
         // create manager (head of the department)

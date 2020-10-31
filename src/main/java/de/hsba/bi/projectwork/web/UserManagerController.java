@@ -7,7 +7,6 @@ import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTask;
 import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTaskService;
 import de.hsba.bi.projectwork.task.suggestedtask.SuggestedTask;
 import de.hsba.bi.projectwork.task.suggestedtask.SuggestedTaskService;
-import de.hsba.bi.projectwork.user.User;
 import de.hsba.bi.projectwork.web.task.acceptedtask.AcceptedTaskForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -45,7 +44,6 @@ public class UserManagerController {
     // view projects
     @GetMapping("/projects")
     public String viewProjects(Model model) {
-        model.addAttribute("dueDate", "");
         model.addAttribute("projects", projectService.findAll());
         return "user/projects";
     }
@@ -59,11 +57,8 @@ public class UserManagerController {
         }
         AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
         acceptedTask.calcDaysLeft();
-        model.addAttribute("task", acceptedTask);
-        model.addAttribute("dueDate", "");
-        model.addAttribute("assignee", new User());
+        model.addAttribute("acceptedTask", acceptedTask);
         model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
-        model.addAttribute("allStatus", AcceptedTask.Status.getAllStatus());
         return "user/managerDeveloper/viewTask";
     }
 
@@ -80,7 +75,7 @@ public class UserManagerController {
     @GetMapping("/editTask/{taskId}")
     public String editTask(@PathVariable("taskId") Long taskId, Model model) {
         AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
-        model.addAttribute("task", acceptedTask);
+        model.addAttribute("acceptedTask", acceptedTask);
         model.addAttribute("taskForm", new AcceptedTaskForm(taskId));
         model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
         model.addAttribute("allStatus", AcceptedTask.Status.getAllStatus());
@@ -94,7 +89,7 @@ public class UserManagerController {
             return "redirect:/userManager/viewTask/" + acceptedTaskForm.getTaskId() + "?edited=true";
         }
         AcceptedTask acceptedTask = acceptedTaskService.findById(acceptedTaskForm.getTaskId());
-        model.addAttribute("task", acceptedTask);
+        model.addAttribute("acceptedTask", acceptedTask);
         model.addAttribute("taskForm", acceptedTaskForm);
         model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
         model.addAttribute("allStatus", AcceptedTask.Status.getAllStatus());

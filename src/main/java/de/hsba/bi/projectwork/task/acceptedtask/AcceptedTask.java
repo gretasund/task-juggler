@@ -28,7 +28,7 @@ public class AcceptedTask extends AbstractTask implements Comparable<AcceptedTas
     // fields
     @ManyToOne
     private User assignee;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "task")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "acceptedTask")
     private List<Booking> times = new ArrayList<>();
     private Enum<Status> status;
     private LocalDate dueDate;

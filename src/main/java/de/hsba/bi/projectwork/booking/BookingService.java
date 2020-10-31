@@ -1,7 +1,6 @@
 package de.hsba.bi.projectwork.booking;
 
 import de.hsba.bi.projectwork.project.Project;
-import de.hsba.bi.projectwork.project.ProjectRepository;
 import de.hsba.bi.projectwork.project.ProjectService;
 import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTask;
 import de.hsba.bi.projectwork.task.acceptedtask.AcceptedTaskRepository;
@@ -26,7 +25,6 @@ public class BookingService {
     private final UserService userService;
     private final BookingRepository bookingRepository;
     private final ProjectService projectService;
-    private final ProjectRepository projectRepository;
     private final AcceptedTaskRepository acceptedTaskRepository;
     private final AcceptedTaskService acceptedTaskService;
 

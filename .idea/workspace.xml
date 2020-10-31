@@ -18,39 +18,37 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="Frontend improvements">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/azure.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/acceptedtask/AcceptedTaskRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/acceptedtask/AcceptedTaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/acceptedtask/AcceptedTaskFormConverter.java" afterDir="false" />
+    <list default="true" id="3c6568af-2955-4db3-828b-044dfb3e8314" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/Booking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/booking/BookingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/project/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/BaseTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTask$Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTaskRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/SuggestedTaskService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task$Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/TaskRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/task/TaskService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/user/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserAdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserDeveloperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserDeveloperController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/UserManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/de/hsba/bi/projectwork/web/task/TaskFormConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/booking/BookingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/ApplicationInUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/ApplicationInUse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/BaseTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/AbstractTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Status.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/suggestedtask/SuggestedTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/suggestedtask/SuggestedTaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/SuggestedTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/suggestedtask/SuggestedTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/acceptedtask/AcceptedTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/TaskService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/Initializr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/init/Initializr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/acceptedtask/AcceptedTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/task/acceptedtask/AcceptedTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/suggestedtask/SuggestedTaskForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/SuggestedTaskFormConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/suggestedtask/SuggestedTaskFormConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/acceptedtask/AcceptedTaskForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/task/TaskFormConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/editTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/editTask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/tasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/tasks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/managerDeveloper/viewTask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/projects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,13 +163,15 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ProjectWorkApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -386,7 +386,8 @@
       <workItem from="1603993711330" duration="3663000" />
       <workItem from="1604043427420" duration="813000" />
       <workItem from="1604044618973" duration="6647000" />
-      <workItem from="1604052765948" duration="6911000" />
+      <workItem from="1604052765948" duration="7953000" />
+      <workItem from="1604146163241" duration="651000" />
     </task>
     <task id="LOCAL-00001" summary="Login and Registration">
       <created>1600120723500</created>
@@ -430,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604057473930</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Changed folder structure and renamed Task.class to AcceptedTask.class + BaseTask.class to Abstract.class">
+      <created>1604066322921</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604066322921</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +465,8 @@
     <MESSAGE value="Added booking functionality&#10;Developers can&#10;- book times on tasks in their projects&#10;- see how much times is already booked on a task (but not from whom)&#10;- but not delete booked times&#10;&#10;Managers can&#10;- see bookings belonging to their projects&#10;- delete bookings&#10;&#10;________________________________________________________________________________________&#10;&#10;Enhanced task functionality&#10;Developers can&#10;- edit an existing task&#10;- suggest a task&#10;&#10;&#10;________________________________________________________________________________________&#10;&#10;Refactoring&#10;- changed strategy for daysLeft in the Task.class&#10;&#10;&#10;________________________________________________________________________________________&#10;&#10;Issue:&#10;- when a task is added the dueDate does not get passed to the controller" />
     <MESSAGE value="resolved merge conflict" />
     <MESSAGE value="Frontend improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Frontend improvements" />
+    <MESSAGE value="Changed folder structure and renamed Task.class to AcceptedTask.class + BaseTask.class to Abstract.class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed folder structure and renamed Task.class to AcceptedTask.class + BaseTask.class to Abstract.class" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -507,10 +516,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="140" y="186" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1603746875029" />
-    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2" timestamp="1604057472926">
-      <screen x="0" y="23" width="1680" height="895" />
+    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2" timestamp="1604066322586">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1604057102859" />
+    <state x="323" y="23" width="1248" height="782" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1604066322586" />
     <state x="323" y="23" key="CommitChangelistDialog2/0.23.1680.895@0.23.1680.895" timestamp="1604057472926" />
     <state x="323" y="23" key="CommitChangelistDialog2/0.23.1680.899@0.23.1680.899" timestamp="1602537283000" />
     <state x="575" y="60" key="Diagram.Print.Preview.Dialog" timestamp="1603267189006">
@@ -521,104 +530,124 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="710" y="429" key="Github.ShareDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600120842026" />
-    <state width="1283" height="314" key="GridCell.Tab.0.bottom" timestamp="1604056803494">
+    <state width="1283" height="388" key="GridCell.Tab.0.bottom" timestamp="1604146814428">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803494" />
+    <state width="1283" height="388" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814428" />
+    <state width="1283" height="253" key="GridCell.Tab.0.bottom/0.23.1680.887@0.23.1680.887" timestamp="1604146407642" />
+    <state width="1283" height="314" key="GridCell.Tab.0.bottom/0.23.1680.893@0.23.1680.893" timestamp="1604093097388" />
     <state width="1283" height="314" key="GridCell.Tab.0.bottom/0.23.1680.895@0.23.1680.895" timestamp="1604056604133" />
     <state width="1283" height="335" key="GridCell.Tab.0.bottom/0.23.1680.899@0.23.1680.899" timestamp="1602535204421" />
     <state width="1283" height="384" key="GridCell.Tab.0.bottom/0.23.1680.901@0.23.1680.901" timestamp="1604044644177" />
     <state width="1638" height="619" key="GridCell.Tab.0.bottom/0.23.1680.902@0.23.1680.902" timestamp="1601731411372" />
-    <state width="1283" height="314" key="GridCell.Tab.0.center" timestamp="1604056803487">
+    <state width="1283" height="388" key="GridCell.Tab.0.center" timestamp="1604146814425">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803487" />
+    <state width="1283" height="388" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814425" />
+    <state width="1283" height="253" key="GridCell.Tab.0.center/0.23.1680.887@0.23.1680.887" timestamp="1604146407639" />
+    <state width="1283" height="314" key="GridCell.Tab.0.center/0.23.1680.893@0.23.1680.893" timestamp="1604093097386" />
     <state width="1283" height="314" key="GridCell.Tab.0.center/0.23.1680.895@0.23.1680.895" timestamp="1604056604132" />
     <state width="1283" height="335" key="GridCell.Tab.0.center/0.23.1680.899@0.23.1680.899" timestamp="1602535204419" />
     <state width="1283" height="384" key="GridCell.Tab.0.center/0.23.1680.901@0.23.1680.901" timestamp="1604044644174" />
     <state width="1638" height="619" key="GridCell.Tab.0.center/0.23.1680.902@0.23.1680.902" timestamp="1601731411370" />
-    <state width="1283" height="314" key="GridCell.Tab.0.left" timestamp="1604056803485">
+    <state width="1283" height="388" key="GridCell.Tab.0.left" timestamp="1604146814423">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803485" />
+    <state width="1283" height="388" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814423" />
     <state width="1283" height="360" key="GridCell.Tab.0.left/0.0.1680.1050@0.23.1680.895" timestamp="1603102234112" />
     <state width="1638" height="364" key="GridCell.Tab.0.left/0.0.1680.928@0.0.1680.928" timestamp="1601227173852" />
+    <state width="1283" height="253" key="GridCell.Tab.0.left/0.23.1680.887@0.23.1680.887" timestamp="1604146407638" />
+    <state width="1283" height="314" key="GridCell.Tab.0.left/0.23.1680.893@0.23.1680.893" timestamp="1604093097382" />
     <state width="1283" height="314" key="GridCell.Tab.0.left/0.23.1680.895@0.23.1680.895" timestamp="1604056604131" />
     <state width="1283" height="335" key="GridCell.Tab.0.left/0.23.1680.899@0.23.1680.899" timestamp="1602535204418" />
     <state width="1283" height="384" key="GridCell.Tab.0.left/0.23.1680.901@0.23.1680.901" timestamp="1604044644171" />
     <state width="1638" height="619" key="GridCell.Tab.0.left/0.23.1680.902@0.23.1680.902" timestamp="1601731411370" />
-    <state width="1283" height="314" key="GridCell.Tab.0.right" timestamp="1604056803492">
+    <state width="1283" height="388" key="GridCell.Tab.0.right" timestamp="1604146814427">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803492" />
+    <state width="1283" height="388" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814427" />
+    <state width="1283" height="253" key="GridCell.Tab.0.right/0.23.1680.887@0.23.1680.887" timestamp="1604146407641" />
+    <state width="1283" height="314" key="GridCell.Tab.0.right/0.23.1680.893@0.23.1680.893" timestamp="1604093097387" />
     <state width="1283" height="314" key="GridCell.Tab.0.right/0.23.1680.895@0.23.1680.895" timestamp="1604056604132" />
     <state width="1283" height="335" key="GridCell.Tab.0.right/0.23.1680.899@0.23.1680.899" timestamp="1602535204419" />
     <state width="1283" height="384" key="GridCell.Tab.0.right/0.23.1680.901@0.23.1680.901" timestamp="1604044644175" />
     <state width="1638" height="619" key="GridCell.Tab.0.right/0.23.1680.902@0.23.1680.902" timestamp="1601731411371" />
-    <state width="1283" height="314" key="GridCell.Tab.1.bottom" timestamp="1604056803502">
+    <state width="1283" height="388" key="GridCell.Tab.1.bottom" timestamp="1604146814432">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803502" />
+    <state width="1283" height="388" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814432" />
+    <state width="1283" height="253" key="GridCell.Tab.1.bottom/0.23.1680.887@0.23.1680.887" timestamp="1604146420568" />
+    <state width="1283" height="314" key="GridCell.Tab.1.bottom/0.23.1680.893@0.23.1680.893" timestamp="1604093097391" />
     <state width="1283" height="314" key="GridCell.Tab.1.bottom/0.23.1680.895@0.23.1680.895" timestamp="1604056604136" />
     <state width="1283" height="335" key="GridCell.Tab.1.bottom/0.23.1680.899@0.23.1680.899" timestamp="1602535905530" />
     <state width="630" height="335" key="GridCell.Tab.1.bottom/0.23.1680.901@0.23.1680.901" timestamp="1602589946082" />
     <state width="1638" height="282" key="GridCell.Tab.1.bottom/0.23.1680.902@0.23.1680.902" timestamp="1601741831668" />
     <state width="1638" height="364" key="GridCell.Tab.1.bottom/0.23.1680.905@0.23.1680.905" timestamp="1601125249525" />
-    <state width="1283" height="314" key="GridCell.Tab.1.center" timestamp="1604056803499">
+    <state width="1283" height="388" key="GridCell.Tab.1.center" timestamp="1604146814430">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803499" />
+    <state width="1283" height="388" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814430" />
+    <state width="1283" height="253" key="GridCell.Tab.1.center/0.23.1680.887@0.23.1680.887" timestamp="1604146420566" />
+    <state width="1283" height="314" key="GridCell.Tab.1.center/0.23.1680.893@0.23.1680.893" timestamp="1604093097390" />
     <state width="1283" height="314" key="GridCell.Tab.1.center/0.23.1680.895@0.23.1680.895" timestamp="1604056604135" />
     <state width="1283" height="335" key="GridCell.Tab.1.center/0.23.1680.899@0.23.1680.899" timestamp="1602535905529" />
     <state width="630" height="335" key="GridCell.Tab.1.center/0.23.1680.901@0.23.1680.901" timestamp="1602589946081" />
     <state width="1638" height="282" key="GridCell.Tab.1.center/0.23.1680.902@0.23.1680.902" timestamp="1601741831666" />
     <state width="1638" height="364" key="GridCell.Tab.1.center/0.23.1680.905@0.23.1680.905" timestamp="1601125249523" />
-    <state width="1283" height="314" key="GridCell.Tab.1.left" timestamp="1604056803497">
+    <state width="1283" height="388" key="GridCell.Tab.1.left" timestamp="1604146814429">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803497" />
+    <state width="1283" height="388" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814429" />
+    <state width="1283" height="253" key="GridCell.Tab.1.left/0.23.1680.887@0.23.1680.887" timestamp="1604146420566" />
+    <state width="1283" height="314" key="GridCell.Tab.1.left/0.23.1680.893@0.23.1680.893" timestamp="1604093097389" />
     <state width="1283" height="314" key="GridCell.Tab.1.left/0.23.1680.895@0.23.1680.895" timestamp="1604056604134" />
     <state width="1283" height="335" key="GridCell.Tab.1.left/0.23.1680.899@0.23.1680.899" timestamp="1602535905528" />
     <state width="630" height="335" key="GridCell.Tab.1.left/0.23.1680.901@0.23.1680.901" timestamp="1602589946069" />
     <state width="1638" height="282" key="GridCell.Tab.1.left/0.23.1680.902@0.23.1680.902" timestamp="1601741831663" />
     <state width="1638" height="364" key="GridCell.Tab.1.left/0.23.1680.905@0.23.1680.905" timestamp="1601125249522" />
-    <state width="1283" height="314" key="GridCell.Tab.1.right" timestamp="1604056803501">
+    <state width="1283" height="388" key="GridCell.Tab.1.right" timestamp="1604146814431">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803501" />
+    <state width="1283" height="388" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814431" />
+    <state width="1283" height="253" key="GridCell.Tab.1.right/0.23.1680.887@0.23.1680.887" timestamp="1604146420567" />
+    <state width="1283" height="314" key="GridCell.Tab.1.right/0.23.1680.893@0.23.1680.893" timestamp="1604093097391" />
     <state width="1283" height="314" key="GridCell.Tab.1.right/0.23.1680.895@0.23.1680.895" timestamp="1604056604135" />
     <state width="1283" height="335" key="GridCell.Tab.1.right/0.23.1680.899@0.23.1680.899" timestamp="1602535905529" />
     <state width="630" height="335" key="GridCell.Tab.1.right/0.23.1680.901@0.23.1680.901" timestamp="1602589946082" />
     <state width="1638" height="282" key="GridCell.Tab.1.right/0.23.1680.902@0.23.1680.902" timestamp="1601741831667" />
     <state width="1638" height="364" key="GridCell.Tab.1.right/0.23.1680.905@0.23.1680.905" timestamp="1601125249524" />
-    <state width="1283" height="314" key="GridCell.Tab.2.bottom" timestamp="1604056803506">
+    <state width="1283" height="388" key="GridCell.Tab.2.bottom" timestamp="1604146814437">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803506" />
+    <state width="1283" height="388" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814437" />
+    <state width="1283" height="314" key="GridCell.Tab.2.bottom/0.23.1680.893@0.23.1680.893" timestamp="1604093097395" />
     <state width="1283" height="314" key="GridCell.Tab.2.bottom/0.23.1680.895@0.23.1680.895" timestamp="1604056604139" />
     <state width="1283" height="335" key="GridCell.Tab.2.bottom/0.23.1680.899@0.23.1680.899" timestamp="1602535204428" />
     <state width="630" height="335" key="GridCell.Tab.2.bottom/0.23.1680.901@0.23.1680.901" timestamp="1602589946084" />
     <state width="1638" height="619" key="GridCell.Tab.2.bottom/0.23.1680.902@0.23.1680.902" timestamp="1601731411378" />
-    <state width="1283" height="314" key="GridCell.Tab.2.center" timestamp="1604056803504">
+    <state width="1283" height="388" key="GridCell.Tab.2.center" timestamp="1604146814435">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803504" />
+    <state width="1283" height="388" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814435" />
+    <state width="1283" height="314" key="GridCell.Tab.2.center/0.23.1680.893@0.23.1680.893" timestamp="1604093097392" />
     <state width="1283" height="314" key="GridCell.Tab.2.center/0.23.1680.895@0.23.1680.895" timestamp="1604056604137" />
     <state width="1283" height="335" key="GridCell.Tab.2.center/0.23.1680.899@0.23.1680.899" timestamp="1602535204426" />
     <state width="630" height="335" key="GridCell.Tab.2.center/0.23.1680.901@0.23.1680.901" timestamp="1602589946083" />
     <state width="1638" height="619" key="GridCell.Tab.2.center/0.23.1680.902@0.23.1680.902" timestamp="1601731411376" />
-    <state width="1283" height="314" key="GridCell.Tab.2.left" timestamp="1604056803503">
+    <state width="1283" height="388" key="GridCell.Tab.2.left" timestamp="1604146814433">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803503" />
+    <state width="1283" height="388" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814433" />
+    <state width="1283" height="314" key="GridCell.Tab.2.left/0.23.1680.893@0.23.1680.893" timestamp="1604093097392" />
     <state width="1283" height="314" key="GridCell.Tab.2.left/0.23.1680.895@0.23.1680.895" timestamp="1604056604137" />
     <state width="1283" height="335" key="GridCell.Tab.2.left/0.23.1680.899@0.23.1680.899" timestamp="1602535204425" />
     <state width="630" height="335" key="GridCell.Tab.2.left/0.23.1680.901@0.23.1680.901" timestamp="1602589946083" />
     <state width="1638" height="619" key="GridCell.Tab.2.left/0.23.1680.902@0.23.1680.902" timestamp="1601731411375" />
-    <state width="1283" height="314" key="GridCell.Tab.2.right" timestamp="1604056803505">
+    <state width="1283" height="388" key="GridCell.Tab.2.right" timestamp="1604146814436">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1283" height="314" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604056803505" />
+    <state width="1283" height="388" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604146814436" />
+    <state width="1283" height="314" key="GridCell.Tab.2.right/0.23.1680.893@0.23.1680.893" timestamp="1604093097394" />
     <state width="1283" height="314" key="GridCell.Tab.2.right/0.23.1680.895@0.23.1680.895" timestamp="1604056604138" />
     <state width="1283" height="335" key="GridCell.Tab.2.right/0.23.1680.899@0.23.1680.899" timestamp="1602535204427" />
     <state width="630" height="335" key="GridCell.Tab.2.right/0.23.1680.901@0.23.1680.901" timestamp="1602589946084" />
@@ -641,10 +670,10 @@
     <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1603958939643" />
     <state x="328" y="113" key="SettingsEditor/0.23.1680.895@0.23.1680.895" timestamp="1603982263966" />
     <state x="328" y="106" key="SettingsEditor/0.23.1680.899@0.23.1680.899" timestamp="1602531970144" />
-    <state x="440" y="249" key="Vcs.Push.Dialog.v2" timestamp="1604057573329">
-      <screen x="0" y="23" width="1680" height="895" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1604066324678">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1604056999503" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1604066324678" />
     <state x="440" y="249" key="Vcs.Push.Dialog.v2/0.23.1680.895@0.23.1680.895" timestamp="1604057573329" />
     <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602532101237">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -685,9 +714,24 @@
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserManagerController.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="93" />
+          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/hsba/bi/projectwork/web/UserDeveloperController.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

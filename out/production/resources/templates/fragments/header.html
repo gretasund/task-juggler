@@ -172,12 +172,12 @@
                 <div sec:authorize="hasRole('DEVELOPER')" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" th:href="@{/userDeveloper/}">Dashboard</a>
                     <a class="dropdown-item" th:href="@{/userDeveloper/projects/}">Projects</a>
-                    <a class="dropdown-item" th:href="@{/userDeveloper/tasks/}">Tasks</a>
+                    <a class="dropdown-item" th:href="@{/userDeveloper/acceptedTasks/}">Tasks</a>
                 </div>
                 <div sec:authorize="hasRole('MANAGER')" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" th:href="@{/userManager/}">Dashboard</a>
                     <a class="dropdown-item" th:href="@{/userManager/projects}">Projects</a>
-                    <a class="dropdown-item" th:href="@{/userManager/tasks}">Tasks</a>
+                    <a class="dropdown-item" th:href="@{/userManager/acceptedTasks}">Tasks</a>
                 </div>
             </div>
             <a sec:authorize="authenticated" th:href="@{/account}" class="p-2 text-dark">Account</a>
@@ -223,7 +223,7 @@
                 <a class="dropdown-item" th:href="@{/userManager/}">Dashboard</a>
                 <a class="dropdown-item" th:href="@{/userManager/users}">Users</a>
                 <a class="dropdown-item" th:href="@{/userManager/projects}">Projects</a>
-                <a class="dropdown-item" th:href="@{/userManager/tasks}">Tasks</a>
+                <a class="dropdown-item" th:href="@{/userManager/acceptedTasks}">Tasks</a>
             </div>
         </div>
         <a sec:authorize="authenticated" th:href="@{/account}" class="p-2 text-dark">Account</a>

@@ -79,7 +79,7 @@ public class UserDeveloperController {
             model.addAttribute("message", "Task successfully edited.");
         }
         AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
-        model.addAttribute("task", acceptedTask);
+        model.addAttribute("acceptedTask", acceptedTask);
         model.addAttribute("bookingForm", new BookingForm());
         model.addAttribute("userObject", userService.findCurrentUser());
         model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
@@ -102,7 +102,7 @@ public class UserDeveloperController {
     @GetMapping("/editTask/{taskId}")
     public String editTask(@PathVariable("taskId") Long taskId, Model model) {
         AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
-        model.addAttribute("task", acceptedTask);
+        model.addAttribute("acceptedTask", acceptedTask);
         model.addAttribute("taskForm", new AcceptedTaskForm(taskId));
         model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
         model.addAttribute("allStatus", AcceptedTask.Status.getAllStatus());
@@ -116,7 +116,7 @@ public class UserDeveloperController {
             return "redirect:/userDeveloper/viewTask/" + acceptedTaskForm.getTaskId() + "?edited=true";
         }
         AcceptedTask acceptedTask = acceptedTaskService.findById(acceptedTaskForm.getTaskId());
-        model.addAttribute("task", acceptedTask);
+        model.addAttribute("acceptedTask", acceptedTask);
         model.addAttribute("taskForm", acceptedTaskForm);
         model.addAttribute("project", projectService.findById(acceptedTask.getProject().getId()));
         return "user/managerDeveloper/editTask";
@@ -130,7 +130,7 @@ public class UserDeveloperController {
             return "redirect:/userDeveloper/viewTask/" + taskId;
         }
         AcceptedTask acceptedTask = acceptedTaskService.findById(taskId);
-        model.addAttribute("task", acceptedTask);
+        model.addAttribute("acceptedTask", acceptedTask);
         model.addAttribute("bookingForm", bookingForm);
         model.addAttribute("userObject", userService.findCurrentUser());
         model.addAttribute("usersBookings", bookingService.findUsersBookings(acceptedTask.getTimes()));
