@@ -196,7 +196,7 @@
                                                 <div th:if="${acceptedTask.assignee == null}" th:text="'Not set'"></div>
                                             </td>
                                             <td th:text="${acceptedTask.estimation} + ' h'"></td>
-                                            <td th:text="${#aggregates.sum(acceptedTask.times.![timeSpent])} + ' h'"></td>
+                                            <td th:text="${#aggregates.sum(acceptedTask.times.![timeSpent])} ? ${#aggregates.sum(acceptedTask.times.![timeSpent])} + ' h' : '0 h'"></td>
                                         </tr>
 
                                         <!--If there are no acceptedTasks in the project-->
